@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title> Consulta </title>  
+    <title>Consulta 3</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -32,7 +32,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand">
+				<a class="navbar-brand" href= "../../../../../index.html">
 					<img src= "../../../../../IMG/Logo.png" width="100" height="100"/>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href= "../../../../../Index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href= "../../../../../index.html">Inicio</a></li>
 						<li class="nav-item  dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
@@ -72,7 +72,7 @@
 				<div class="col-lg-12">
 					<h1>Desarrollo de Sistemas II</h1>
                     </br>
-                    <h1>Nombre Consulta</h1>
+                    <h1>Comunicación Por Red</h1>
 				</div>
 			</div>
 		</div>
@@ -85,10 +85,309 @@
 			<div class="row">
 				<div class>
 				  <div class="inner-column">
-						<h1><span>Título:</span></h1>
-					<h4>Subtítulo:</h4>
-						<p>Contenido:</p>
-					</div>
+						<h1 align="center"><span><strong>Comunicación Por Red:</strong></span></h1></br>
+					
+					
+					
+
+                        
+                    <h2><strong>I) <u> ¿CÓMO CONECTARSE A LA RED?</u></strong></h2>
+                    <p align="justify">Para que se puedan llevar a cabo operaciones de red en tu app, el manifiesto debe incluir los siguientes permisos:</p>
+                    <p align="justify"><img src="../../../../../IMG/Consulta 3 (1).png" alt="" width="720" height="73"></p>
+                     <p align="justify"><b>A) ¿Cómo diseñar una comunicación de red segura?</b></p>
+                     <p align="justify">Antes de agregar funcionalidades de red en tu  app, debes asegurarte de que los datos y la información que esta contenga  permanezcan seguros cuando se transmitan a través de una red. Para hacerlo,  sigue las siguientes recomendaciones:</p>
+                     <ul>
+                       <ul>
+                         <ul>
+                           <li>
+                             <div align="justify">· Minimiza la cantidad de <strong><em>datos del usuario</em></strong> sensibles o personales que  se transmiten a través de la red.</div>
+                           </li>
+                           <div align="justify">
+                             <ul>
+                               <ul>
+                                 <li>· Envía todo el tráfico de red de tu app  a través de <strong><em>SSL </em></strong><em>(Secure  Sockets Layer)</em>.</li>
+                                 <ul>
+                                   <ul>
+                                     <li>· Puedes crear una <strong><em>configuración de seguridad de la  red</em></strong>, que le permita a tu app confiar en CA personalizadas o  restringir el conjunto de CA <em>(Autoridades de Certificación)</em> del sistema  en las que confía para lograr una comunicación segura.</li></br>
+                                   </ul>
+                                 </ul>
+                               </ul>
+                             </ul>
+                           </div>
+                           <ul>
+                           </ul>
+                         </ul>
+                       </ul>
+                     </ul>
+                    <p align="justify"><b>B) ¿Cómo elegir un cliente HTTP?</b></p>
+                    <p align="justify">La  mayoría de las apps para Android conectadas a redes utilizan <strong><em>HTTP</em></strong> para enviar y recibir  datos. La plataforma de Android incluye el cliente <strong><em>HttpsURLConnection</em></strong>,  que admite <strong><em>TLS </em></strong><em>(Transport  Layer Security)</em>, cargas y descargas de transmisión, tiempos de espera  configurables, IPv6 y agrupaciones de conexiones.</p></br>
+                    <p align="justify"><b>C) ¿Cómo Buscar DNS?</b>                    </p>
+                    <p align="justify">En  dispositivos con Android 10 y versiones posteriores, se agregó compatibilidad  nativa para búsquedas de DNS especializadas mediante búsquedas de <strong><em>Cleartext</em></strong> y un modo de DNS mediante  TLS. La API de <strong><em>DnsResolver</em></strong> proporciona una resolución  asíncrona genérica que te permite buscar <strong><em>SRV </em></strong><em>(Service Resource Records),</em> <strong><em>NAPTR</em></strong> <em>(Naming Address  Pointer)</em> y otros tipos de registros.</p></br>
+                    <p align="justify"><b>D) ¿Cómo introducir las operaciones de red en un subproceso independiente?</b>
+                    <p align="justify">El  siguiente fragmento de <strong><em>Activity</em></strong> usa un <strong><em>Fragment</em></strong> sin interfaz gráfica para  encapsular las operaciones de red asíncronas. También se debe implementar la  interfaz de <strong><em>DownloadCallback</em></strong>,  lo que permite que el fragmento vuelva a llamar a la Activity en caso de que  necesite un estado de conectividad o enviar una actualización a la IU.</p>
+                    <p align="justify"><img src="../../../../../IMG/Consulta 3 (2).png" alt="" width="700" height="500"></p>
+                    </br>
+                    <p align="justify"><b>E) ¿Cómo implementar un fragmento sin interfaz gráfica para encapsular operaciones de red?</b>                    
+                    <p align="justify">Como <strong><em>NetworkFragment</em></strong> se ejecuta en el  subproceso de IU de forma predeterminada, usa <strong><em>AsyncTask</em></strong> para ejecutar las operaciones de red en un  subproceso en segundo plano.                    </p>
+                    <p align="justify"><img src="../../../../../IMG/Consulta 3 (3).png" alt="" width="750" height="500"></p>
+<p align="justify">Cuando  usas una subclase de <strong><em>AsyncTask</em></strong> para ejecutar operaciones  de red, debes tener cuidado no crear una fuga de memoria en el caso de que se  destruya la <strong><em>Activity</em></strong> a la que hace referencia <strong><em>AsyncTask</em></strong> antes que termine su  trabajo en segundo plano. Para garantizar que esto no suceda, el siguiente fragmento  borra cualquier referencia a la <strong><em>Activity</em></strong> en el método <strong><em>onDetach()</em></strong> del <strong><em>Fragment</em></strong>.</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (4).png" alt="" width="700" height="500"></p>
+<p align="justify"><b>F) Usa HttpsUrlConnection Para Obtener Datos:</b>
+<p align="justify">El  método <strong><em>downloadUrl()</em></strong> debería tomar la URL en  cuestión y usarla para realizar una solicitud HTTP GET. Una vez establecida la  conexión, debes usar el método <strong><em>getInputStream()</em></strong> para recuperar los datos como <strong><em>InputStream</em></strong>. En el  siguiente fragmento, se usa la API de <strong><em>HttpsURLConnection</em></strong> para lograr esto:</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (5).png" alt="" width="800" height="600"></p></br>
+<p align="justify"><b>G) ¿Cómo convertir InputStream en una string?</b>
+<p align="justify">Un <strong><em>InputStream</em></strong> es una fuente legible de  bytes. Cuando se obtiene un elemento <strong><em>InputStream</em></strong>, es común decodificarlo o  convertirlo en un tipo de datos de destino. Por ejemplo, si descargaras datos  de imágenes, podrías decodificarlos y mostrarlos de la siguiente manera:</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (6).png" alt="" width="551" height="123"></p></br>
+<p align="justify"><b>H) ¿Cómo conservar la actividad después de hacer cambios en la configuración?</b> 
+<p align="justify">Si  deseas conservar la actividad después de cualquier cambio de configuración,  debes conservar el <strong><em>Fragment</em></strong> original y asegurarte de  que la <strong><em>Activity</em></strong> reconstruida haga  referencia a él. Primero, tu <strong><em>NetworkFragment</em></strong> debería llamar a <strong><em>setRetainInstance(true)</em></strong> en su método <strong><em>onCreate()</em></strong>, como se  muestra a continuación:</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (7).png" alt="" width="676" height="142"></p>
+<p align="justify">Luego,  modifica la manera en que se inicializa <strong><em>NetworkFragment</em></strong> en tu método estático <strong><em>getInstance()</em></strong>:</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (8).png" alt="" width="805" height="340"></p></br>
+<h2><strong>II) <u> ¿CÓMO ADMINISTRAR EL USO DE LA RED?</u></strong></h2></br>
+<p align="justify"><b>A) ¿Cómo comprobar la conexión de red de un dispositivo?</b>
+<p align="justify">Para verificar la conexión de red, por lo  general, se usan las siguientes clases:
+<div align="justify">
+  <ul>
+    <ul>
+      <ul>
+        <li><strong>· ConnectivityManager: </strong>Responde consultas sobre el estado de la conexión de red. También  notifica a las aplicaciones cuando cambia la conectividad de red.<strong> </strong></li>
+        <ul>
+          <ul>
+            <li><strong>· NetworkInfo: </strong>Describe el estado de una interfaz de red de un tipo determinado <em>(actualmente,  móvil o Wi-Fi)</em>.<strong> </strong></li></br>
+          </ul>
+        </ul>
+      </ul>
+    </ul>
+  </ul>
+</div>
+<ul>
+  <ul>
+  <ul>
+    <ul>
+      <p align="justify">En  este fragmento de código, se prueba la conectividad de red para Wi-Fi y redes  móviles.</p>
+      <p align="justify">Siempre debes verificar <strong><em>isConnected()</em></strong> antes  de realizar operaciones de red, ya que <strong><em>isConnected()</em></strong> se encarga de aspectos  como redes móviles inestables, el modo de avión y datos restringidos en segundo  plano. </p>
+      <p><img src="../../../../../IMG/Consulta 3 (9).png" alt="" width="700" height="500"></p>
+    </ul>
+      <li></li>
+    </ul>
+  </ul>
+</ul>
+<p align="justify">El método <strong><em>getActiveNetworkInfo()</em></strong> muestra una instancia de <strong><em>NetworkInfo</em></strong>,  que representa la primera interfaz de red conectada que puede encontrar, o null  si ninguna de las interfaces está conectada.
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (10).png" alt="" width="600" height="178">
+<p align="justify"><b>B) ¿Cómo administrar el uso de la red?</b> 
+<p align="justify">Para  escribir una app que admita el acceso a la red y administración del uso de la  red, tu manifiesto debe tener los permisos correctos y filtros de <strong><em>intents</em></strong>.</p>
+<p align="justify">El extracto de manifiesto que se muestra a  continuación incluye los siguientes permisos:</p>
+<div align="justify">
+  <ul>
+    <ul>
+      <ul>
+        <li><strong><em>· android.permission.INTERNET:</em></strong> Les permite a las aplicaciones abrir sockets de red.</li>
+        <ul>
+          <ul>
+            <li><strong><em>· android.permission.ACCESS_NETWORK_STATE:</em></strong> Les permite a las aplicaciones acceder a información  sobre redes.</li></br>
+            <li></li>
+          </ul>
+        </ul>
+      </ul>
+    </ul>
+  </ul>
+</div>
+<ul>
+  <ul>
+  <ul>
+    <ul>
+      <ul>
+        </ul>
+    </ul>
+      <li></li>
+    </ul>
+  </ul>
+</ul>
+<p><img src="../../../../../IMG/Consulta 3 (11).png" alt="" width="700" height="500"></p>
+<p align="justify"><b>C) ¿Cómo implementar una actividad de preferencia?</b> 
+<p align="justify">El  extracto de manifiesto anterior, la actividad de la app de muestra <strong><em>SettingsActivity</em></strong> tiene un filtro de <strong><em>intents</em></strong> para la acción <strong><em>ACTION_MANAGE_NETWORK_USAGE</em></strong>. <strong><em>SettingsActivity</em></strong> es una subclase de <strong><em>PreferenceActivity</em></strong>.  Muestra preferencias que permite a los usuarios especificar lo siguiente:</p>
+<ul>
+  <ul>
+    <ul>
+      <li>· Si desean mostrar resúmenes para cada  entrada de feed <strong><em>XML</em></strong> o simplemente un vínculo  para cada entrada.</li>
+      <ul>
+        <ul>
+          <li>· Si quieren descargar el feed <strong><em>XML</em></strong> en caso de que haya alguna  conexión de red disponible o solo si la conexión Wi-Fi está disponible.</li></br>
+        </ul>
+      </ul>
+      <li></li>
+    </ul>
+  </ul>
+</ul>
+<p align="justify"><b>D) ¿Cómo responder a los cambios de preferencias?</b>
+<p align="justify">En  este fragmento, la app verifica la configuración de preferencias en <strong><em>onStart()</em></strong>. Si hay  una coincidencia entre la configuración y la conexión de red del dispositivo <em>(por  ejemplo, si la configuración es &quot;Wi-Fi&quot; y el dispositivo tiene </em><em>una  conexión Wi-Fi)</em>, la app descarga el feed y actualiza la  pantalla.</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (12).png" alt="" width="800" height="550"></p>
+<p align="justify"><b>E) ¿Cómo detectar cambios de conexión?</b>
+<p align="justify">Cuando  cambia la conexión de red del dispositivo, <strong><em>NetworkReceiver</em></strong> intercepta la acción <strong><em>CONNECTIVITY_ACTION</em></strong>,  determina el estado de la conexión de red y establece los indicadores <strong><em>wifiConnected</em></strong> y <strong><em>mobileConnected</em></strong> en verdadero o falso. El  resultado es que, la próxima vez que el usuario regrese a la app, esta solo  descargará el feed más reciente y actualizará la pantalla si <strong><em>NetworkActivity.refreshDisplay</em></strong> se establece en true.</p>
+<p align="justify"><img src="../../../../../IMG/Consulta 3 (13).png" alt="" width="800" height="500"></p></br>
+<p align="justify">
+<p align="justify">
+<h2><strong>III) 	<u>¿CÓMO OPTIMIZAR EL USO DE DATOS DE RED?</u></strong></h2>
+					
+					<p align="justify"><b>A)	¿Cómo optimizar el uso de datos de red?</b>
+<p align="justify">Durante la vida útil de un smartphone, el costo de un plan de datos móviles puede superar fácilmente el costo del propio dispositivo. 
+Esta capacidad es particularmente útil cuando se usa el roaming, cerca del final del ciclo de facturación, o bien para un pequeño paquete de datos prepago</p>
+
+<p align="justify">Los usuarios pueden incluir apps específicas en la lista blanca para permitir el uso de datos medidos en segundo plano, incluso cuando está activado Ahorro de datos.
+Android 7.0 extiende la API de <b>ConnectivityManager</b> para que las apps puedan recuperar las preferencias del Ahorro de datos del usuario y controlar los cambios en las preferencias
+</p>
+
+
+
+					<p align="justify"><b>B)	¿Cómo verificar las preferencias de Ahorro de datos?</b>
+
+<p align="justify">En Android 7.0 (API nivel 24), las apps pueden usar la API de <b>ConnectivityManager</b> para determinar las restricciones de uso de 
+datos que se aplican. 
+Con el método getRestrictBackgroundStatus(), se muestra uno de los siguientes valores:</p>
+
+<p align="justify"><b>· RESTRICT_BACKGROUND_STATUS_DISABLED: </b>
+Ahorro de datos está inhabilitado.
+</p>
+
+<p align="justify"><b>· RESTRICT_BACKGROUND_STATUS_ENABLED:</b>
+El usuario habilitó Ahorro de datos para esta app. Las apps deberían esforzarse por limitar el uso de datos en primer plano y manejar con facilidad las restricciones de uso de datos en segundo plano.
+</p>
+
+<p align="justify"><b>· RESTRICT_BACKGROUND_STATUS_WHITELISTED:</b>
+El usuario habilitó Ahorro de datos, pero la app se encuentra en la lista blanca. Igualmente, las apps deben esforzarse por limitar el uso de datos en primer y segundo plano.
+</p>
+
+<p align="justify"><img src="../../../../../IMG/z1.png" alt="" width="800" height="500"></p></br>
+<p align="justify">
+<p align="justify">
+<p align="justify"><b>C)	¿Cómo supervisar los cambios en las preferencias de Ahorro de Datos?</b>
+  
+<p align="justify">Las apps pueden controlar los cambios en las preferencias de Ahorro de datos mediante la creación de un <b>BroadcastReceiver</b> para escuchar 
+<b>ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED</b> y mediante un registro dinámico del receptor con <b>Context.registerReceiver()</b>. 
+Cuando una app recibe esta transmisión, 
+debe verificar si las nuevas preferencias del Ahorro de datos afectan los permisos. Para ello, debe llamar a <b>ConnectivityManager.getRestrictBackgroundStatus().</b></p>
+					
+					<br></br>
+					
+					 <h2><strong>IV) <u>DESCRIPCIÓN GENERAL DE VOLLEY:</u></strong></h2>
+					
+					<p align="justify"><b>A)	Descripción General de Volley</b>
+					
+					<p align="justify">Volley es una biblioteca HTTP que facilita y agiliza el uso de redes en apps para Android. 
+					Volley está disponible en GitHub y ofrece estos beneficios:</p>
+					
+					                  <p><em>· Programación automática de solicitudes de red.</em></p>
+									  <p><em>· Varias conexiones de red simultáneas</em>.</p>
+									  <p><em>· Almacenamiento de respuestas en caché y en disco transparentes con coherencia de caché en HTTP estándar</em>.</p>
+									  <p><em>· API de cancelación de solicitudes (permite cancelar una única solicitud, o bien establecer bloques o grupos de solicitudes para cancelar)</em>.</p>
+									  <p><em>· Ordenamiento sólido que permite completar correctamente la IU con datos recuperados de forma asíncrona de la red.</em></p>
+									  <p><em>· Herramientas de depuración y rastreo.</em></p></br>
+				    <p align="justify">Volley no es adecuado para operaciones de transmisión o descarga grandes, 
+					ya que almacena todas las respuestas en la memoria durante el análisis. Para operaciones de descarga grandes, te recomendamos usar una alternativa como <b>DownloadManager.</b></p>
+					
+					
+					<p align="justify">La biblioteca principal de Volley se desarrolla en GitHub y contiene la canalización principal de despacho de solicitudes, 
+					además de un conjunto de utilidades que pueden aplicarse de manera general disponible en la "caja de herramientas" de Volley. 
+					La manera más fácil de incorporar Volley en tu proyecto es agregar la siguiente dependencia al archivo <b>build.gradle</b> de tu app:</p>
+					
+<p align="justify"><img src="../../../../../IMG/z2.png" alt="" width="500" height="120"></p></br>
+<p align="justify">
+<h2><strong>V)	<u>¿CÓMO ENVIAR UNA SOLICITUD SIMPLE?</u></strong></h2>
+
+										<p align="justify"><b>A)	¿Cómo enviar una solicitud simple?</b>
+
+					
+					
+					<p align="justify">En un nivel alto, puedes usar Volley para crear una <b>RequestQueue</b> y pasarle objetos <b>Request.</b> 
+					La RequestQueue administra los subprocesos de trabajo para ejecutar las operaciones de red, leer la caché y escribir en ella, y analizar las respuestas.</p>
+					
+					<p align="justify"><b>B)	¿Cómo agregar el permiso de internet?</b>
+					
+					<p align="justify">Para usar Volley, debes agregar el permiso <b>android.permission.INTERNET</b> al manifiesto de tu app. Sin este permiso, tu app no podrá conectarse a la red.</p>
+					
+					<p align="justify"><b>C)	¿Cómo usar el newRequestQueue?</b>
+					
+					<p align="justify">Volley proporciona un método de conveniencia <b>Volley.newRequestQueue</b>, que configura una <b>RequestQueue</b> por ti mediante valores predeterminados y, 
+					luego, inicia la cola. Por ejemplo:</p>
+					
+					
+<p align="justify"><img src="../../../../../IMG/z3.png" alt="" width="600" height="400"></p>
+<p align="justify">
+					
+					
+					
+					<p align="justify">La ejecución en el subproceso principal es conveniente para completar los controles de IU con los datos que se reciben, ya que puedes modificar libremente los controles de IU directamente desde tu controlador de respuestas.</p>
+					
+					
+										<p align="justify"><b>D)	¿Cómo enviar una solicitud?</b>
+
+					
+					
+					<p align="justify">Para enviar una solicitud, simplemente debes crearla y agregarla a la <b>RequestQueue</b> con <b><em>add()</em></b>, 
+					como se muestra más arriba. Una vez que lo haces, esta pasa por la canalización, se envía, se analiza su respuesta sin procesar y se entrega.
+Cuando llamas a add(), Volley ejecuta un subproceso de procesamiento de caché y un conjunto de subprocesos de despacho de redes. 
+En la siguiente imagen se puede observar el ciclo de vida de una solicitud:
+</p>
+<p align="justify"><img src="../../../../../IMG/z4.png" alt="" width="450" height="340"></p>
+<p align="justify">
+					
+					
+									<p align="justify"><b>E)	¿Cómo cancelar una solicitud?</b>
+
+					
+					
+					
+					<p align="justify">Para cancelar una solicitud, llama al <b><em>cancel()</em></b> en tu objeto <b>Request</b>. Una vez que la canceles, Volley garantizará que nunca se llame a tu 
+					controlador de 
+					respuestas, lo que en la práctica significa que puedes cancelar todas las solicitudes pendientes en el método <b>onStop()</b> de tu actividad y no tienes que llenar 
+					tus controladores
+					de respuestas con verificaciones para <b>getActivity() == null</b>, en caso de que ya se haya llamado a <b><em>onSaveInstanceState()</em></b>, o bien a otro código estándar defensivo.</p>
+					
+					
+					<p align="justify">A fin de aprovechar este comportamiento, generalmente, deberías registrar todas las solicitudes en curso para poder
+					cancelarlas en el momento adecuado. Por ejemplo, puedes etiquetar todas las solicitudes con la Activity que las realiza y llamar a <b><em>requestQueue.cancelAll(this)</em></b> 
+					desde <b>onStop()</b>.</p></br>
+					<h2><strong>VI)		<u>¿CÓMO CONFIGURAR REQUESTQUEUE?</u></strong></h2>
+
+					<p align="justify"><b>A)	¿Cómo configurar una red y una caché?</b>
+
+					
+					
+					<p align="justify">Una RequestQueue necesita dos cosas a fin de realizar su trabajo: una red mediante la cual transportar las solicitudes y una caché para administrar el 
+					almacenamiento en caché. Hay implementaciones estándar de estas en la caja de herramientas de Volley: <b>DiskBasedCache</b> proporciona una caché de 
+					un archivo por respuesta con un índice en la memoria y <b>BasicNetwork</b> proporciona transporte de red basado en tu cliente HTTP preferido.</p>
+					
+					<p align="justify">En este fragmento, se muestran los pasos para configurar una <b>RequestQueue:</b></p>
+					
+<p align="justify"><img src="../../../../../IMG/z5.png" alt="" width="500" height="400"></p>
+<p align="justify">
+					<p align="justify">Si solo necesitas realizar una solicitud única y no quieres abandonar el conjunto de subprocesos, puedes crear la RequestQueue en donde 
+					sea que la necesites y llamar a <b><em>stop()</em></b> en la <b>RequestQueue</b> cuando haya vuelto tu respuesta o error con el método <b>Volley.newRequestQueue()</b>.</p></br>
+					<h2><strong>VII)	<u>¿CÓMO IMPLEMENTAR UNA SOLICITUD PREDETERMINADA?</u></strong></h2>
+					
+					
+					<p align="justify"><b>A)	¿Cómo escribir una solicitud personalizada?</b>
+
+					
+					
+					<p align="justify">La mayoría de las solicitudes incluyen implementaciones listas para usar en la caja de herramientas; si tu respuesta es una string, 
+					una imagen o un <b>JSON</b>, probablemente no necesites implementar una <b>Request</b> personalizada</p>
+					
+					<p align="justify"><b>B)	parseNetworkResponse</b>
+					
+					<p align="justify">Una <b>Response</b> encapsula una respuesta analizada que se entregará para un tipo específico (como una string, una imagen o un elemento JSON). 
+					A continuación, se muestra una implementación de ejemplo de <b><em>parseNetworkResponse().</em></b></p>
+					
+					<p align="justify"><img src="../../../../../IMG/z6.png" alt="" width="400" height="200"></p>
+
+					<p align="justify"><b><em>parseNetworkResponse()</em></b> toma como su parámetro a <b>NetworkResponse</b>, que contiene la carga útil de la respuesta como un <b><em>byte[]</em></b>, un código de estado HTTP y encabezados de respuesta.
+Tu implementación debe mostrar una <b>Response<T></b>, que contiene tu objeto de respuesta con el tipo definido y metadatos almacenados en caché o un error, en el caso de que falle el análisis.
+</p>
+					<p align="justify">Volley llama a <b><em>parseNetworkResponse()</em></b> desde un subproceso de trabajo. 
+					De esta manera, se garantiza que las operaciones de análisis costosas, como la decodificación de un JPEG en un mapa de bits, no bloqueen el subproceso de IU</em></b></p>
+					
+					
+				  </div>
 				</div>
 			</div>
 		</div>
