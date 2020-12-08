@@ -32,7 +32,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand">
+				<a class="navbar-brand" href="../../../../../index.html">
 					<img src= "../../../../../IMG/Logo.png" width="100" height="100"/>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
 				<div class="col-lg-12">
 					<h1>Desarrollo de Sistemas II</h1>
                     </br>
-                    <h1>Nombre Consulta</h1>
+                    <h1>Consulta 3: Guardar Datos (Preferencias, Archivos, BDD)</h1>
 				</div>
 			</div>
 		</div>
@@ -85,13 +85,665 @@
 			<div class="row">
 				<div class>
 				  <div class="inner-column">
-						<h1><span>Título:</span></h1>
-					<h4>Subtítulo:</h4>
-						<p>Contenido:</p>
+						<h1><span>Título: Guardar Datos (Preferencias, Archivos, BDD)</span></h1> <br/> <br/> <br/>
+		
 					</div>
 				</div>
 			</div>
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<img src="../../../../../IMG/ImgGrupo2/img1_consulta3.PNG"  align="center" width="400px" height="300px">	
+                        		
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha -->
+
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                	<div class="inner-column">                   
+           
+						<p align="justify">Es necesario guardar información sobre el estado de una aplicación Android cuando se encuentra en el método 
+                        onPause() para que no se pierda el progreso del usuario. Para ello existen 3 opciones de almacenamiento: </p>               
+                        
+                        	
+                        <ul>
+                        	<li><p align="justify">• &nbsp Guardar pares claves-valor de tipos de datos simples en un archivo de preferencias compartidas.</p></li>
+                            
+                            <li><p align="justify">• &nbsp Guardar archivos arbitrarios en el sistema de archivos de Android.</p></li> 
+                            
+                            <li><p align="justify">• &nbsp Utilizar bases de datos administradas por SQLite.</p></li> 
+                        </ul> 
+                        
+                	</div>
+                    				
+                </div>
+
+            	<!-- Texto derecha fin -->
+                
+			</div>
+            
+            <br/>
+            
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <hr style="size:4px" color="black" />
+            
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            
+            
+             <!-- Texto izquierda -->
+            <div class="row">
+            	<h2 align="center"><strong>1. Guardar pares claves-valor de tipos de datos simples en un archivo de preferencias</strong></h2>
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <p align="justify"><strong><u>SharedPreferences</u></strong></p>
+						<p align="justify">Se utiliza cuando se quiere guardar colecciones pequeñas de pares clave-valor, para ello se utiliza 
+                        el objeto el cual tiene asociado un archivo que contiene pares clave-valor y proporciona métodos simples para leer y 
+                        escribir dichos pares. Este objeto puede ser privado o compartido. </p>
+                        
+                        <p align="justify">Para obtener un manejador de las preferencias compartidas existen dos métodos por el cual 
+                        se puede hacer uso del manejador:</p>
+                        
+                        </div>                                                 
+                        					
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <p align="justify"><strong><u>getSharedPreferences():</u> </strong></p>
+						<p align="justify">Se utiliza cuando se necesita múltiples archivos de preferencias 
+                        compartidas identificados por el nombre, se lo puede llamar desde cualquier instancia de Context en la app. </p>                                          
+                        
+                        </div>
+                                                  
+                        <img src="../../../../../IMG/ImgGrupo2/img2_consulta3.PNG"  align="center" width="550px" height="100px">
+                        				
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">					
+
+						<div class="inner-column">
+						
+                        <br/>
+                        <p align="justify"><strong><u>getPreferences():</u> </strong></p>
+						<p align="justify">Se utiliza cuando se necesita utilizar un solo archivo de preferencias compartidas 
+                        para la actividad, no se necesita indicar un nombre y se lo puede llamar desde una instancia de Activity. </p>                      
+                        
+                        </div>
+                        
+                        <img src="../../../../../IMG/ImgGrupo2/img3_consulta3.PNG"  align="center" width="600px" height="80px">
+                                                                  					                                       				
+				</div> 	
+                            
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <hr style="size:4px" color="black" />
+            
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+             <!-- Texto izquierda -->
+            <div class="row">
+            	<h2 align="center"><strong>2. Guardar archivos arbitrarios en el sistema de archivos de Android.</strong></h2>
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+                        <br/><img src="../../../../../IMG/ImgGrupo2/img4_consulta3.PNG"  align="center" width="700px" height="300px">                                             
+                        					
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <p align="justify"><strong><u>Almacenamiento Interno</u></strong></p>
+                        
+						<ul>
+                        	<li><p align="justify">• Para guardar archivos en caché se debe usar <strong>createTempFile().</strong> </p></li>
+                            
+                            <li><p align="justify">• Para crear y escribir un archivo privado en el almacenamiento interno: </p></li> 
+                            
+                            <img src="../../../../../IMG/ImgGrupo2/img5_consulta3.PNG"  align="center" width="500px" height="100px"> <br/><br/>
+                            
+                            <li><p align="justify">• Para leer un archivo desde almacenamiento interno: </p></li> 
+                            
+                            <img src="../../../../../IMG/ImgGrupo2/img6_consulta3.PNG"  align="center" width="500px" height="100px"> <br/><br/>
+                            
+                            <li><p align="justify">• <strong>getFilesDir():</strong> obtiene la ruta de acceso absoluta al directorio de sistema de archivos.  </p></li> 
+                            
+                            <li><p align="justify">• <strong>getDir():</strong> crea un directorio dentro del almacenamiento interno </p></li> 
+                            
+                            <li><p align="justify">• <strong>deleteFile():</strong> elimina un archivo guardado.</p></li> 
+                        </ul>                                         
+                        
+                        </div>
+                                                  
+                        				
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">					
+
+						<div class="inner-column">
+						
+                        <br/>
+                        <p align="justify"><strong><u>Almacenamiento Externo</u></strong></p>
+						<p align="justify"><strong>WRITE_EXTERNAL_STORAGE:</strong> solicitar permiso al almacenamiento. </p> 
+                        <p><img src="../../../../../IMG/ImgGrupo2/img7_consulta3.PNG"  align="center" width="600px" height="80px"></p>
+                        
+                        <p align="justify"><strong>READ_EXTERNAL_STORAGE:</strong> leer el almacenamiento externo. </p>         
+                        <p><img src="../../../../../IMG/ImgGrupo2/img8_consulta3.PNG"  align="center" width="600px" height="80px"></p>       
+                        
+                        <ul>
+                        	<li><p align="justify"><strong>• Archivos públicos:</strong> disponibles para otras apps y el usuario. Cuando 
+                            el usuario desinstala la app, estos archivos deben seguir disponibles.  </p></li>
+                            
+                            <li><p align="justify">&nbsp &nbsp &nbsp &nbsp &nbsp • getExternalStoragePublicDirectory() </p></li>
+                            
+                            <li><p align="justify"><strong>• Archivos privados:</strong> archivos que pertenecen a tu app y deben eliminarse 
+                            cuando el usuario desinstala la app.</p></li>
+                            
+                            <li><p align="justify">&nbsp &nbsp &nbsp &nbsp &nbsp • getExternalFilesDir() </p></li>
+                            
+                        </ul>     
+                        
+                        </div>
+                        
+                        
+                                                                  					                                       				
+				</div> 	
+                            
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <hr style="size:4px" color="black" />
+            
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            
+            
+             <!-- Texto izquierda -->
+            <div class="row">
+            	<h2 align="center"><strong>3. Utilizar bases de datos administradas por SQLite.</strong></h2>
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <p align="justify"><strong><u>Esquema</u></strong></p>
+						<p align="justify">El esquema es una declaración formal de la manera en la que la base de datos 
+                        está organizada, se refleja en las instrucciones SQL que utilizas para crear la base de datos.</p>
+                        
+                        <p align="justify"><strong><u>Clase Contract</u></strong></p>
+                        <p align="justify">Es un contenedor para constantes que definen nombres de URI, tablas y columnas, 
+                        permite utilizar las mismas constantes en todas las clases del mismo paquete.</p>
+                        
+                        <p align="justify"><strong><u>Crear una base de datos utilizando un asistente de SQL </u></strong></p>
+                                                                      
+                     </div>    
+                      
+                     <img src="../../../../../IMG/ImgGrupo2/img9_consulta3.PNG"  align="center" width="800px" height="300px"> <br/><br/>
+                     
+                     <div class="inner-column">
+                     
+                     
+                     <p align="justify"><strong><u>Métodos de manipulación de información </u></strong></p>
+                     
+                     </div> 
+                     
+                     <img src="../../../../../IMG/ImgGrupo2/img10_consulta3.PNG"  align="center" width="800px" height="300px"> 
+                                                               
+                        					
+				</div> 	
+                
+                            
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            
+            
+  
+        
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+        
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Biblioteca de persistencias Room</strong></h2>
+						<p align="justify">La biblioteca de persistencias Room brinda una capa de abstracción para SQLite que permite acceder 
+                        a la base de datos sin problemas y, al mismo tiempo, aprovechar toda la potencia de SQLite.</p>    
+                        
+                        <p align="justify">El caso práctico más común es almacenar en caché datos relevantes. De esa manera, cuando el dispositivo no 
+                        puede acceder a la red, el usuario de todos modos puede explorar ese contenido mientras está desconectado. La biblioteca te ayuda 
+                        a crear una memoria caché de los datos en un dispositivo que ejecute tu app.</p>              
+                                               	
+					</div>
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+
+						<ul>
+                        	<img src="../../../../../IMG/ImgGrupo2/img11_consulta3.PNG"  align="center" width="400px" height="330px">
+                        </ul>
+                        			
+				</div> 	
+             </div>
+             
+             
+                     
+                                     
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+        
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->  
+        
+        
+              
+                
+                <!-- Texto Derecha -->
+
+             <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                    <div class="inner-column">
+                    	
+                        <h2 align="left"><strong>Cómo guardar contenido en una base de datos local con Room</strong></h2>
+                        
+						<ul>
+                        	<li><p align="justify"><strong>• &nbsp Base de datos:</strong> Contiene el titular de la base de datos y 
+                            sirve como punto de acceso principal para la conexión subyacente a los datos persistentes y relacionales de tu app. </p></li>
+                            
+                            <li><p align="justify"><strong>• &nbsp Entidad:</strong> Representa una tabla dentro de la base de datos.</p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp DAO:</strong> Contiene los métodos utilizados para acceder a la base de datos.</p></li> 
+                            
+                        </ul>  
+                        
+                    </div>                      				
+                </div>       
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                    <img src="../../../../../IMG/ImgGrupo2/img12_consulta3.PNG"  align="center" width="400px" height="330px">
+                     				
+                </div>       
+			</div>
+            
+            
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <br/>
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+           
+                     
+            
+             <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Cómo definir datos con entidades Room</strong></h2>
+						<p align="justify">Para cada entidad, se crea una tabla dentro del objeto Database asociado con el fin de retener los elementos. 
+                        Debes hacer referencia a la clase de entidad a través del arreglo entities de la clase Database.</p>                                   
+                        
+					</div>
+				</div>
+               
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    
+                        
+                        <p align="justify"><strong><u>Cómo usar una clave primaria.</u></strong></p>
+                        
+                        <p align="justify">Cada entidad debe definir al menos 1 campo como clave primaria. 
+                        Incluso cuando solo hay 1 campo, aún debes usar la anotación @PrimaryKey en él.</p>
+                        
+                        <ul>
+                        	<li><p align="justify">• &nbsp Clave primaria compuesta </p></li>
+                            <img src="../../../../../IMG/ImgGrupo2/img13_consulta3.PNG"  align="center" width="400px" height="100px"><br/><br/>
+                            
+                            <li><p align="justify">• &nbsp Nombre diferente para la tabla </p></li>
+                            <img src="../../../../../IMG/ImgGrupo2/img14_consulta3.PNG"  align="center" width="200px" height="100px"> <br/><br/>
+                            
+                            <li><p align="justify">• &nbsp Nombre diferente para una columna </p></li>
+                            <img src="../../../../../IMG/ImgGrupo2/img15_consulta3.PNG"  align="center" width="400px" height="150px"><br/><br/>
+                                                      
+                        </ul>                         
+                                            	                                                            
+					</div>
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                        
+				 		<p align="justify"><strong><u>Cómo ignorar campos</u></strong></p>
+                        
+                    	<p align="justify">De forma predeterminada, Room crea una columna para cada campo que se define en la entidad.</p>
+                        
+                        <ul>
+                        	<li><p align="justify">• &nbsp Campos no deseados </p></li>
+                            <img src="../../../../../IMG/ImgGrupo2/img16_consulta3.PNG"  align="center" width="400px" height="200px"><br/><br/>
+                            
+                            <li><p align="justify">• &nbsp Hereda campos de una entidad principal</p></li>
+                            <img src="../../../../../IMG/ImgGrupo2/img17_consulta3.PNG"  align="center" width="400px" height="200px"> <br/><br/>
+                                                      
+                        </ul> 
+                        
+					</div>
+                    
+				</div>    
+            </div>
+                
+                
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <br/>
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+                
+            <div class="row">
+            	<h2 align="left"><strong>Cómo proporcionar compatibilidad con la búsqueda de tablas</strong></h2>
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                    	
+                        <br/>
+                    	                    
+				 		<p align="justify"><strong><u>Cómo admitir la búsqueda en el texto completo</u></strong></p>
+                        
+                    	<p align="justify">Si la app requiere un acceso muy rápido a la información de la base de datos mediante la búsqueda en el texto completo (FTS), 
+                        respalda tus entidades con una tabla virtual que use el módulo de extensión SQLite FTS3 o FTS4.</p>
+                                                                                                                       
+					</div>
+                    
+                    
+				</div>  
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                
+                	<br/>
+                	<img src="../../../../../IMG/ImgGrupo2/img18_consulta3.PNG"  align="center" width="400px" height="200px">
+                </div>
+                
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                    
+                    	<br/>
+                        
+				 		<p align="justify"><strong><u>Columnas específicas del índice</u></strong></p>
+                        
+                    	<p align="justify">Si la app debe admitir versiones de SDK que no permiten usar entidades respaldadas por tablas FTS3 o FTS4, igual puedes 
+                        indexar algunas columnas de la base de datos para agilizar las consultas.</p>
+                                                                                         
+					</div>
+                    
+				</div>  
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                
+                	<br/>
+                	<img src="../../../../../IMG/ImgGrupo2/img19_consulta3.PNG"  align="center" width="400px" height="200px"><br/><br/>
+                    <img src="../../../../../IMG/ImgGrupo2/img20_consulta3.PNG"  align="center" width="400px" height="200px">
+                    
+                </div>            				
+                        
+			</div>
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <br/>
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+                
+            <div class="row">
+            	<h2 align="left"><strong>Cómo definir relaciones entre objetos</strong></h2>
+                <div class="col-lg-12 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                    	
+                        <br/>
+                        
+                    	<p align="justify">Como SQLite es una base de datos relacional, puedes especificar relaciones entre entidades. 
+                        Aunque la mayoría de las bibliotecas de asignación relacional de objetos permiten que los objetos de entidad se 
+                        hagan referencia entre sí, Room lo prohíbe explícitamente.</p>                     
+                                                                                                                       
+					</div>
+                    
+                    
+				</div>  
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                
+                	<div class="inner-column">
+                    
+                    	<p align="justify"><strong><u>Cómo definir relaciones de uno a uno</u></strong></p>
+                        <p align="justify">En las relaciones de uno a uno entre dos entidades, cada instancia 
+                        de la entidad principal se corresponde exactamente con una instancia de la entidad secundaria y viceversa.</p>                     
+                    
+                    </div>
+                    
+                    <img src="../../../../../IMG/ImgGrupo2/img21_consulta3.PNG"  align="center" width="400px" height="200px">
+                
+                </div>
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                
+                	<br/><br/>
+                
+                    <img src="../../../../../IMG/ImgGrupo2/img22_consulta3.PNG"  align="center" width="400px" height="200px"><br/><br/>
+                    <img src="../../../../../IMG/ImgGrupo2/img23_consulta3.PNG"  align="center" width="400px" height="100px">
+                
+                </div>
+                
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                    
+                    	<br/>
+                        
+				 		<p align="justify"><strong><u>Cómo definir relaciones de uno a varios</u></strong></p>
+                        
+                    	<p align="justify">En las relaciones de uno a varios entre dos entidades, cada instancia de la entidad principal corresponde a 
+                        cero o más instancias de la entidad secundaria, pero cada instancia de la entidad secundaria solo puede corresponder una instancia 
+                        de la entidad principal.</p>
+                                                                                         
+					</div>
+                    
+                    <img src="../../../../../IMG/ImgGrupo2/img24_consulta3.PNG"  align="center" width="400px" height="200px">
+                    
+				</div>  
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                
+                	<br/><br/><br/>
+                    
+                	<img src="../../../../../IMG/ImgGrupo2/img25_consulta3.PNG"  align="center" width="400px" height="200px"><br/><br/>
+                    <img src="../../../../../IMG/ImgGrupo2/img26_consulta3.PNG"  align="center" width="400px" height="100px">
+                    
+                </div> 
+                
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                    
+                    	<br/>
+                        
+				 		<p align="justify"><strong><u>Cómo definir relaciones de varios a varios</u></strong></p>
+                        
+                    	<p align="justify">En las relaciones de varios a varios entre dos entidades, cada instancia de la entidad principal 
+                        corresponde a cero o más instancias de la entidad secundaria y viceversa.</p>                      
+                                                                                         
+					</div>
+                    
+                    <img src="../../../../../IMG/ImgGrupo2/img27_consulta3.PNG"  align="center" width="400px" height="200px"> <br/><br/>
+                    
+                    <div class="inner-column">
+                    
+                    	<p align="justify">El siguiente paso depende de cómo quieras consultar las entidades relacionadas.</p>
+                        
+                    </div>
+                    
+				</div>  
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                	<div class="inner-column">
+                
+                	<br/><br/><br/>
+                    
+                    <p align="justify">•     Si quieres consultar listas de reproducción y un listado de las canciones correspondientes por cada lista de reproducción, 
+                    crea una clase de datos nueva con un objeto Playlist único y un listado de todos los objetos Song que incluye la lista de reproducción.</p>  
+                    
+                 	</div>
+                        
+                	<img src="../../../../../IMG/ImgGrupo2/img25_consulta3.PNG"  align="center" width="300px" height="100px"><br/><br/>
+                    
+                    <div class="inner-column">
+                    
+                    <p align="justify">•	Si quieres consultar canciones y un listado de las listas de reproducción correspondientes por cada canción, crea una 
+                    clase de datos nueva con un objeto Song único y un listado de los objetos Playlist en los que se incluye la canción.</p>  
+                    
+                    </div>
+                    
+                    <img src="../../../../../IMG/ImgGrupo2/img26_consulta3.PNG"  align="center" width="350px" height="100px">
+                    
+                </div>
+                
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                	<div class="inner-column">
+                    
+                    	<br/>
+                        
+				 		<p align="justify"><strong><u>Cómo definir relaciones anidadas</u></strong></p>
+                        
+                    	<p align="justify">Es posible que, en ocasiones, debas consultar un conjunto de tres o más 
+                        tablas relacionadas entre sí. En ese caso, definirías relaciones anidadas entre las tablas.</p>                      
+                                                                                         
+					</div>
+                    
+                    <img src="../../../../../IMG/ImgGrupo2/img30_consulta3.PNG"  align="center" width="400px" height="400px"> <br/><br/>
+                    
+                    <div class="inner-column">
+                    
+                    	<p align="justify">Primero, modela la relación entre dos de las tablas del conjunto como lo harías normalmente, con una clase 
+                        de datos y la anotación @Relation. Después de definir una clase de datos que represente esa relación, crea otra clase de datos 
+                        que modele la relación entre otra tabla del conjunto y la primera clase de relación, y "anida" la relación existente dentro de la nueva.</p>
+                        
+                    </div>
+                    
+				</div>  
+                
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                
+                
+                	<br/><br/><br/>
+                        
+                	<img src="../../../../../IMG/ImgGrupo2/img31_consulta3.PNG"  align="center" width="400px" height="200px"><br/><br/>
+                    <img src="../../../../../IMG/ImgGrupo2/img32_consulta3.PNG"  align="center" width="400px" height="200px"><br/><br/>
+                    <img src="../../../../../IMG/ImgGrupo2/img33_consulta3.PNG"  align="center" width="500px" height="150px"><br/><br/>
+                    
+                </div>              				
+                        
+			</div>
+            
+           
+           
+          
+                   
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+                
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            
+             <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1 align="left"><strong>TERCERA PARTE   ------> GRACE <-------- </strong></h1>
+						<p align="justify"></p>                                   
+                        
+					</div>
+				</div>
+                          				                  
 		</div>
+        
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+        
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+ 
 	</div>
 	<!-- End About -->
 	
