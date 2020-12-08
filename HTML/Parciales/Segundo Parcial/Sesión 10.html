@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Sesión 15</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../CSS/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="../../../CSS/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../../../CSS/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../../CSS/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand">
+					<img src="../../../IMG/Logo.png"alt="" width="100" height="100"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="../../../Index.html">Inicio</a></li>
+						<li class="nav-item active dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="../Primer Parcial/Primer Parcial.html">Primer Parcial</a>
+								<a class="dropdown-item" href="Segundo Parcial.html">Segundo Parcial</a>
+								<a class="dropdown-item" href="../Tercer Parcial/Tercer Parcial.html">Tercer Parcial</a>
+							</div>
+					  </li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Consultas</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href= "../../Consulta/Consulta_Grupo1.html">Grupo 1</a>
+								<a class="dropdown-item" href="../../Consulta/Consulta_Grupo2.html">Grupo 2</a>
+                                <a class="dropdown-item" href="../../Consulta/Consulta_Grupo3.html">Grupo 3</a>
+                                <a class="dropdown-item" href="../../Consulta/Consulta_Grupo4.html">Grupo 4</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Desarrollo de Sistemas II</h1>
+                    </br>
+                    <h1>Permisos</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class>
+				  <div class="inner-column">
+						<h1><span>Título:Permisos</span></h1>
+					
+						<p>Contenido:</p>
+						<p><b>Descripción general de los permisos</b></p>
+
+<p><table cellpadding="0" cellspacing="0" align="left"> 
+<tbody>
+<tr>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+
+</p>
+
+<br />
+<p><b>Aprobación de un permiso</b></p>
+<img src="../../../IMG/per1.png"  >
+
+<p>Una app debe publicitar los permisos que requiere incluyendo etiquetas &lt;uses-permission&gt; en el manifiesto de la app.</p>
+<img src="../../../IMG/per2.png"  >
+<img src="../../../IMG/per3.png"  >
+<br />
+<p><b>Solicitudes para permisos riesgosos</b></p>
+
+<p>Solo los permisos riesgosos requieren la aprobación del usuario</p>
+
+<p><b>Solicitudes de tiempo de ejecución (Android 6.0 </b>y posteriores)</p>
+
+<p>Si el dispositivo tiene instalado Android 6.0 (nivel de API 23) o una versión posterior, y la targetSdkVersion de la app es de nivel 23 o posterior, el usuario no recibirá ninguna notificación de permisos durante la instalación.</p>
+
+<p>Cuando la app solicita un permiso, el usuario ve un diálogo del sistema que le indica a qué grupo de permisos está intentando acceder la app. El diálogo incluye los botones <b>Denegar y Permitir.</b></p>
+<img src="../../../IMG/per4A.png"  >
+<p>Si el usuario rechaza la solicitud de permiso, la próxima vez que la app solicite el permiso, el diálogo incluirá una casilla de verificación que, si se marca, indicará que el usuario no desea que se le vuelva a pedir el permiso.</p>
+<img src="../../../IMG/per4.png"  >
+<img src="../../../IMG/per5.png"  >
+<br />
+<p><b>Solicitudes en el momento de la instalación (Android 5.1.1 y anteriores)</b></p>
+
+<p>Si el dispositivo tiene instalado Android 5.1.1 (nivel de API 22) o versiones anteriores, o si el atributo <b><i>targetSdkVersion</i></b> es 22 o inferior y se ejecuta en cualquier versión de Android, el sistema le pedirá automáticamente al usuario que otorgue todos los permisos riesgosos para tu app en el momento de la instalación</p>
+<img src="../../../IMG/per6.png"  >
+<p><b>Permisos para funciones de hardware opcionales</b></p>
+<img src="../../../IMG/per7.png"  >
+
+
+<br />
+<p>Por lo tanto, si tu app solicita el permiso de <b>CAMERA</b>, es importante que también incluyas la etiqueta <b><i>&lt;uses-feature&gt; </i></b>en tu manifiesto a fin de declarar si se requiere o no esta función. Por ejemplo:</p>
+<img src="../../../IMG/8.png"  >
+<p><b>Permisos únicos</b></p>
+
+<p>El diálogo de permisos para el usuario contiene una opción llamada Solo esta vez. Si el usuario selecciona esta opción, se le otorgará un permiso único temporal a la app.</p>
+
+<p>Luego la app podrá acceder a los datos relacionados durante un período que dependerá del comportamiento de tu app y de las acciones del usuario:</p>
+<img src="../../../IMG/9.png"  >
+<br />
+<p><b>Aplicación de permisos</b></p>
+
+<p>Los permisos no solo se utilizan para solicitar funcionalidades del sistema. Los servicios proporcionados por las apps pueden aplicar permisos personalizados para limitar su uso a determinados usuarios.</p>
+
+<p><b>Aplicación de permisos de actividad</b></p>
+
+<p>Los permisos aplicados con el atributo android:permission en la etiqueta &lt;activity&gt;, en el manifiesto, fijan restricciones respecto a los usuarios que pueden iniciar esa Activity. Se verifica el permiso durante Context.startActivity() y Activity.startActivityForResult(). Si el emisor no tiene el permiso necesario, la llamada arroja una SecurityException.</p>
+
+<p><b>Aplicación de permiso de servicio</b></p>
+
+<p>Los permisos aplicados con el atributo android:permission en la etiqueta &lt;service&gt; del manifiesto fijan restricciones respecto a los usuarios que pueden iniciarlo o vincularlo con el Service asociado. Se verifica el permiso durante Context.startService(), Context.stopService() y Context.bindService(). Si el emisor no tiene el permiso necesario, la llamada arroja una SecurityException.</p>
+
+<p><b>Aplicación de permiso de emisión</b></p>
+
+<p>Los permisos aplicados con el atributo android:permission en la etiqueta &lt;receiver&gt; fijan restricciones respecto de la autorización para enviar transmisiones al BroadcastReceiver asociado. Se controla el permiso después de que se muestra Context.sendBroadcast(), mientras el sistema intenta proporcionar la emisión enviada al receptor en cuestión. En consecuencia, un error de permisos no generará una excepción para el emisor, sino que únicamente no proporcionará el Intent.</p>
+
+<p><b>Aplicación de permisos de proveedor de contenido</b></p>
+<img src="../../../IMG/10.png"  >
+<p>Los permisos aplicados con el atributo android:permission en la etiqueta &lt;provider&gt; fijan restricciones respecto a quiénes pueden acceder a los datos en un ContentProvider.</p>
+
+<p>De la misma manera, se puede suministrar un permiso a Context.registerReceiver() para tener control sobre quiénes pueden realizar transmisiones a un receptor registrado programáticamente. Por otro lado, se puede suministrar un permiso cuando se llama a Context.sendBroadcast() a fin de restringir los objetos receptores de emisión que tienen autorización para recibirla.</p>
+
+<p><b>Aplicación de permisos de proveedor de contenido</b></p>
+
+<p>Con el atributo android:permission en la etiqueta &lt;provider&gt; fijan restricciones respecto a quiénes pueden acceder a los datos en un ContentProvider.</p>
+
+<p><b>Permisos de URI</b></p>
+
+<p>cuando inicia una actividad o muestra un resultado en una actividad, el emisor puede establecer <i>Intent.FLAG_GRANT_READ_URI_PERMISSION o Intent.FLAG_GRANT_WRITE_URI_PERMISSION.</i> </p>
+
+<p>Esto otorga a la actividad receptora permisos de acceso al URI de datos específico en el intent, independientemente de que tenga permiso para acceder a los datos en el proveedor de contenido correspondiente al intent.</p>
+
+<p>Para crear la implementación más segura que permita a otras apps tomar la responsabilidad de sus acciones dentro de tu app, debes usar permisos específicos de esta manera y declarar la compatibilidad de la app con el atributo android:grantUriPermissions o la etiqueta &lt;grant-uri-permissions&gt;.</p>
+
+<p><b>Aplicación de otros permisos</b></p>
+
+<p>Se pueden aplicar los permisos específicos arbitrarios a un servicio, en cualquier llamada, lo que se logra con el método Context.checkCallingPermission() la cual realiza una llamada con la string de permiso, que mostrará un número entero que indicará si se otorgó ese permiso al proceso de llamada actual.</p>
+
+<p>Si se tiene el ID de otro proceso (PID), puedes usar el método contextual Context.checkPermission() para verificar un permiso según ese PID. </p>
+
+<p>Si se tiene el nombre del paquete de otra app, puedes usar el método PackageManager.checkPermission() para averiguar si se le otorgó un permiso específico a ese paquete en particular.</p>
+
+<p><b>Permisos de restablecimiento automático de apps que no se usan</b></p>
+
+<p>Si la app está orientada a Android 11 (nivel de API 30) o a versiones posteriores y no se usó durante algunos meses, el sistema restablecerá automáticamente los permisos de tiempo de ejecución sensibles que el usuario otorgó a la app a fin de proteger sus datos</p>
+
+<p><b>Cómo solicitar al usuario que inhabilite el restablecimiento automático</b></p>
+
+<p>Esto es útil en situaciones en las que los usuarios esperan que tu app funcione principalmente en segundo plano, incluso sin interactuar con ella, como en los siguientes casos prácticos:</p>
+
+<p>· Para brindar contenido apto para todo público</p>
+
+<p>· Para sincronizar datos</p>
+
+<p>· Para comunicarse con dispositivos inteligentes</p>
+
+<p>· Para vincularse con dispositivos complementarios</p>
+
+<p>Para direccionar al usuario a la página de la app en la configuración del sistema, invoca un intent que incluya la acción de intent <b><i>Intent.ACTION_AUTO_REVOKE_PERMISSIONS</i></b>. </p>
+
+<p>Desde esta pantalla, los usuarios pueden evitar que el sistema restablezca los permisos de tu app de la siguiente manera:</p>
+
+<p><b>1. </b>Presiona la opción <b>Permissions</b>, que carga la pantalla de configuración <b>App permissions.</b></p>
+
+<p>2. Desactiva la opción <b>Remove permissions if app isn't used.</b></p>
+
+<p><b>Cómo determinar si el restablecimiento automático está inhabilitado</b></p>
+
+<p>Para comprobar si la función de restablecimiento automático está inhabilitada, llama a isAutoRevokeWhitelisted(). Si este método muestra true, el sistema no restablece automáticamente los permisos de la app.</p>
+
+<p><b>Cómo probar la función de restablecimiento automático</b></p>
+
+<p>A fin de verificar si el sistema restablece los permisos de tu app, haz lo siguiente:</p>
+
+<p>1. Registra el tiempo predeterminado que el sistema espera para restablecer los permisos de una app. De esa manera, puedes restablecerla después de realizar las pruebas:</p>
+<img src="../../../IMG/11.png"  >
+<p>2. Reduce el tiempo que el sistema espera para restablecer los permisos. En el siguiente ejemplo, se modifica el sistema de manera que restablezca los permisos de una app solo un segundo después de que dejas de interactuar con ella:</p>
+<img src="../../../IMG/12.png"  >
+<p>3. Invoca el proceso de restablecimiento automático de forma manual, como se muestra en el siguiente fragmento. Antes de ejecutar este comando, asegúrate de que se haya activado durante unos segundos el dispositivo de prueba.</p>
+<img src="../../../IMG/13.png"  >
+<p>4. Verifica que tu app pueda controlar el evento de restablecimiento automático.</p>
+
+<p>5. Restablece el tiempo predeterminado que el sistema espera antes de restablecer automáticamente los permisos de una app:</p>
+<img src="../../../IMG/14.png"  >
+<p><b>Otorgamientos automáticos de permisos nuevos</b></p>
+
+<p>· Las apps existentes suponen que el acceso a esas API es libre, Android puede implementar la solicitud del permiso nuevo en el manifiesto de la app para evitar dañarla en la versión nueva de la plataforma (por lo tanto, permite que tu app herede el permiso). </p>
+
+<p>· Android toma las decisiones relacionadas con el hecho de que una app podría necesitar el permiso según el valor indicado para el atributo targetSdkVersion. Si el valor es inferior al de la versión en la cual el permiso se agregó, Android agregará el permiso.</p>
+
+<p><b>Niveles de protección</b></p>
+
+<p>Los permisos se dividen en varios niveles de protección. El nivel de protección determina si se necesitan solicitudes de permiso de tiempo de ejecución.</p>
+
+<p>Hay tres niveles de protección que afectan a apps de terceros: permisos normales, de firma y riesgosos. </p>
+<img src="../../../IMG/15.png"  >
+<p><b>Permisos especiales</b></p>
+
+<p>Un par de permisos no se comportan como normales ni riesgosos. <b><i>SYSTEM_ALERT_WINDOW</i></b> y <b><i>WRITE_SETTINGS</i></b> son particularmente sensibles; por ello, la mayoría de las apps no deben usarlos.</p>
+
+<p>El permiso SYSTEM_ALERT_WINDOW en el manifiesto y enviar un intent en el que se solicite la autorización del usuario. El sistema responde al intent mostrando una pantalla de administración detallada al usuario.</p>
+
+<p><b>Grupos de permisos</b></p>
+
+<p>Los permisos se organizan en grupos relacionados con las capacidades o funciones de un dispositivo.</p>
+
+<p>En este sistema, las solicitudes de permisos se controlan a nivel grupal y un grupo de permisos individual corresponde a varias declaraciones de permisos en el manifiesto de la app. Por ejemplo, el grupo de SMS incluye las declaraciones READ_SMS y RECEIVE_SMS. Agrupar permisos de esta manera permite al usuario tomar decisiones más significativas y fundamentadas sin verse abrumado por solicitudes de permisos complejas y técnicas.</p>
+<img src="../../../IMG/16.png"  >
+<p>Si el dispositivo tiene Android 6.0 (nivel de API 23) instalado y el atributo targetSdkVersion de la app es 23 o un valor superior, el siguiente comportamiento del sistema tiene lugar cuando tu app solicita un permiso riesgoso:</p>
+
+<p>· Si la app no tiene permisos actualmente en el grupo de permisos, el sistema mostrará al usuario el diálogo de solicitud de permiso en el que se describe el grupo de permisos al cual la app desea acceder. En diálogo, no se describe el permiso específico dentro de ese grupo. </p>
+
+<p>Por ejemplo, si una app solicita el permiso READ_CONTACTS, el diálogo del sistema solo indicará que la app necesita acceder a los contactos del dispositivo. Si el usuario brinda la aprobación, el sistema otorgará a la app solamente el permiso que solicitó.</p>
+
+<p>· Si la app ya tiene otro permiso riesgoso en el mismo grupo de permisos, el sistema otorgará de inmediato el permiso, sin interactuar con el usuario. </p>
+
+<p>Por ejemplo, si a una app ya se le otorgó el permiso READ_CONTACTS y, luego, esta solicita el permiso WRITE_CONTACTS, el sistema lo otorga de inmediato sin mostrar el diálogo de permisos al usuario.</p>
+
+<p><b>Cómo ver los permisos de una app</b></p>
+
+<p>Puedes ver todos los permisos definidos actualmente en el sistema usando la app de Configuración y el comando de shell adb shell pm list permissions. Para usar la app de Configuración, ve a Configuración &gt; Apps. Elige una app y desplázate hacia abajo para ver los permisos que usa. Para los desarrolladores, la opción "-s" de la herramienta adb muestra los permisos con un aspecto similar al que observarán los usuarios:</p>
+<img src="../../../IMG/17.png"  >
+<p><br />
+<br />
+</p>
+
+<p>Además, puedes usar la opción -g de adb para otorgar automáticamente todos los permisos cuando instales una app en un emulador o un dispositivo de prueba:</p>
+<img src="../../../IMG/18.png"  >
+<p><b>Solicita permisos de la app</b></p>
+
+<p>Para declarar que la app necesita un permiso, debes incluirlo en el manifiesto de la app y, luego, solicitar al usuario que apruebe cada permiso durante el tiempo de ejecución (en Android 6.0 y versiones posteriores).</p>
+
+<p>Los principios básicos son los siguientes:</p>
+
+<p>· Solicita permisos en contexto cuando el usuario comience a interactuar con la función que lo requiere.</p>
+
+<p>· No bloquees al usuario. Proporciona siempre la opción de cancelar un flujo de IU educativo relacionado con los permisos.</p>
+
+<p>· Si el usuario rechaza o revoca un permiso que necesita una función, debes realizar una degradación elegante de tu app para que pueda seguir usándola; para ello, puedes inhabilitar la función que requiere el permiso.</p>
+
+<p>· No des por sentado ningún comportamiento del sistema.</p>
+
+<p><b>Agrega permisos al manifiesto</b></p>
+<img src="../../../IMG/19.png"  >
+<p>En todas las versiones de Android, para declarar que la app necesita un permiso, coloca un elemento &lt;uses-permission&gt; en el manifiesto como elemento secundario del elemento &lt;manifest&gt; de nivel superior.</p>
+
+<p><b>Verifica si tu app tiene permisos</b></p>
+
+<p>Si tu app necesita un permiso riesgoso, deberás verificar si tienes ese permiso cada vez que realices una operación que lo requiera. En Android 6.0 (nivel 23 de API) y versiones posteriores, los usuarios pueden revocar permisos riesgosos desde cualquier app en cualquier momento.</p>
+
+<p><b>Determina si tu app ya recibió el permiso</b></p>
+
+<p>Para verificar si el usuario ya otorgó un permiso en particular a tu app, pasa ese permiso al método ContextCompat.checkSelfPermission(). Este método muestra PERMISSION_GRANTED o PERMISSION_DENIED, según si tu app tiene el permiso o no.</p>
+
+<p><b>Explica el motivo por el que la app necesita el permiso</b></p>
+
+<p>Si el método ContextCompat.checkSelfPermission() muestra PERMISSION_DENIED, llama a shouldShowRequestPermissionRationale(). Si este método muestra true, enseña una IU educativa al usuario. En esta IU, describe por qué la función que el usuario quiere habilitar necesita un permiso en particular.</p>
+
+<p><b>Solicita permisos</b></p>
+
+<p>Después de que el usuario vea una IU educativa, o de que el valor que muestra shouldShowRequestPermissionRationale() indique que esta vez no necesitas mostrar una IU educativa, solicita el permiso. Los usuarios ven un diálogo de permisos del sistema en el que pueden elegir si desean otorgar un permiso en particular a tu app.</p>
+
+<p><b>Permite que el sistema administre el código de solicitud de permiso</b></p>
+
+<p>Para permitir que el sistema administre el código de solicitud asociado a una solicitud de permisos, agrega una dependencia en la biblioteca androidx.activity del archivo build.gradle de tu módulo. Usa la versión 1.2.0 o posterior de la biblioteca.</p>
+
+<p>Luego puedes usar una de las siguientes clases:</p>
+
+<p>· Para solicitar un solo permiso, usa RequestPermission.</p>
+
+<p>· Para solicitar varios permisos al mismo tiempo, usa RequestMultiplePermissions.</p>
+
+<p>En los siguientes pasos, se muestra cómo usar el contrato RequestPermission. El proceso es casi el mismo para el contrato RequestMultiplePermissions.</p>
+
+<p>1. En la lógica de inicialización de tu actividad o fragmento, pasa una implementación de ActivityResultCallback a una llamada a registerForActivityResult(). La interfaz ActivityResultCallback define el modo en el que tu app controla la respuesta del usuario a la solicitud de permiso.</p>
+
+<p>2. Mantén una referencia al valor que muestra registerForActivityResult(), que es del tipo ActivityResultLauncher.</p>
+
+<p>Para mostrar el diálogo de permisos del sistema cuando sea necesario, llama al método launch() en la instancia de ActivityResultLauncher que guardaste en el paso anterior.</p>
+<img src="../../../IMG/20.png"  >
+<p><b>Administra por tu cuenta el código de solicitud de permiso</b></p>
+
+<p>En lugar de permitir que el sistema administre el código de solicitud de permiso, puedes administrarlo por tu cuenta como alternativa. Para hacerlo, incluye el código de solicitud en una llamada a requestPermissions().</p>
+<img src="../../../IMG/21.png"  >
+<p>Una vez que el usuario responde al diálogo de permisos del sistema, este invoca la implementación de onRequestPermissionsResult() de tu app. El sistema pasa la respuesta del usuario al diálogo de permisos, así como el código de solicitud que definiste, como se muestra en el siguiente fragmento de código:</p>
+<img src="../../../IMG/22.png"  >
+<p><b>Controla la denegación de permisos</b></p>
+
+<p>Si el usuario rechaza una solicitud de permiso, tu app debe ayudar a los usuarios a comprender las implicaciones de esta denegación. En particular, tu app debe informar a los usuarios sobre las funciones que no se pueden usar debido a la falta de permiso. Cuando lo hagas, ten en cuenta las siguientes recomendaciones:</p>
+
+<p>· Orienta la atención del usuario. Destaca una parte específica de la IU de tu app en la que la funcionalidad sea limitada porque no tiene los permisos necesarios. Estos son algunos ejemplos de lo que puedes hacer:</p>
+
+<p>ü Muestra un mensaje en el que habrían aparecido los resultados o los datos de la función.</p>
+
+<p>ü Muestra un botón diferente que contenga un ícono y un color de error.</p>
+
+<p>· Brinda información específica. No muestres un mensaje genérico; en su lugar, menciona qué funciones no están disponibles porque tu app no tiene el permiso necesario.</p>
+
+<p>· No bloquees la interfaz de usuario. En otras palabras, no muestres un mensaje de advertencia de pantalla completa que impida a los usuarios seguir usando tu app.</p>
+
+<p><b>Solicita la conversión a controlador predeterminado si es necesario</b></p>
+
+<p>Si quieres solicitar los permisos específicos para registros de llamadas y mensajes SMS, y publicar tu app en Play Store, debes solicitar al usuario que configure tu app como controlador predeterminado para una función principal del sistema antes de solicitar estos permisos de tiempo de ejecución.</p>
+
+<p><b>Declara permisos por nivel de API</b></p>
+
+<p>Para declarar permisos únicamente en dispositivos que admiten permisos durante el tiempo de ejecución (es decir, que ejecuten Android 6.0 [nivel 23 de API] o versiones posteriores), debes incluir la etiqueta uses-permission-sdk-23 en lugar de uses-permission.</p>
+
+<p>Cuando usas cualquiera de estas etiquetas, puedes establecer el atributo maxSdkVersion para especificar que, en dispositivos que ejecutan versiones posteriores, no se necesita ningún permiso en particular.</p>
+
+<p><b>Recomendaciones sobre los permisos de la app</b></p>
+
+<p>Las solicitudes de permisos protegen la información sensible de un dispositivo y solo deben usarse cuando el acceso a la información es necesario para el funcionamiento de tu app.</p>
+
+<p>Para obtener un panorama general sobre los permisos de Android, consulta la descripción general de permisos.</p>
+
+<p><b>Principios básicos del trabajo con permisos de Android</b></p>
+
+<p>Te recomendamos que sigas estos principios básicos cuando trabajes con permisos de Android:</p>
+
+<p><b><i>N°1: Solo usa los permisos necesarios para el funcionamiento de tu app.</i></b></p>
+
+<p><b><i>N°2 Presta atención a los permisos que se requieren para las bibliotecas.</i></b></p>
+
+<p><b><i>N° 3: Sé transparente.</i></b></p>
+
+<p><b><i>N° 4: Explicita los accesos al sistema.</i></b></p>
+
+<p><b>Como definir un permiso de app personalizado</b></p>
+
+<p><b>Contexto: </b></p>
+
+<p>Las apps pueden exponer su funcionalidad a otras apps.</p>
+
+<p>También pueden definir permisos que se ponen automáticamente a disposición de cualquier otra app que este firmada con el mismo certificado.</p>
+
+<p><b>Firma de apps:</b></p>
+
+<p>Este certificado identifica al autor de la app, no es necesario que el certificado este firmado por una autoridad.</p>
+
+<p><b>ID de usuario y acceso a archivos:</b></p>
+
+<p>Todos los datos almacenados por una app recibirán el ID de usuario de esa app y en general no serán accesibles para otros paquetes.</p>
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	<!-- End About -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f" >
+	  <div class="container" >
+		  <div class="row" >
+			  
+			<div class="col-lg-4 col-md-4" >
+				<h3 align="justify" style="color:#0FF">Sobre Nosotros...</h3>
+				<p align="justify">Somos estudiantes de la Universidad UTE que actualmente cursamos el octavo semestre de la carrera de Ingeniería Informática y Ciencias de la Computación.</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" >
+				<p align="justify" style="color:#0FF">&nbsp</p>
+				<p align="justify">&nbsp</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" > 
+				  <h3 style="color:#0FF">Líderes</h3>
+                  <ul>
+                   <li>
+                <span style="color:#0FF">Daniel Altamirano</span>
+                <h3>daniel.altamirano@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Leslie Torres</span>
+                <h3>leslie.torres@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Ivonne Venegas</span>
+                <h3>ivonne.venegas@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Carlos Yépez</span>
+                <h3>carlos.yepez@ute.edu.ec</h3></a>
+              </li>
+            </ul>   	
+			</div>
+	    </div>
+	  </div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2020 <a>UTE Ingeniería Informática</a> 
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+</footer>
+	<!-- End Footer -->
+    
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="../../../JS/jquery-3.2.1.min.js"></script>
+	<script src="../../../JS/popper.min.js"></script>
+	<script src="../../../JS/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="../../../JS/jquery.superslides.min.js"></script>
+	<script src="../../../JS/images-loded.min.js"></script>
+	<script src="../../../JS/isotope.min.js"></script>
+	<script src="../../../JS/baguetteBox.min.js"></script>
+	<script src="../../../JS/form-validator.min.js"></script>
+    <script src="../../../JS/contact-form-script.js"></script>
+    <script src="../../../JS/custom.js"></script>
+</body>
+</html>
