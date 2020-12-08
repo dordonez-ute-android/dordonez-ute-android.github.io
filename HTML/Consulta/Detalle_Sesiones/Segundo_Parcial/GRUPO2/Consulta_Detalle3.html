@@ -40,7 +40,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href= "../../../../../index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href= "../../../../../Index.html">Inicio</a></li>
 						<li class="nav-item  dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
@@ -721,20 +721,183 @@
             <br/>
             
             <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
-            
-            
-            
-             <div class="row">
-				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+              <div class="container">
+                         <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-left">
 					<div class="inner-column">
-						<h1 align="left"><strong>TERCERA PARTE   ------> GRACE <-------- </strong></h1>
-						<p align="justify"></p>                                   
-                        
+						<h2 align="left"><strong>Implementación de vistas en una Base de Datos</strong></h2>
+						<p align="justify">La versión 2.1.0 de la biblioteca de persistencias Room proporciona compatibilidad con vistas de bases de datos SQLite. </p>   
+                         <h2 style="color:#039">Biblioteca de persistencias ROOM<strong></strong></h2></br>
+                <center><img src="../../../../../IMG/C3.1.JPG" alt="imagen2.1.png" align="center" width="413px" height="368px"></center>   
 					</div>
 				</div>
-                          				                  
-		</div>
-        
+                 </div>         				
+ </br> 
+ </br>       
+	<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left" style="color:#F39"><strong>¿Qué es una vista?</strong></h2>
+                         <p align="justify"> Una vista es una consulta cuyo resultado se presenta como una tabla, puesto que tienen la misma estructura: filas y columnas. La diferencia es que sólo se almacena de ellas la definición y no los datos, que se extraen de las otras tablas de la base de datos. </br>
+                         En SQLite las vistas son de solo lectura, de forma que no se pueden ejecutar instrucciones  <b style="color:#3CC">insert, delete o update </b>es sobre ellas para actualizar las tablas.</p>  
+						
+                        </div>
+			
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+
+						<ul>
+                        	<img src="../../../../../IMG/C3.2.png" alt="imagen2.1.png" align="center" width="300px" height="300px">
+                        </ul>   			
+				</div>
+				</div> 
+                </br>
+                </br>	
+                 <div class="container">
+                         <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-left">
+					<div class="inner-column">
+                    <h2 align="left" style="color:#F39"><strong>Como crear una vista</strong></h2>
+						<p align="justify"> Para crear una vista, agrega la anotación <b style="color:#6F6"">@DatabaseView </b> a una clase. Establece el valor de la anotación para la consulta que la clase debe representar.</p>   
+                  <center><img src="../../../../../IMG/C3.3.png" alt="imagen2.1.png" align="center" width="677px" height="200px"></center>     <br>
+    <h2 align="left" style="color:#F39"><strong>Cómo asociar una vista con tu base de datos</strong></h2>         
+                 <p align="justify"> Para incluir la vista como parte de la base de datos de tu app, incluye la propiedad views en la anotación <b style="color:#6F6"">@Database </b>de tu app:</p>  
+                 <center><img src="../../../../../IMG/C3.4.png" alt="imagen2.1.png" align="center" width="550px" height="122px"></center>   </br>
+  <div class="container">
+                         <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-left">
+					<div class="inner-column">
+						<h2 align="left"><strong>Acceso a los datos con DAO de Room</strong></h2>
+						<p align="justify"> Para acceder a los datos de tu app con la biblioteca de persistencias, Room trabaja con objetos de acceso a datos o conocido también como DAO, el cual es el principal componente de Room, ya que cada DAO incluye métodos que ofrecen acceso abstracto a la base de datos de tu app. </br>
+El componente DAO puede ser una Interfaz o una clase abstracta que define los métodos de acceso a la base de datos. Si es una clase abstracta, puede tener opcionalmente un constructor que tome un <b style="color:#3CC"> RoomDatabase </b>ecomo su único parámetro.</p> 
+                         
+                <center><img src="../../../../../IMG/C3.5.png" alt="imagen2.1.png" align="center" width="494px" height="318px"></center>	</br><h2 style="color:#039">Métodos para  mayor comodidad<strong></strong></h2>
+                    <p align="justify"> Hay múltiples consultas de conveniencia que puedes representar mediante una clase DAO:</p>
+				</div> 	
+                    </div>
+				
+				</div>        
+ <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 style="color:#F63"><strong>Insertar </strong></h2></br>
+					   <p align="justify">Cuando creas un método DAO y lo anotas con <b style="color:#6F6"">@Insert</b>, Room genera          una implementación que inserta todos los parámetros en la base de datos en una sola transacción.</br></br>
+Si el método <b style="color:#6F6"">@Insert</b> recibe solo un parámetro, formación o una lista     de las entidades como parámetros. Para un solo parámetro puede mostrar un log representando la fila de la inserción. Para múltiples entidades o una colección, debería mostrar log [ ] como arreglo o una lista.
+</p>
+					</div>
+               
+				</div> 		
+			     
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                </br></br>
+                	<img src="../../../../../IMG/C3.6.png" alt="Capture.png" align="center" width="270px" height="270px">
+                </div>
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            </br></br>
+            <center><img src="../../../../../IMG/C3.7.png" alt="Captures2.png" align="center" width="544px" height="224px"></center></br></br>
+	<!-- Seccion derecha texto -->
+			<div class="row">			
+					<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    </br>
+						<img src="../../../../../IMG/c3.png" alt="Captures2.png" align="center" width="270px" height="270px">					
+					</div>				
+						</br></br>	
+				<div class="col-lg-5 col-md-12 col-sm-12 text-justify">	
+                      <h2 style="color:#6C9"><strong>Actualizar </strong></h2></br>
+					  <p align="justify">El método de conveniencia <b style="color:#6F6"">Update</b> modifica un conjunto de entidades, proporcionadas como parámetros, en la base de datos.</br></br>
+Aunque, si bien no suele ser necesario, puedes hacer que este método muestre un valor int, que indica la cantidad de filas actualizadas en la base de datos.
+</p>
+                   
+			</div> </div>
+		<!-- Seccion fin derecha texto -->
+        <
+        </br></br><center><img src="../../../../../IMG/C3.8.png" alt="Captures2.png" align="center" width="544px" height="180px"></center></br></br>
+	<!-- Seccion izquierda texto -->
+    
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                   
+						<h2 style="color:#FC0"><strong>Eliminar </strong></h2></br>
+					  <p align="justify">El método de conveniencia <b style="color:#6F6"">Delete</b> quita un conjunto de entidades, proporcionadas como parámetros, de la base de datos. Utiliza las claves primarias para encontrar las entidades que se borrarán.</br></br>
+Aunque, si bien no suele ser necesario, puedes hacer que este método muestre un valor int, que indica la cantidad de filas que se quitaron de la base de datos.
+</p>
+					 
+					</div>
+				</div> 		
+			
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                </br>
+                	<img src="../../../../../IMG/c3.1.png" alt="Capture3.jpg" align="center" width="270px" height="270px">
+                </div>
+                </div>
+                 <center><img src="../../../../../IMG/C3.10.png" alt="Captures2.png" align="center" width="544px" height="180px"></center>
+			</div>
+                </div>  
+        </div> 
+            
+            
+                 <div class="container">
+                         <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-left">
+					<div class="inner-column"></br>
+                    <h2 style="color:#039">¿Cómo consultar información?<strong></strong></h2></br>
+						<p align="justify"> La anotación principal que hace consultas en la base de datos es <b style="color:#396">@Query</b> que se usa en las clases DAO. </p>   
+            <center><img src="../../../../../IMG/C3.11.JPG" alt="Capture.png" align="center" width="630px" height="240px"></center>
+            <center><img src="../../../../../IMG/C3.12.png" alt="Capture.png" align="center" width="310px" height="121px"></center></br></br>
+				<p align="justify">En el momento de compilación, Room sabe que está consultando todas las columnas de la tabla de usuarios. Si la consulta contiene un error de sintaxis o si la tabla de usuarios no existe en la base de datos, Room muestra un error con el mensaje apropiado a medida que se compila tu app.</p></br>
+                <h2 style="color:#039">¿Cómo pasar parámetros a la consulta?<strong></strong></h2></br>
+                <p align="justify">Pasar parámetros a consultas tiene como objetivo realizar operaciones de filtrado, como mostrar solo usuarios mayores de cierta edad. Para realizarlo se usa los parámetros del método en tu anotación Room:</p></br>
+                <center><img src="../../../../../IMG/C3.13.png" alt="Capture.png" align="center" width="508px" height="133px"></center></br>
+              <p align="justify">Cuando se procesa esta consulta en el momento de la compilación, Room hace coincidir el parámetro de vinculación: <b style="color:#36C">minAge</b> con el parámetro del método <b style="color:#396">minAge.</b> Room realiza la coincidencia con los nombres de los parámetros. Si hay una falta de coincidencia, se produce un error al compilar tu app.</p><br>
+<h2 style="color:#039">¿Cómo pasar parámetros a la consulta?<strong></strong></h2></br>
+<p align="justify">Algunas de las consultas pueden requerir acceso a varias tablas para calcular el resultado. Room te permite escribir cualquier consulta, por lo que se puede unir tablas. Si la respuesta es un tipo de dato observable, como <b style="color:#3CC">Flowable</b> o <b style="color:#3CC">LiveData</b>, Room mira todas las tablas a las que se hace referencia en la consulta para la invalidación.</p> </br>
+<center><img src="../../../../../IMG/C3.14.png" alt="Capture.png" align="center" width="579px" height="225px"></center></br>
+   <div class="container">
+                         <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-left">
+					<div class="inner-column">
+						<h2 align="left"><strong>Referencia a datos complejos con Room</strong></h2>
+						<p align="justify">Room proporciona funciones para realizar conversiones de tipos de datos
+<h2 style="color:#039">Convertidores de tipo <strong></strong></h2>
+<p align="justify"><b style="color:#639">TypeConverter</b>, convierte una clase personalizada en un tipo conocido que puede conservarse en Room.</p>
+<h2 style="color:#039">Ejemplo <strong></strong></h2>
+<p align="justify">Si queremos conservar instancias de Date, con <b style="color:#3C9">TypeConverter</b>podemos almacenar la marca de tiempo Unix equivalente en la base de datos.</p>
+ </p>   
+                         
+                <center><img src="../../../../../IMG/C3.15.png" alt="imagen2.1.png" align="center" width="478px" height="229px"></center>   </br></br>
+                <div class="container">
+                         <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-left">
+					<div class="inner-column">
+						<h2 align="left"><strong>Room no permite referencias a objetos</strong></h2></br>
+						<div class="row">			
+					<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                  
+						<img src="../../../../../IMG/C3.16.png" alt="Captures2.png" align="center" width="301px" height="310px">					
+					</div>				
+						</br></br>	
+				<div class="col-lg-5 col-md-12 col-sm-12 text-justify">	
+					<p align="justify">Room no permite referencias de objetos entre clases de entidades. En su lugar, debes solicitar explícitamente los datos que necesita tu app.</br></br>
+No permite referencias a objetos, ya que crea problemas de rendimiento significativos.
+
+</p>
+       
+                   
+			</div> </div>
+					</div>
+				</div>
+                 </div>
+					</div>
+				</div>
+                 </div>     
+                </div> 	
+                    </div>
+				</div>
+                </br>
+                
+             
         <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
         
             <br/>           
