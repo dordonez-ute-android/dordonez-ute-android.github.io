@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Sesión 10</title>  
+    <title>Sesión 15</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -114,11 +114,11 @@
 
 <br />
 <p><b>Aprobación de un permiso</b></p>
-<img src="../../../IMG/per1.png"  >
+<img src="../../../IMG/per1.PNG"  >
 
 <p>Una app debe publicitar los permisos que requiere incluyendo etiquetas &lt;uses-permission&gt; en el manifiesto de la app.</p>
-<img src="../../../IMG/per2.png"  >
-<img src="../../../IMG/per3.png"  >
+<img src="../../../IMG/per2.PNG"  >
+<img src="../../../IMG/per3.PNG"  >
 <br />
 <p><b>Solicitudes para permisos riesgosos</b></p>
 
@@ -131,26 +131,26 @@
 <p>Cuando la app solicita un permiso, el usuario ve un diálogo del sistema que le indica a qué grupo de permisos está intentando acceder la app. El diálogo incluye los botones <b>Denegar y Permitir.</b></p>
 <img src="../../../IMG/per4A.png"  >
 <p>Si el usuario rechaza la solicitud de permiso, la próxima vez que la app solicite el permiso, el diálogo incluirá una casilla de verificación que, si se marca, indicará que el usuario no desea que se le vuelva a pedir el permiso.</p>
-<img src="../../../IMG/per4.png"  >
-<img src="../../../IMG/per5.png"  >
+<img src="../../../IMG/per4.PNG"  >
+<img src="../../../IMG/per5.PNG"  >
 <br />
 <p><b>Solicitudes en el momento de la instalación (Android 5.1.1 y anteriores)</b></p>
 
 <p>Si el dispositivo tiene instalado Android 5.1.1 (nivel de API 22) o versiones anteriores, o si el atributo <b><i>targetSdkVersion</i></b> es 22 o inferior y se ejecuta en cualquier versión de Android, el sistema le pedirá automáticamente al usuario que otorgue todos los permisos riesgosos para tu app en el momento de la instalación</p>
-<img src="../../../IMG/per6.png"  >
+<img src="../../../IMG/per6.PNG"  >
 <p><b>Permisos para funciones de hardware opcionales</b></p>
-<img src="../../../IMG/per7.png"  >
+<img src="../../../IMG/per7.PNG"  >
 
 
 <br />
 <p>Por lo tanto, si tu app solicita el permiso de <b>CAMERA</b>, es importante que también incluyas la etiqueta <b><i>&lt;uses-feature&gt; </i></b>en tu manifiesto a fin de declarar si se requiere o no esta función. Por ejemplo:</p>
-<img src="../../../IMG/8.png"  >
+<img src="../../../IMG/per8.PNG"  >
 <p><b>Permisos únicos</b></p>
 
 <p>El diálogo de permisos para el usuario contiene una opción llamada Solo esta vez. Si el usuario selecciona esta opción, se le otorgará un permiso único temporal a la app.</p>
 
 <p>Luego la app podrá acceder a los datos relacionados durante un período que dependerá del comportamiento de tu app y de las acciones del usuario:</p>
-<img src="../../../IMG/9.png"  >
+<img src="../../../IMG/per9.PNG"  >
 <br />
 <p><b>Aplicación de permisos</b></p>
 
@@ -169,7 +169,7 @@
 <p>Los permisos aplicados con el atributo android:permission en la etiqueta &lt;receiver&gt; fijan restricciones respecto de la autorización para enviar transmisiones al BroadcastReceiver asociado. Se controla el permiso después de que se muestra Context.sendBroadcast(), mientras el sistema intenta proporcionar la emisión enviada al receptor en cuestión. En consecuencia, un error de permisos no generará una excepción para el emisor, sino que únicamente no proporcionará el Intent.</p>
 
 <p><b>Aplicación de permisos de proveedor de contenido</b></p>
-<img src="../../../IMG/10.png"  >
+<img src="../../../IMG/per10.PNG"  >
 <p>Los permisos aplicados con el atributo android:permission en la etiqueta &lt;provider&gt; fijan restricciones respecto a quiénes pueden acceder a los datos en un ContentProvider.</p>
 
 <p>De la misma manera, se puede suministrar un permiso a Context.registerReceiver() para tener control sobre quiénes pueden realizar transmisiones a un receptor registrado programáticamente. Por otro lado, se puede suministrar un permiso cuando se llama a Context.sendBroadcast() a fin de restringir los objetos receptores de emisión que tienen autorización para recibirla.</p>
@@ -227,15 +227,15 @@
 <p>A fin de verificar si el sistema restablece los permisos de tu app, haz lo siguiente:</p>
 
 <p>1. Registra el tiempo predeterminado que el sistema espera para restablecer los permisos de una app. De esa manera, puedes restablecerla después de realizar las pruebas:</p>
-<img src="../../../IMG/11.png"  >
+<img src="../../../IMG/per11.PNG"  >
 <p>2. Reduce el tiempo que el sistema espera para restablecer los permisos. En el siguiente ejemplo, se modifica el sistema de manera que restablezca los permisos de una app solo un segundo después de que dejas de interactuar con ella:</p>
-<img src="../../../IMG/12.png"  >
+<img src="../../../IMG/per12.PNG"  >
 <p>3. Invoca el proceso de restablecimiento automático de forma manual, como se muestra en el siguiente fragmento. Antes de ejecutar este comando, asegúrate de que se haya activado durante unos segundos el dispositivo de prueba.</p>
-<img src="../../../IMG/13.png"  >
+<img src="../../../IMG/per13.PNG"  >
 <p>4. Verifica que tu app pueda controlar el evento de restablecimiento automático.</p>
 
 <p>5. Restablece el tiempo predeterminado que el sistema espera antes de restablecer automáticamente los permisos de una app:</p>
-<img src="../../../IMG/14.png"  >
+<img src="../../../IMG/per14.PNG"  >
 <p><b>Otorgamientos automáticos de permisos nuevos</b></p>
 
 <p>· Las apps existentes suponen que el acceso a esas API es libre, Android puede implementar la solicitud del permiso nuevo en el manifiesto de la app para evitar dañarla en la versión nueva de la plataforma (por lo tanto, permite que tu app herede el permiso). </p>
@@ -247,7 +247,7 @@
 <p>Los permisos se dividen en varios niveles de protección. El nivel de protección determina si se necesitan solicitudes de permiso de tiempo de ejecución.</p>
 
 <p>Hay tres niveles de protección que afectan a apps de terceros: permisos normales, de firma y riesgosos. </p>
-<img src="../../../IMG/15.png"  >
+<img src="../../../IMG/per15.PNG"  >
 <p><b>Permisos especiales</b></p>
 
 <p>Un par de permisos no se comportan como normales ni riesgosos. <b><i>SYSTEM_ALERT_WINDOW</i></b> y <b><i>WRITE_SETTINGS</i></b> son particularmente sensibles; por ello, la mayoría de las apps no deben usarlos.</p>
@@ -259,7 +259,7 @@
 <p>Los permisos se organizan en grupos relacionados con las capacidades o funciones de un dispositivo.</p>
 
 <p>En este sistema, las solicitudes de permisos se controlan a nivel grupal y un grupo de permisos individual corresponde a varias declaraciones de permisos en el manifiesto de la app. Por ejemplo, el grupo de SMS incluye las declaraciones READ_SMS y RECEIVE_SMS. Agrupar permisos de esta manera permite al usuario tomar decisiones más significativas y fundamentadas sin verse abrumado por solicitudes de permisos complejas y técnicas.</p>
-<img src="../../../IMG/16.png"  >
+<img src="../../../IMG/per16.PNG"  >
 <p>Si el dispositivo tiene Android 6.0 (nivel de API 23) instalado y el atributo targetSdkVersion de la app es 23 o un valor superior, el siguiente comportamiento del sistema tiene lugar cuando tu app solicita un permiso riesgoso:</p>
 
 <p>· Si la app no tiene permisos actualmente en el grupo de permisos, el sistema mostrará al usuario el diálogo de solicitud de permiso en el que se describe el grupo de permisos al cual la app desea acceder. En diálogo, no se describe el permiso específico dentro de ese grupo. </p>
@@ -273,13 +273,13 @@
 <p><b>Cómo ver los permisos de una app</b></p>
 
 <p>Puedes ver todos los permisos definidos actualmente en el sistema usando la app de Configuración y el comando de shell adb shell pm list permissions. Para usar la app de Configuración, ve a Configuración &gt; Apps. Elige una app y desplázate hacia abajo para ver los permisos que usa. Para los desarrolladores, la opción "-s" de la herramienta adb muestra los permisos con un aspecto similar al que observarán los usuarios:</p>
-<img src="../../../IMG/17.png"  >
+<img src="../../../IMG/per17.PNG"  >
 <p><br />
 <br />
 </p>
 
 <p>Además, puedes usar la opción -g de adb para otorgar automáticamente todos los permisos cuando instales una app en un emulador o un dispositivo de prueba:</p>
-<img src="../../../IMG/18.png"  >
+<img src="../../../IMG/per18.PNG"  >
 <p><b>Solicita permisos de la app</b></p>
 
 <p>Para declarar que la app necesita un permiso, debes incluirlo en el manifiesto de la app y, luego, solicitar al usuario que apruebe cada permiso durante el tiempo de ejecución (en Android 6.0 y versiones posteriores).</p>
@@ -295,7 +295,7 @@
 <p>· No des por sentado ningún comportamiento del sistema.</p>
 
 <p><b>Agrega permisos al manifiesto</b></p>
-<img src="../../../IMG/19.png"  >
+<img src="../../../IMG/per19.PNG"  >
 <p>En todas las versiones de Android, para declarar que la app necesita un permiso, coloca un elemento &lt;uses-permission&gt; en el manifiesto como elemento secundario del elemento &lt;manifest&gt; de nivel superior.</p>
 
 <p><b>Verifica si tu app tiene permisos</b></p>
@@ -331,13 +331,13 @@
 <p>2. Mantén una referencia al valor que muestra registerForActivityResult(), que es del tipo ActivityResultLauncher.</p>
 
 <p>Para mostrar el diálogo de permisos del sistema cuando sea necesario, llama al método launch() en la instancia de ActivityResultLauncher que guardaste en el paso anterior.</p>
-<img src="../../../IMG/20.png"  >
+<img src="../../../IMG/per20.PNG"  >
 <p><b>Administra por tu cuenta el código de solicitud de permiso</b></p>
 
 <p>En lugar de permitir que el sistema administre el código de solicitud de permiso, puedes administrarlo por tu cuenta como alternativa. Para hacerlo, incluye el código de solicitud en una llamada a requestPermissions().</p>
-<img src="../../../IMG/21.png"  >
+<img src="../../../IMG/per21.PNG"  >
 <p>Una vez que el usuario responde al diálogo de permisos del sistema, este invoca la implementación de onRequestPermissionsResult() de tu app. El sistema pasa la respuesta del usuario al diálogo de permisos, así como el código de solicitud que definiste, como se muestra en el siguiente fragmento de código:</p>
-<img src="../../../IMG/22.png"  >
+<img src="../../../IMG/per22.PNG"  >
 <p><b>Controla la denegación de permisos</b></p>
 
 <p>Si el usuario rechaza una solicitud de permiso, tu app debe ayudar a los usuarios a comprender las implicaciones de esta denegación. En particular, tu app debe informar a los usuarios sobre las funciones que no se pueden usar debido a la falta de permiso. Cuando lo hagas, ten en cuenta las siguientes recomendaciones:</p>
