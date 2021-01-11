@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Consulta 3</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../CSS/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="../../../CSS/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../../../CSS/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../../CSS/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand"  href="../../../index.html">
+					<img src="../../../IMG/Logo.png"alt="" width="100" height="100"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="../../../index.html">Inicio</a></li>
+						<li class="nav-item active dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="../Primer Parcial/Primer Parcial.html">Primer Parcial</a>
+								<a class="dropdown-item" href="Segundo Parcial.html">Segundo Parcial</a>
+								<a class="dropdown-item" href="../Tercer Parcial/Tercer Parcial.html">Tercer Parcial</a>
+							</div>
+					  </li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Desarrollo de Sistemas II</h1>
+                    </br>
+                    <h1>WebSockets</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class>
+				  <div class="inner-column">
+						<h1><span>Título: WebSockets</span></h1>
+					
+						</div>
+				</div>
+			</div>
+				
+				<!-- Start About -->
+
+			<!-- Seccion izquierda texto -->
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">		
+					  <p align="justify"><br>Es una alternativa a la comunicación mediante el protocolo HTTP, ofreciendo un canal de comunicación bidireccional y duradero entre cliente y servidor. Una vez establecido, el canal se mantiene abierto ofreciendo una conexión bastante rápida con baja latencia y sobrecarga. 
+					  </p>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<img src="../../../IMG/imagen36.png" alt="imagen36.png" align="center" width="550px" height="350px">	
+						<br><br>
+					</div>
+					<div class="inner-column">		
+					  <p align="justify">
+					  Está diseñada para ser implementada en navegadores y servidores web, pero puede utilizarse por cualquier aplicación cliente/servidor. Es ideal para aplicaciones que requieren conexiones en tiempo real como juegos multijugador, aplicaciones IoT y de chat..</p>		
+                      			
+					</div>
+					
+					
+				</div> 	
+			</div>
+			<!-- Seccion fin izquierda texto -->
+		
+			<!-- Seccion derecha texto -->
+			<div class="row">		
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<img src="../../../IMG/imagen37.png" alt="imagen37.png" align="center" width="750px" height="600px">	
+				<br>						<br>
+				</div>
+				<br><br>	
+		<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<strong><h1>&nbsp</h1></strong>		
+	</div>
+<!--fin separador negro-->
+	
+	<h1><strong><br>Diferencia entre WebSockets y HTTP</strong></h1>
+		
+			<!-- Seccion derecha texto -->
+			<div class="row">			
+					<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<br>
+						<img src="../../../IMG/imagen38.png" alt="imagen38.png" align="center" width="450px" height="700px">
+					<br>						<br>
+					</div>				
+							
+					<div class="col-lg-6 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+					<br>
+						  <p align="justify" style=" font-size:18px"><br> HTTP es un protocolo que permite un tipo de comunicación basada en solicitudes y respuestas, es decir que el servidor devuelve información cuando el cliente la solicita. <br><br>Es ideal para intercambio ocasional de información e interacciones que deban ser inicializadas por el cliente. <br><br>Es más simple de implementar que WebSockets.<br><br> Por otro lado, con WebSockets el servidor puede enviar un mensaje al cliente sin necesidad de que el mismo haya solicitado algo. <br><br>El cliente y el servidor pueden comunicarse simultáneamente para lo cual no existe mucha sobrecarga de datos, esto se traduce en una comunicación de baja latencia.<br><br> Es la mejor opción para comunicaciones en tiempo real de larga duración.</p>	
+						  </div>
+					</div>
+				<br>
+				</div>
+				<!--separador negro-->
+					<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+							<strong><h1>&nbsp</h1></strong>		
+					</div>
+				<!--fin separador negro-->
+				
+				<h1><strong><br>Tipos de WebSockets</strong></h1>
+				<div class="row">	
+					<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+						<br>		
+						<img src="../../../IMG/imagen47.png" alt="imagen47.png" align="center" width="450px" height="350px">
+					<br>
+					</div>
+						
+							
+				<div class="col-lg-6 col-md-6 col-sm-12 text-justify">	
+				<div class="inner-column">
+                      <p align="justify" style=" font-size:18px">
+						<br>
+						 El cliente envía una petición de negociación WebSocket y el servidor envía una respuesta de negociación WebSocket. <br><br>En ambos lados se genera un token aleatorio que finalmente se une en una cadena MD5 única para confirmar que la petición ha sido leída correctamente. <br><br> En este aspecto es similar a HTTP, sin embargo, una vez negociada la petición se activa el modo full-duplex.En el caso de Android Studio, existen diversas librerías para implementar WebSockets con ayuda de Java. 
+						 </p>
+				</div>		 
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+				<div class="inner-column">
+                      <p align="justify" style=" font-size:18px">
+						
+						 La elección de uno u otro dependerá de las necesidades del desarrollador. Entre las distintas librerías se encuentran las siguientes:
+						 </p>
+				</div>		 
+				</div>
+				
+				
+				
+	
+	<!-- Seccion izquierda texto -->
+		
+	
+			
+			<div class="col-lg-2 col-md-2 col-sm-2 text-center">
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-8 text-center">
+		
+					<div class="inner-column" >
+						 <table align="center">
+					
+                    	<tr bgcolor="#6eb865">
+                        	<th  style="color:#ffffff; text-align:center; font-size:18px"> Librería </th> <br/>
+                            <th  style="color:#ffffff; text-align:left; font-size:18px">&nbsp&nbsp&nbsp Descripción </th>
+                        </tr>
+                    
+                    	<tr bgcolor="">
+                        	<td style="text-align:left; font-size:18px"> <strong>
+								 <span style="color:black" >TooTallNate/<br>Java-WebSocket&nbsp&nbsp</span></strong>
+							</td>
+                            <td style="text-align:left; font-size:18px">  Implementación básica de servidor y cliente escrita 100% en Java. Tiene muchos problemas relacionados a conexiones SSL.</td>
+
+                        </tr>
+						
+						
+                        
+                        <tr bgcolor="gray">
+                        	<td color="white" style="text-align:left; font-size:18px"> <strong> 
+							<span style="color:#ffffff" >koush/<br>AndroidAsync&nbsp&nbsp&nbsp&nbsp</span>
+							</strong></td>
+                            <td color="white" style="text-align:left; font-size:18px"> <span style="color:#ffffff" > Basado en NIO, es decir de un solo hilo y devolución de llamada. Cliente HTTP + servidor y cliente + servidor WebSocket. </td>
+                        </tr>
+						<tr bgcolor="">
+                        	<td style="text-align:left; font-size:18px"> <strong>
+								 <span style="color:black" >codebutler/<br>android-websockets&nbsp&nbsp&nbsp&nbsp</span></strong>
+							</td>
+                            <td style="text-align:left; font-size:18px" >  Un cliente WebSocket muy simple y mínimo para Android. Permite que el dispositivo Android tenga una conexión TCP a Internet sin bloqueo de activación.</td>
+
+                        </tr>
+                        
+                        <tr bgcolor="gray">
+                        	<td color="white" style="text-align:left; font-size:18px"> <strong> 
+							<span style="color:#ffffff" >Atmosphere/<br>wasync&nbsp&nbsp&nbsp&nbsp</span>
+							</strong></td>
+                            <td color="white" style="text-align:left; font-size:18px"> <span style="color:#ffffff" > WebSocket con biblioteca cliente de transporte de reserva para Node.js, Android y Java. </td>
+                        </tr>
+						<tr bgcolor="">
+                        	<td style="text-align:left; font-size:18px"> <strong>
+								 <span style="color:black" >TakahikoKawasaki/<br>nv-websocket-client&nbsp&nbsp&nbsp&nbsp</span></strong>
+							</td>
+                            <td style="text-align:left; font-size:18px">  Implementación de cliente WebSocket de alta calidad en Java.</td>
+
+                        </tr>
+                        
+                        <tr bgcolor="gray">
+                        	<td color="white" style="text-align:left; font-size:18px"> <strong> 
+							<span style="color:#ffffff" >square/<br>okhttp&nbsp&nbsp&nbsp&nbsp</span>
+							</strong></td>
+                            <td color="white" style="text-align:left; font-size:18px"> <span style="color:#ffffff" > Cliente HTTP + SPDY para aplicaciones Android y Java. Tiene un módulo Websocket integrado desde la versión 3.5.</td>
+                        </tr>
+						<tr bgcolor="">
+                        	<td style="text-align:left; font-size:18px"> <strong>
+								 <span style="color:black" >firebase/<br>TubeSock&nbsp&nbsp&nbsp&nbsp</span></strong>
+							</td>
+                            <td style="text-align:left; font-size:18px">  Cliente de WebSocket implementada en Java</td>
+
+                        </tr> 
+						<tr bgcolor="gray">
+                        	<td color="white" style="text-align:left; font-size:18px"> <strong> 
+							<span style="color:#ffffff" >Autobahn|<br>Android (GitHub)&nbsp&nbsp&nbsp&nbsp</span>
+							</strong></td>
+                            <td color="white" style="text-align:left; font-size:18px" > <span style="color:#ffffff" > Biblioteca de redes de código abierto para Java / Android. Implementa el Protocolo WebSocket y el Protocolo de mensajería de aplicaciones web (WAMP). No tiene soporte para wss.</td>
+                        </tr>						
+                   	</table>                   
+					<br>                        	
+					</div>
+					<br>					
+				</div >
+			<!-- Seccion fin izquierda texto -->
+	
+	<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<strong><h1>&nbsp</h1></strong>		
+	</div>
+<!--fin separador negro-->
+
+				<div class="row">
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">					
+						<h2><br><strong>Implementación nativa para Android :</strong> </h2>	<br>
+					  </div>
+				</div> 	
+
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					  <p align="justify;font-size:18px" >También existe una librería cliente nativa para Android llamada; nkzawa / socket.io-client.java. Para implementarla se debe agregar como una dependencia en build.gradle de la siguiente manera:</p>	
+					</div>
+				</div> 	
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">					
+					<img src="../../../IMG/imagen39.png" alt="imagen39.png" align="center" width="550px" height="200px">
+				</div> 	
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">
+					  <br>
+						A continuación, se debe inicializar el socket mediante Java con el siguiente código:
+					  </p>	
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+						<img src="../../../IMG/imagen40.png" alt="imagen40.png" align="center" width="650px" height="700px">						
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">					  
+						Para analizar y componer cadenas JSON, agregar el siguiente código:
+					  </p>					
+					</div>
+				</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+						<img src="../../../IMG/imagen41.png" alt="imagen41.png" align="center" width="650px" height="500px">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">
+					
+						Las opciones se suministran de la siguiente manera:
+					  </p>	
+				
+					</div>
+				</div>
+				
+				
+					<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+								
+						<img src="../../../IMG/imagen42.png" alt="imagen42.png" align="center" width="600px" height="300px">
+				
+					</div>
+					
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">
+			
+						Se puede proporcionar parámetros de consulta con la opción “query” de la siguiente manera:
+					  </p>	
+				
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+						<img src="../../../IMG/imagen43.png" alt="imagen43.png" align="center" width="700px" height="250px">
+					</div>
+					
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">
+				
+						Para obtener una devolución de llamada “Ack” cuando el servidor recibió un mensaje:
+					  </p>	
+				
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+						<img src="../../../IMG/imagen44.png" alt="imagen44.png" align="center" width="700px" height="200px">
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">					
+						Y viceversa:
+					  </p>					
+					</div>
+				</div>
+				
+					<div class="col-lg-12 col-md-12 col-sm-12 text-center">								
+						<img src="../../../IMG/imagen45.png" alt="imagen45.png" align="center" width="700px" height="450px">
+				
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+					<div class="inner-column">
+                      <p align="justify; " style="font-size:18px">
+				
+						Para configurar SSL:
+					  </p>	
+				
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+								
+						<img src="../../../IMG/imagen46.png" alt="imagen46.png" align="center" width="900px" height="650px">
+						<br><br>
+					</div>
+					
+					
+				
+				
+				<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<strong><h1>&nbsp</h1></strong>		
+	</div>
+<!--fin separador negro-->
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+						<h2><br><strong>Bibliografía:</strong> </h2>	<br>
+						
+						
+					  </div>
+				</div> 	
+				<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+                      <h3 align="justify">
+					
+						•	Castro, O. (13 de 08 de 2019). PubNub. Obtenido de Java WebSocket Programming with Android and Spring Boot: https://www.pubnub.com/blog/java-websocket-programming-with-android-and-spring-boot/
+					  </h3>	
+					  <br>
+					  <h3 align="justify">
+					  
+							•	Copes, F. (16 de 10 de 2019). flaviocopes.com/. Obtenido de Introduction to WebSockets: https://flaviocopes.com/websockets/
+					  </h3>	
+					  <br>
+					  <h3 align="justify">
+					  
+							•	Ivan, M. (10 de 05 de 2018). proft.me. Obtenido de A quick guide to WebSocket communication in Android : https://en.proft.me/2018/05/10/quick-guide-websocket-communication-android/
+					  </h3>	
+					  <br>
+					  <h3 align="justify">
+					  
+							•	Socket.IO. (14 de 03 de 2019). github.com. Obtenido de Socket.IO-client Java: https://github.com/socketio/socket.io-client-java
+					  </h3>	
+					  <br>
+					  <h3 align="justify">
+					  
+							•	Varios. (30 de 05 de 2015). stackoverrun.com. Obtenido de Which WebSocket library to use in Android app?: https://stackoverrun.com/es/q/8404295
+					  </h3>	
+					  <br>
+					  <h3 align="justify">
+					  
+							•	Varios. (s.f.). Wikipedia. Obtenido de WebSocket: https://es.wikipedia.org/wiki/WebSocket
+					  </h3>	
+					   <br>
+				</div>
+				</div>
+				</div> 
+					
+		<!-- Seccion fin derecha texto -->	
+	<!-- End About -->
+			</div>
+				
+		</div>
+		</div>
+	
+	<!-- End About -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f" >
+	  <div class="container" >
+		  <div class="row" >
+			  
+			<div class="col-lg-4 col-md-4" >
+				<h3 align="justify" style="color:#0FF">Sobre Nosotros...</h3>
+				<p align="justify">Somos estudiantes de la Universidad UTE que actualmente cursamos el octavo semestre de la carrera de Ingeniería Informática y Ciencias de la Computación.</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" >
+				<p align="justify" style="color:#0FF">&nbsp</p>
+				<p align="justify">&nbsp</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" > 
+				  <h3 style="color:#0FF">Líderes</h3>
+                  <ul>
+                   <li>
+                <span style="color:#0FF">Daniel Altamirano</span>
+                <h3>daniel.altamirano@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Leslie Torres</span>
+                <h3>leslie.torres@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Ivonne Venegas</span>
+                <h3>ivonne.venegas@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Carlos Yépez</span>
+                <h3>carlos.yepez@ute.edu.ec</h3></a>
+              </li>
+            </ul>   	
+			</div>
+	    </div>
+	  </div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2020 <a>UTE Ingeniería Informática</a> 
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+</footer>
+    
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="../../../JS/jquery-3.2.1.min.js"></script>
+	<script src="../../../JS/popper.min.js"></script>
+	<script src="../../../JS/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="../../../JS/jquery.superslides.min.js"></script>
+	<script src="../../../JS/images-loded.min.js"></script>
+	<script src="../../../JS/isotope.min.js"></script>
+	<script src="../../../JS/baguetteBox.min.js"></script>
+	<script src="../../../JS/form-validator.min.js"></script>
+    <script src="../../../JS/contact-form-script.js"></script>
+    <script src="../../../JS/custom.js"></script>
+</body>
+</html>
