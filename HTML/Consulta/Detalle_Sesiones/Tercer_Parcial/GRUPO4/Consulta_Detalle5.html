@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title> Consulta </title>  
+    <title>Sesión 18 - Consulta 5</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -32,7 +32,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand">
+				<a class="navbar-brand" href= "../../../../../index.html">
 					<img src= "../../../../../IMG/Logo.png" width="100" height="100"/>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,24 +40,14 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href= "../../../../../Index.html">Inicio</a></li>
-						<li class="nav-item  dropdown">
+						<li class="nav-item"><a class="nav-link" href= "../../../../../index.html">Inicio</a></li>
+						<li class="nav-item active dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href= "../../../../Parciales/Primer Parcial/Primer Parcial.html">Primer Parcial</a>
 								<a class="dropdown-item" href= "../../../../Parciales/Segundo Parcial/Segundo Parcial.html">Segundo Parcial</a>
 								<a class="dropdown-item" href= "../../../../Parciales/Tercer Parcial/Tercer Parcial.html">Tercer Parcial</a>
 							</div>
-					  </li>
-						<li class="nav-item active dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> Consultas</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href= "../../../Consulta_Grupo1.html">Grupo 1</a>
-								<a class="dropdown-item" href= "../../../Consulta_Grupo2.html">Grupo 2</a>
-                                <a class="dropdown-item" href= "../../../Consulta_Grupo3.html ">Grupo 3</a>
-                                <a class="dropdown-item" href= "../../../Consulta_Grupo4.html ">Grupo 4</a>
-							</div>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -72,7 +62,7 @@
 				<div class="col-lg-12">
 					<h1>Desarrollo de Sistemas II</h1>
                     </br>
-                    <h1>Nombre Consulta</h1>
+                    <h1>Google Maps</h1>
 				</div>
 			</div>
 		</div>
@@ -85,10 +75,630 @@
 			<div class="row">
 				<div class>
 				  <div class="inner-column">
-						<h1><span>Título:</span></h1>
-					<h4>Subtítulo:</h4>
-						<p>Contenido:</p>
-					</div>
+						<h1 align="center"><span><strong>Google Maps:</strong></span></h1></br>    
+                  <h2><strong>I) <u> DESCRIPCIÓN GENERAL.</u></strong>                    </h2>
+                    <p align="justify">Con <strong><em>Maps SDK for Android</em></strong>,  puedes agregar mapas basados en datos de <strong><em>Google  Maps</em></strong> a tu aplicación. La API controla automáticamente el acceso  a los servidores de <strong><em>Google Maps</em></strong>,  la descarga de datos, la visualización de mapas y la respuesta a los gestos del  mapa.<br>
+                      También puedes utilizar las llamadas a la API para agregar marcadores,  polígonos y superposiciones a un mapa básico, así como para cambiar la vista  que tenga el usuario de un área del mapa en particular. Estos objetos  proporcionan información adicional de las ubicaciones en el mapa y permiten la  interacción del usuario con este. La API te permite agregar estos gráficos a un  mapa:                    </p>
+                  <div align="justify">
+                      <ul>
+                        <li>
+                          <div align="justify">· Íconos anclados en  posiciones específicas del mapa <em>(marcadores)</em>
+                          <ul>
+                            <li>· Conjuntos de segmentos  de líneas <em>(polilíneas)</em></li>
+                            <li>· Segmentos cerrados <em>(polígonos)</em></li>
+                            <li>· Gráficos de mapa de  bits anclados en posiciones específicas del mapa <em>(superposiciones de suelo)</em></li>
+                            <li>· Conjuntos de imágenes  que se muestran sobre los mosaicos del Mapa base <em>(superposiciones de  mosaicos)</em></li>
+                          </ul>
+                    </ul>
+                  </div>
+                  <ul>
+                      <li>
+                        <ul></br>
+                        </ul>
+                          <p><b>A) Configuración del Proyecto.</b></p>
+                          <ul>
+                            <li>
+                              <div align="justify"><strong>1)</strong> Instala Android Studio.</div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong>2)</strong> Instala y configura el <strong><em>SDK de Servicios de Google Play</em></strong>, que  incluye <strong><em>Maps SDK for Android</em></strong>.</div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong>3)</strong> Obtén una clave de API. Para ello,  deberás registrar un proyecto en <strong><em>Google Cloud  Platform Console</em></strong>, crear una clave de API y restringirla con el  certificado de firma de tu app.</div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong>4)</strong> Agrega la configuración requerida al  manifiesto de tu aplicación.</div>
+                            </li>
+                            <div align="justify"></br>
+                            </div>
+                            <li>
+                              <p align="justify"><em>A continuación, se detalla sobre cada paso del  proceso.</em></p>
+                            </li>
+                          </ul>
+                    </ul>
+                          <p><b>B) Instala el SDK de Servicios de Google Play..</b></p>
+                  <ol>
+                            <li>
+                              <div align="justify"><strong>1)</strong> Inicie Android Studio.</div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong>2) </strong>Cree un nuevo proyecto.</div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong>3)</strong> Seleccione <strong><em>Actividad de Google Maps</em></strong> , luego haga clic  en <strong><em>Siguiente</em></strong>.<strong></strong></div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong>4)</strong> Ingrese el nombre de su aplicación, el  nombre del paquete y la ubicación del proyecto, el lenguaje de programación <em>(Java  o Kotlin)</em> y el nivel mínimo de API de Android compatible con su aplicación,  luego haga clic en <strong><em>Finalizar</em></strong>.</div></br>
+                            </li>
+                            <li>
+                              <div align="justify"></div>
+                            </li>
+                            <li>
+                              <div align="justify"></div>
+                            </li>
+                            <li>
+                              <div align="justify"></div>
+                            </li>
+                            <li>
+                              <div align="justify"></div>
+                            </li>
+                            <li>
+                              <div align="justify"></div>
+                            </li>
+                            <li>
+                              <div align="justify"></div>
+                            </li>
+                            <li>
+                              <div align="justify"><strong></strong></div>
+                            </li>
+                            <li> </li>
+                            <li> </li>
+                  </ol>
+                  <p align="justify"><b>C) Obtén una Clave de API.</b></p>
+                          <div align="justify">
+                            <ol>
+                              <li><strong>1)</strong> Accede a&nbsp;<strong><em>Google Cloud Platform Console</em></strong><strong>.</strong></li>
+                              <li><strong>2)</strong> Haz clic en el menú  desplegable del proyecto y selecciona o crea el proyecto en que deseas agregar  la clave de API. </li>
+                              <li><strong>3)</strong> Haz clic en el botón de  menú&nbsp;<img src="../../../../../IMG/Grupo4/Consulta 5 (1).png" alt="" width="41" height="29">&nbsp;y selecciona&nbsp;<strong><em>API  y servicios</em></strong><strong>&nbsp;<em>&gt; Credenciales</em></strong>.<strong> </strong></li>
+                              <li><strong>4)</strong> En la página&nbsp;<strong><em>Credenciales</em></strong>, haz clic en&nbsp;<strong><em>Crear  credenciales&nbsp;&gt; Clave de API</em></strong>.<strong> </strong></li>
+                              <li><strong>5)</strong> Haz clic en&nbsp;<strong><em>Cerrar</em></strong><strong>.</strong> La nueva clave de API aparecerá en la página&nbsp;<strong><em>Credenciales</em></strong>&nbsp;debajo de&nbsp;<strong><em>Claves de API</em></strong>.<strong> </strong></li></br>
+                            </ol>
+                          </div>
+                          <p><b>D) Agrega la Clave de API a tu APP.</b></p>
+                          <ol>
+                            <li>
+                              <div align="justify"><strong>1)</strong> En <strong><em>AndroidManifest.xml</em></strong>,  inserta el siguiente elemento justo antes de la etiqueta <strong><em>&lt;/application&gt;</em></strong> de cierre para  agregarlo como componente secundario de <strong><em>&lt;application&gt;</em></strong>:</div>
+                            </li>
+                          </ol>
+                          <p><img src="../../../../../IMG/Grupo4/Consulta 5 (2).png" alt="" width="530" height="90"></p>
+                          <ol>
+                            <li> </li>
+                          </ol>
+                  <p align="justify">En el atributo <strong><em>value</em></strong>,  reemplaza <strong><em>YOUR_API_KEY</em></strong> por tu clave de API <em>(la string encriptada)</em>.  Este elemento configura la clave <strong><em>com.google.android.geo.API_KEY</em></strong> en el valor de tu clave de API.</p>
+                  <div align="justify">
+                    <ol>
+                      <li><strong>2)</strong> Guarda el archivo <strong><em>AndroidManifest.xml</em></strong> y vuelve a compilar tu aplicación.</li></br>
+                    </ol>
+                  </div>
+                  <p align="justify"><b>E) Restringe la Clave de API.</b></p>
+                          <div align="justify">
+                            <ul>
+                              <li><strong>· Restricción  de la Aplicación: </strong>Limita el uso de la clave de API a sitios web <em>(URL  de referencia HTTP)</em>, servidores web <em>(direcciones IP)</em> o apps para  dispositivos móviles <em>(para Android o iOS)</em>.<strong></strong></li></br>
+                            </ul>
+                            <ul>
+                              <li><strong>· Restricción  de la API: </strong>Limita el uso de la clave de API a uno o más  SDK o API. Las solicitudes que se realicen a una API o a un SDK asociados a la  clave de API se procesarán correctamente, pero aquellas que se realicen a una  API o un SDK no asociados con dicha clave no se podrán completar.<strong></strong></li></br>
+                              <li> </li>
+                            </ul>
+                          </div>
+                          <ul>
+                            <li>
+                              <p align="justify"><em>Para restringir una clave de API, sigue estos  pasos:</em></p>
+                              <div align="justify">
+                                <ul>
+                                  <li><strong>1)</strong> En la página&nbsp;<strong><em>Credenciales</em></strong>,  haz clic en el nombre de la clave de API que deseas proteger.</li>
+                                  <li><strong>2)</strong> En la página&nbsp;<strong><em>Restringir  y cambiar nombre de la clave de API</em></strong>, establece las  restricciones:</li></br>
+                                </ul>
+                                <p align="justify"><strong><em>Restricciones de la Aplicación:</em></strong></p>
+                                <div align="justify">
+                                  <ul>
+                                    <li>· Selecciona <strong><em>Apps para Android</em></strong> y sigue las instrucciones.</li>
+                                    <li>· Haz  clic en <strong><em>+ Agregar nombre del paquete y huella  digital</em></strong>.</li>
+                                    <li>· Ingresa  el nombre del paquete y la huella digital del certificado <strong><em>SHA-1</em></strong>. Por ejemplo:</li></br>
+                                    <li><img src="../../../../../IMG/Grupo4/Consulta 5 (3).png" alt="" width="327" height="40"></li></br>
+                                  </ul>
+                                  <p><img src="../../../../../IMG/Grupo4/Consulta 5 (4).png" alt="" width="634" height="45"></p>
+                                  <ul>
+                                    <li> </li>
+                                  </ul>
+                                </div>
+                                <ul>
+                                  <li>
+                                    <p align="justify"><strong><em>Restricciones de la API:</em></strong><strong></strong></p>
+                                    <div align="justify">
+                                      <ul>
+                                        <li>· Selecciona <strong><em>Restringir clave</em></strong>.</li>
+                                        <li>· Haz clic en <strong><em>Seleccionar API</em></strong> y elige <strong><em>Maps SDK for Android</em></strong>.</li>
+                                        <li>· Haz clic en <strong><em>Guardar</em></strong>.</li></br>
+                                      </ul>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                        </ul>
+                    <p align="justify"><b>F)	Agrega la Configuración Requerida al Manifiesto de tu APP.</b></p>
+                  <p align="justify">Edita el archivo <strong><em>AndroidManifest.xml</em></strong> de  tu aplicación y agrega la siguiente configuración.</p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Especifica  el número de versión de Servicios de Google Play:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Agrega la siguiente declaración al elemento <strong><em>&lt;application&gt;</em></strong> del archivo <strong><em>AndroidManifest.xml</em></strong>.  Esto incorporará la versión de Servicios de Google Play con la que se compiló  la app.</p>
+                  <p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (5).png" alt="" width="650" height="84"></p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Especifica  tu Clave de API:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Asegúrate de incluir tu clave de API en el  archivo <strong><em>AndroidManifest.xml</em></strong> como se detalla en inciso <strong>D</strong>.</p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Especifica  los Permisos de Android:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Para especificar los permisos que necesita tu  aplicación, agrega los elementos <strong><em>&lt;uses-permission&gt;</em></strong> como secundarios del elemento <strong><em>&lt;manifest&gt;</em></strong> en el archivo <strong><em>AndroidManifest.xml</em></strong>.</p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Permisos de Ubicación:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Si tu app necesita acceder a la ubicación del  usuario, primero debes solicitar el permiso correspondiente. Para ello, agrega  el permiso de ubicación de Android pertinente a tu app.</p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong><em> → android.permission.ACCESS_COARSE_LOCATION:</em></strong> Permite que la API utilice Wi-Fi o datos  móviles (o ambos) para determinar la ubicación del dispositivo. </li></br>
+                    </ul>
+                    <ul>
+                      <li><strong><em>→ android.permission.ACCESS_FINE_LOCATION:</em></strong> Permite que la API determine la ubicación más precisa  posible mediante los proveedores de ubicación disponibles, incluido el sistema  de posicionamiento global (GPS), así como Wi-Fi y datos móviles.</li>
+                      <li></li></br>
+                    </ul>
+                    <ul>
+                      <li><strong>· <u>Agrega  los Permisos al Manifiesto:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Agrega <strong>uno</strong> de los siguientes permisos como componente  secundario del elemento <strong><em>&lt;manifest&gt;</em></strong> en tu manifiesto. Puedes optar por el permiso de  ubicación básico:</p>
+                  <p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (6).png" alt="" width="831" height="163"></p>
+                  <p align="justify">O por el permiso de ubicación precisa:</p>
+                  <p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (7).png" alt="" width="807" height="164"></p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Permiso de Almacenamiento Externo:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Si te orientas a la versión <strong><em>8.3</em></strong> o  una posterior del <strong><em>SDK de Servicios de Google  Play</em></strong>, ya no necesitarás el permiso <strong><em>WRITE_EXTERNAL_STORAGE</em></strong>, caso contrario debes solicitar  el permiso <strong><em>android.permission.WRITE_EXTERNAL_STORAGE</em></strong>.</p>
+                  <p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (8).png" alt="" width="725" height="69"></p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Permisos  que se Combinan Automáticamente con el Manifiesto:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Los siguientes permisos se definen en el  manifiesto de <strong><em>Servicios de Google Play</em></strong> y se combinan automáticamente con el manifiesto  de tu app en el tiempo de compilación. No es necesario que los agregues de  manera explícita al manifiesto:</p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong><em>→ android.permission.INTERNET:</em></strong> Es un  permiso que la API utiliza para descargar mosaicos de mapa de los servidores de <strong><em>Google Maps</em></strong>.<strong></strong></li></br>
+                    </ul>
+                  </div>
+                  <div align="justify">
+                    <ul>
+                      <li><strong><em>→ android.permission.ACCESS_NETWORK_STATE:</em></strong> Es un permiso que la API utiliza para  verificar el estado de la conexión a fin de determinar si se pueden descargar  los datos.<strong></strong></li></br>
+                    </ul>
+                    <ul>
+                      <li><strong>· <u>Especifica  el Requisito para la Versión 2 de OpenGL ES:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify"><strong><em>Maps SDK for Android</em></strong> renderiza el mapa con la versión 2 de <strong><em>OpenGL ES</em></strong>. La siguiente configuración se  define en el manifiesto de <strong><em>Servicios de  Google Play</em></strong> y se combina  automáticamente con el manifiesto de tu app en el tiempo de compilación. Es  decir, no es necesario que agregues la configuración de manera explícita a tu  manifiesto:<strong></strong></p>
+                  <p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (9).png" alt="" width="429" height="90"></p>
+                  <div align="justify">
+                    <ul>
+                      <li><strong>· <u>Especifica  el Requisito para la Biblioteca Heredada del HTTP de Apache:</u></strong></li>
+                    </ul>
+                  </div>
+                  <p align="justify">Si utilizas <strong><em>com.google.android.gms:play-services-maps:16.0.0</em></strong> o versiones anteriores, y tu app se orienta a la  API nivel 28 <em>(Android 9.0)</em> o una posterior, debes incluir la siguiente  declaración en el elemento <strong><em>&lt;application&gt;</em></strong> del archivo <strong><em>AndroidManifest.xml</em></strong>.<strong></strong></p>
+                  <p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (10).png" alt="" width="446" height="86"></p></br>
+                  <ul>
+                  
+                  <h2><strong>II) <u> ¿CÓMO AGREGAR UN MAPA CON UN MARCADOR?</u></strong></h2>            
+                    <div align="justify">
+                        <p align="justify"><b>A) Configura tu Proyecto de Desarrollo.</b></p>
+                        <ol>
+                          <li><strong>1)</strong> Agrega el paquete de <strong><em>Servicios de Google Play</em></strong> a Android Studio.<strong></strong></li>
+                          <li><strong>2)</strong> Clona o descarga el repositorio de  muestras de la versión 2 de la API de <strong><em>Google  Maps</em></strong> para Android. <em>(</em><a href="https://github.com/googlemaps/android-samples"><em>https://github.com/googlemaps/android-samples</em></a><em>)</em><strong> </strong></li>
+                          <li><strong>3)</strong> Importa el proyecto del instructivo:</li>
+                        </ol>
+                        <ol>
+                          <li><strong>→ a)</strong> En Android Studio, selecciona <strong><em>Archivo &gt; Nuevo &gt; Importar proyecto</em></strong>.<strong></strong></li>
+                          <li><strong>→ b) </strong>Ve a la ubicación en la que guardaste  el repositorio tras descargarlo.</li>
+                          <li><strong>→ c)</strong> Busca el proyecto <strong><em>MapWithMarker</em></strong> en  esta ubicación:<strong> <em>PATH-TO-SAVED-REPO/android-samples/tutorials/MapWithMarker</em></strong></li>
+                          <li><strong>→ d)</strong> Selecciona el directorio del proyecto  y haz clic en <strong><em>Aceptar</em></strong>.</br></br>
+                            <p align="justify"><b>B) Comprende el Código.</b></p>
+                            <p><strong><em>Verifica el Manifiesto de Android:</em></strong></p>
+                            <ul>
+                              <li></li>
+                            </ul>
+                          </li>
+                          <li>· Agrega un elemento <strong><em>meta-data</em></strong> en  el que se especifique tu clave de API. En este ejemplo, se mapea el valor de la  clave de API a un string <strong><em>google_maps_key</em></strong>.</li>
+                          <li><img src="../../../../../IMG/Grupo4/Consulta 5 (11).png" alt="" width="510" height="90"></li></br>
+                          <li>· Para ver cómo se mapea la clave de API  al valor del string, consulta el archivo <strong><em>build.gradle</em></strong> de tu app. Este incluye la siguiente línea que  mapea el string <strong><em>google_maps_key</em></strong> a la propiedad <strong><em>GOOGLE_MAPS_API_KEY</em></strong> de <strong><em>Gradle</em></strong>:</li>
+                          <li><img src="../../../../../IMG/Grupo4/Consulta 5 (12).png" alt="" width="635" height="70"></li></br>
+                          <li>· A continuación, un ejemplo del  manifiesto completo:</li>
+                          <li><img src="../../../../../IMG/Grupo4/Consulta 5 (13).png" alt="" width="600" height="600"></li>
+<li></br>
+  <p align="justify"><b>C) Agrega un Mapa.</b></p>
+                      </li>
+<li><strong>1)</strong> Agrega un elemento <strong><em>&lt;fragment&gt;</em></strong> al archivo de diseño de <strong><em>activity_maps.xml</em></strong>.  Este elemento define un fragmento <strong><em>(SupportMapFragment)</em></strong> para que actúe como contenedor del mapa y proporcione acceso al objeto <strong><em>GoogleMap</em></strong>.</li>
+</ol>
+                        <p><img src="../../../../../IMG/Grupo4/Consulta 5 (14).png" alt="" width="654" height="175"></p>
+                        <ol>
+  <li><strong>2)</strong> En el método <strong><em>onCreate()</em></strong> de tu actividad, llama a <strong><em>FragmentManager.findFragmentById()</em></strong> a fin de generar un controlador para el fragmento  de mapa.</li>
+  <li><img src="../../../../../IMG/Grupo4/Consulta 5 (15).png" alt="" width="821" height="254"></li></br>
+  <li><strong>3) </strong>Implementa la interfaz <strong><em>OnMapReadyCallback</em></strong> y anula el método <strong><em>onMapReady()</em></strong> para  configurar el mapa cuando el objeto <strong><em>GoogleMap</em></strong> esté disponible:</li>
+  </ol>
+                      <p><img src="../../../../../IMG/Grupo4/Consulta 5 (16).png" alt="" width="664" height="305"></p>
+                      <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li>
+                          <p><em>De  forma predeterminada, <strong>Maps SDK for Android</strong> muestra el contenido de la ventana de información  cuando el usuario presiona un marcador. </em></p>
+                            
+                          <h2><strong>III) <u> POLILÍNEAS Y POLÍGONOS PARA REPRESENTAR RUTAS Y ÁREAS.</u></strong></h2>
+                          <p>El procedimiento es el mismo hasta el paso <strong><em>3</em></strong> del  inciso <strong><em>C</em></strong> del tema anterior.</p>
+                          <ol>
+                            <li><strong>1) </strong>Importa el proyecto del instructivo:</li>
+                            <li><strong>2)</strong> Busca el proyecto <strong><em>Polygons</em></strong> en  esta ubicación: <strong><em>PATH-TO-SAVED-REPO/android-samples/tutorials/Polygons</em></strong></li>
+                            <li><strong>3)</strong> Selecciona el directorio del proyecto  y haz clic en <strong><em>Aceptar</em></strong>. </li></br>
+                          </ol>
+                        </li>
+                          <li>
+                            <p align="justify"><b>A) Agrega una Polilínea Para Dibujar una Línea en el Mapa.</b></p>
+                            <p>Una  polilínea es una serie de segmentos de líneas conectadas. Las polilíneas  resultan útiles para representar rutas, trayectos o demás conexiones entre  diferentes ubicaciones en el mapa.<strong></strong></p>
+                            <ol>
+                              <li><strong>1)</strong> Crea un objeto <strong><em>PolylineOptions</em></strong> y agrégale puntos. Cada punto representa una ubicación en el mapa, la  cual defines con un objeto <strong><em>LatLng</em></strong> que contiene los valores de latitud y longitud. La  muestra de código que se incluye a continuación crea una polilínea de 6 puntos.</li>
+                              <li><strong>2)</strong> Llama a <strong><em>GoogleMap.addPolyline()</em></strong> para agregar la polilínea al mapa. </li>
+                              <li><img src="../../../../../IMG/Grupo4/Consulta 5 (17).png" alt="" width="623" height="215"></li>
+                              <li>
+                                <p><em>Establece  la opción <strong>clickable</strong> de la polilínea en <strong>true</strong> si deseas controlar los eventos de clic en la  polilínea.</em></p>
+                                <p align="justify"><b>B) Almacena Datos Arbitrarios con una Polilínea.</b></p>
+                              </li>
+                            </ol>
+                          </li>
+                          <li><strong>1)</strong> Llama a <strong><em>Polyline.setTag()</em></strong> para almacenar un objeto de datos con la polilínea. El siguiente código define  una etiqueta arbitraria <strong><em>(A)</em></strong> que indica un tipo de polilínea:<strong></strong></li>
+                          <li><img src="../../../../../IMG/Grupo4/Consulta 5 (18.png" alt="" width="796" height="253"></li></br>
+                          <li><strong>2) </strong>Recupera los datos con <strong><em>Polyline.getTag()</em></strong>.</li></br>
+<li>
+  <p align="justify"><b>C)	Controla los Eventos de Clic en la Polilínea.</b></p>
+                  </li>
+<li><strong>1)</strong> Llama a <strong><em>Polyline.setClickable()</em></strong> para habilitar la posibilidad de hacer clics en la polilínea. De forma  predeterminada, no se puede hacer clic en las polilíneas, y tu app no recibirá  una notificación cuando el usuario las presione.</li></br>
+<li></li>
+<li><strong>2) </strong>Implementa la interfaz <strong><em>OnPolylineClickListener</em></strong> y llama a <strong><em>GoogleMap.setOnPolylineClickListener()</em></strong> para configurar el objeto de escucha en el mapa:</li>
+<li><img src="../../../../../IMG/Grupo4/Consulta 5 (19.png" alt="" width="650" height="450"></li></br>
+<li><strong>3)</strong> Anula el método de devolución de  llamada <strong><em>onPolylineClick()</em></strong>. En  el siguiente ejemplo, cada vez que el usuario hace clic en la polilínea, se  alterna entre dos patrones de trazo, específicamente, una <strong><em>&quot;línea continua&quot;</em></strong> y una <strong><em>&quot;línea  de puntos&quot;</em></strong>:</li>
+<li><img src="../../../../../IMG/Grupo4/Consulta 5 (20.png" alt="" width="650" height="450"></li></br>
+<li></li>
+<li>
+  <p align="justify"><b>D) Agrega Polígonos para Representar Áreas en el Mapa.</b></p>
+  <p>Un  polígono <strong><em>(Polygon)</em></strong> es una forma que consiste en una serie de  coordenadas en una secuencia ordenada, similar a una polilínea <strong><em>(Polyline)</em></strong>. La diferencia radica en que el  polígono define un área cerrada con un interior que se puede rellenar, mientras  que una polilínea tiene extremos abiertos.</p>
+  <ol>
+    <li><strong>1)</strong> Crea un objeto <strong><em>PolygonOptions</em></strong> y agrégale puntos. Cada punto representa una ubicación en el mapa, la  cual defines con un objeto <strong><em>LatLng</em></strong> que contiene los valores de latitud y longitud.  La siguiente muestra de código crea un polígono de 4 puntos.</li>
+    <li><strong>2)</strong> Llama a <strong><em>Polygon.setClickable()</em></strong> para habilitar la posibilidad de hacer clic en el  polígono. </li>
+    <li><strong>3)</strong> Llama a <strong><em>GoogleMap.addPolygon()</em></strong> para agregar el polígono al mapa.</li>
+    <li><strong>4)</strong> Llama a <strong><em>Polygon.setTag()</em></strong> para almacenar un objeto de datos con el polígono.  El siguiente código define un tipo arbitrario <strong><em>(alpha)</em></strong> para el polígono.</li></br>
+    <li><img src="../../../../../IMG/Grupo4/Consulta 5 (21.png" alt="" width="550" height="200"></li></br>
+  </ol>
+  <h2><strong>IV) <u> OBJETOS DE MAPAS.</u></strong>  </h2>
+  <p align="justify"><b>A)	Agrega un Fragmento.</b></p>
+  <p>Otra  forma de hacerlo es agregando un objeto <strong><em>MapFragment</em></strong> a una actividad. Para ello, crea una nueva instancia <strong><em>MapFragment</em></strong> y,  luego, llama a <strong><em>FragmentTransaction.add()</em></strong> a fin de agregar el objeto <strong><em>Fragment</em></strong> a la actividad actual.</p>
+<p align="justify"><img src="../../../../../IMG/Grupo4/Consulta 5 (22).png" alt="" width="549" height="115"></p>
+  <p align="justify"><b>B) Agrega un Código de Mapa.</b></p>
+  </li>
+<li><strong>1)</strong> Para trabajar con el mapa dentro de tu  app, debes implementar la interfaz <strong><em>OnMapReadyCallback</em></strong> y establecer una instancia de la devolución de llamada en un objeto <strong><em>MapFragment</em></strong> o <strong><em>MapView</em></strong>. En este ejemplo, se  utiliza un objeto <strong><em>MapFragment</em></strong>,  ya que es la forma más común de agregar un mapa a una app. El primer paso es  implementar la interfaz de devolución de llamada:</li>
+<li><img src="../../../../../IMG/Grupo4/Consulta 5 (23).png" alt="" width="486" height="105"></li></br>
+<li><strong>2)</strong> En el método <strong><em>onCreate()</em></strong> de tu actividad establece el  archivo de diseño como la vista de contenido.</li>
+<li><img src="../../../../../IMG/Grupo4/Consulta 5 (24).png" alt="" width="483" height="133"></li></br>
+<li> </li>
+<li><strong>3)</strong> Para controlar el fragmento, llama a <strong><em>FragmentManager.findFragmentById()</em></strong> y  pásale el <strong><em>ID</em></strong> de recurso de tu elemento <strong><em>&lt;fragment&gt;</em></strong>. Ten en cuenta que el <strong><em>ID</em></strong> de  recurso <strong><em>R.id.map</em></strong> se agrega automáticamente al proyecto de Android  cuando creas el archivo de diseño.</li></br>
+<li><strong>4)</strong> Luego, utiliza <strong><em>getMapAsync()</em></strong> para  establecer la devolución de llamada en el fragmento.</li>
+<li><img src="../../../../../IMG/Grupo4/Consulta 5 (26).png" alt="" width="579" height="80"></li></br>
+<li><strong>5)</strong> Utiliza el método de devolución de  llamada <strong><em>onMapReady(GoogleMap)</em></strong> para controlar el objeto <strong><em>GoogleMap</em></strong>. La devolución de llamada se  activa cuando el mapa está listo para utilizarse. Proporciona una instancia no  nula de <strong><em>GoogleMap</em></strong>. </li>
+<li><img src="../../../../../IMG/Grupo4/Consulta 5 (27).png" alt="" width="383" height="141"></li></br>
+<li>
+  <p align="justify"><b>C) Tipos de Mapas.</b></p>
+  <p><strong><em>Maps SDK for Android</em></strong> ofrece cuatro tipos de mapas, así como la opción de no incluir  ninguno:</p>
+  <ul>
+    <li><strong><em>→ Normal:</em></strong> Es un mapa de ruta típico. Muestra rutas,  algunos elementos creados por el hombre y elementos naturales importantes, como  ríos. También muestra etiquetas de rutas y elementos.
+      <ul>
+        <li><strong><em>→ Híbrido:</em></strong> Muestra datos de fotos satelitales, además de los mapas de ruta. También  muestra etiquetas de rutas y elementos.</li>
+      </ul>
+      <ul>
+        <li><strong><em>→ Satelital:</em></strong> Muestra datos de fotos satelitales. No muestra etiquetas de rutas y  características.
+          <ul>
+            <li><strong><em>→ De Terreno:</em></strong> Muestra datos topográficos. El mapa incluye  colores, isolíneas y etiquetas relacionadas, y sombras que agregan perspectiva.  También muestra algunas rutas y etiquetas.</li>
+          </ul>
+          <ul>
+            <li><strong><em>→ Ninguno:</em></strong> No muestra ningún mosaico. El mapa se renderiza como una cuadrícula vacía sin  mosaicos cargados.</br></br>
+              <p align="justify"><b>D) Cambia el Tipo de Mapa.</b></p>
+              <p>Para  determinar el tipo de mapa, llama al método <strong><em>setMapType()</em></strong> del objeto <strong><em>GoogleMap</em></strong>. Para  ello, pasa una de las constantes de tipo definidas en el objeto <strong><em>GoogleMap</em></strong>.  Por ejemplo, utiliza el siguiente código para mostrar un mapa satelital:</p>
+              <p>En  la siguiente imagen, se comparan tres tipos de mapas de la misma ubicación, uno  normal, uno híbrido y uno de terreno:</p>
+              <p><img src="../../../../../IMG/Grupo4/Consulta 5 (28).png" alt="" width="850" height="400"></p>
+              <p align="justify"><b>E) Trabaja con Mapas de Interiores en la API.</b></p>
+              </li>
+            <li>· Para  inhabilitar los mapas de interiores, debes llamar a <strong><em>GoogleMap.setIndoorEnabled(false)</em></strong>, ya que  estos mapas están habilitados de forma predeterminada. Además, los mapas de  interiores se muestran en un mapa a la vez. De forma predeterminada, este es el  primer mapa que se agrega a tu app. Si deseas mostrar mapas de interiores en  otro mapa, inhabilítalos en el primero y, luego, llama a <strong><em>setIndoorEnabled(true)</em></strong> en el segundo.<strong></strong></li></br>
+          </ul>
+          <ul>
+            <li>· Para  inhabilitar el selector de piso predeterminado, llama a <strong><em>GoogleMap.getUiSettings().setIndoorLevelPickerEnabled(false)</em></strong>.
+              <ul></br>
+                <li>· Una  interfaz en <strong><em>GoogleMap</em></strong>, <strong><em>OnIndoorStateChangeListener</em></strong>, te permite  establecer un objeto de escucha que se llamará cuando se enfoque un nuevo  edificio o se active un nuevo piso en un edificio.</li></br>
+                <li><strong>· </strong>El  método <strong><em>GoogleMap.getFocusedBuilding()</em></strong> te muestra el edificio que está actualmente en foco. Luego, puedes llamar a <strong><em>IndoorBuilding.getActiveLevelIndex()</em></strong> para encontrar el piso activo en ese momento.
+                  <ul></br>
+                    <li>· El  diseño del Mapa base no afecta los mapas de interiores.<strong></strong></li></br>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p align="justify"><b>F) Capa de Tráfico.</b></p>
+                      <p>Puedes  darles a tus usuarios la posibilidad de ver el mapa con información superpuesta  sobre la densidad del tráfico. Esto les proporcionará un resumen visual de la  situación del tráfico local. Llama al método <strong><em>setTrafficEnabled()</em></strong> para activar y desactivar la capa de tráfico, y  al método <strong><em>isTrafficEnabled()</em></strong> a fin de determinar si actualmente está activa.</p>
+                      <p><strong><em>Configuración Inicial: </em></strong></p>
+                      <p>La  API de <strong><em>Google Maps</em></strong> te permite configurar el estado inicial del mapa  para adaptarlo a las necesidades de tu aplicación. Puedes especificar lo  siguiente:</p>
+                      <ul>
+                        <li>· Cómo  posicionar la cámara, lo que incluye la ubicación, el zoom, el rumbo y la  inclinación.</li>
+                        <li>· Qué  tipo de mapa mostrar<em>.</em></li>
+                        <li>· Si  mostrar o no los botones de zoom y la brújula en pantalla.</li>
+                        <li>· Qué  gestos puede emplear un usuario para manipular la cámara<em>.</em></br></br>
+                          <p align="justify"><b>G) ¿Cómo usar Atributos XML?</b></p>
+                          <p>La  API de <strong><em>Google Maps</em></strong> define un conjunto de atributos <strong><em>XML</em></strong> personalizados  para un objeto <strong><em>MapFragment</em></strong> o <strong><em>MapView</em></strong> que puedes utilizar a fin de configurar el estado  inicial del mapa directamente desde el archivo de diseño. Actualmente, se  definen los siguientes atributos:</p>
+                          <ul>
+                            <li><strong><em>→ mapType.</em></strong> Te permite especificar el tipo de mapa que se mostrará. Los valores válidos son  ninguno <em>(none)</em>, normal <em>(normal)</em>, híbrido <em>(hybrid)</em>,  satelital <em>(satellite)</em> y de terreno <em>(terrain)</em>.</li>
+                            <li></li>
+                            <li>
+                              <ul>
+                                <li><strong><em>→ CameraTargetLat</em></strong>, <strong><em>cameraTargetLng</em></strong>, <strong><em>cameraZoom</em></strong>, <strong><em>cameraBearing</em></strong> y <strong><em>cameraTilt.</em></strong> Te permiten especificar la posición inicial de la cámara. </li>
+                              </ul>
+                              <ul>
+                                <li><strong><em>→ uiZoomControls</em></strong> <strong><em>y uiCompass</em></strong>. Te permiten  especificar si mostrar o no los controles de zoom y la brújula en el mapa.
+                                  <ul>
+                                    <li><strong><em>→ uiZoomGestures</em></strong>, <strong><em>uiScrollGestures</em></strong>, <strong><em>uiRotateGestures</em></strong> y <strong><em>uiTiltGestures</em></strong>. Te  permiten especificar qué gestos están habilitados o inhabilitados para  interactuar con el mapa. </li>
+                                    </ul>
+                                  <ul>
+                                    <li><strong><em>→ zOrderOnTop</em></strong>.  Controla si la superficie de la vista de mapa se dispone sobre la ventana. 
+                                      <ul>
+                                        <li><strong><em>→ useViewLifecycle</em></strong>.  Solo es válido con un objeto <strong><em>MapFragment</em></strong>.  Este atributo especifica si el ciclo de vida del mapa debe vincularse a la  vista del fragmento o al fragmento en sí. </li>
+                                        </ul>
+                                      <ul>
+                                        <li><strong><em>→ liteMode</em></strong>.  El valor true establece el mapa en modo lite. El modo lite muestra una imagen  de mapa de bits correspondiente a un mapa que admite un subconjunto de las  funcionalidades proporcionadas por la API completa. El valor predeterminado de  este atributo es <strong><em>false</em></strong>.</br></br>
+                                          <p> Para utilizar estos atributos personalizados en tu archivo de  diseño <strong><em>XML</em></strong>, primero debes  agregar la siguiente declaración de espacio de nombres. </p>
+                                          <p><img src="../../../../../IMG/Grupo4/Consulta 5 (29).png" alt="" width="605" height="39"></p>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <p>Luego,  puedes agregar los atributos con un prefijo <strong><em>map:</em></strong> en tus componentes de diseño, como lo harías con los atributos estándares de  Android.</p>
+                          <p>En  el siguiente fragmento de código <strong><em>XML</em></strong>,  se muestra cómo configurar un objeto <strong><em>MapFragment</em></strong> con algunas opciones personalizadas. También se  pueden aplicar los mismos atributos a un objeto <strong><em>MapView</em></strong>.</p>
+                          <p><img src="../../../../../IMG/Grupo4/Consulta 5 (30).png" alt="" width="600" height="400"></p></br>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul></li></ol></div></ul>
+            <h2><strong>V) <u> COMO INTERACTUAR CON EL MAPA.</u></strong></h2>
+
+   <p align="justify"><b>A) Controles y Gestos</b>.</p>
+                      <p align="justify"><strong><em>Maps SDK for Android</em></strong> permite personalizar la manera en que los usuarios pueden interactuar con tu mapa. 
+					  Para ello, debe determinar los componentes integrados de la IU que aparecerán en el mapa y los gestos permitidos.</p>
+                      <p align="justify"><strong>B) Modo Lite Para una Interacción Mínima del Usuario</strong>.</p>
+                      <p align="justify">El modo lite muestra una imagen de mapa de bits correspondiente a un mapa de una ubicación determinada y con un nivel de zoom específico. 
+					  Además, en este modo, los usuarios no pueden desplazar lateralmente el mapa ni acercarlo o alejarlo, así como tampoco pueden utilizar gestos.</p>
+                      <ul>
+                      
+                          <p align="justify"><b>C) Controles de la IU.</b></p>
+						  
+					<p align="justify">La API de Google Maps ofrece controles de la IU incorporados similares a los de la aplicación de Google Maps en un teléfono Android. 
+					Puedes activar o desactivar la visibilidad de estos controles con la clase <em><strong>UiSettings</strong></em>, que se puede obtener de un mapa GoogleMap con el método <strong><em>GoogleMap.getUiSettings</em></strong>.</p>
+					
+					
+					  <p><b>D) Controles de Zoom.</b></p>
+						  
+					<p align="justify">La API de Google Maps proporciona controles de zoom incorporados que aparecen en la esquina inferior derecha del mapa. De forma predeterminada, estos se encuentran 
+					inhabilitados, pero puedes llamar a <strong><em> UiSettings.setZoomControlsEnabled(true)</em></strong> para habilitarlos.</p>
+					
+					
+					
+					<p align="justify"><b>E) Selector de Piso</b>.</p>
+						  
+					<p>Cuando haya dos o más mapas de interiores visibles, se aplicará el selector de piso al edificio que esté actualmente en foco, que suele ser el que se encuentra más cerca del centro de la pantalla. Cada edificio tiene un piso predeterminado, que se selecciona cuando aparece por primera vez el selector. Los usuarios pueden utilizar este selector para elegir otro piso.
+Para inhabilitar o habilitar el control correspondiente al selector de piso, llama a <strong><em>GoogleMap.getUiSettings().setIndoorLevelPickerEnabled(boolean)</em></strong>.</p>
+
+
+
+					<p align="justify"><b>F) Gestos de Inclinación</b>.</p>
+						  
+					<p>Para inclinar el mapa, los usuarios deben colocar dos dedos en el mapa y moverlos hacia abajo o hacia arriba. De esta forma, el ángulo de inclinación aumentará o disminuirá, respectivamente. 
+					Para inhabilitar los gestos de inclinación, llama a <strong><em>UiSettings.setTiltGesturesEnabled(boolean)</em></strong>.</p>
+					
+					
+					<p align="justify"><b>G) Gestos de Rotación</b>.</p>
+						  
+					<p>Para rotar el mapa, los usuarios deben colocar dos dedos sobre él y aplicar un movimiento de rotación. 
+					Para inhabilitar la rotación, llama a <strong><em>UiSettings.setRotateGesturesEnabled(boolean)</em></strong>.</p></br>
+			<h2><strong> VI) EVENTOS.</strong></h2>
+
+  
+  
+  <p align="justify"><b>A) Eventos de Clic Largo y en el Mapa.</b></p>
+  <p align="justify">Si deseas responder cuando un usuario presione un punto en el mapa, puedes utilizar un objeto de escucha <em><strong>OnMapClickListener</strong></em>. 
+				  Para configurarlo en el mapa, llama a <strong><em>GoogleMap.setOnMapClickListener(OnMapClickListener)</em></strong>. 
+				  Cuando un usuario haga clic en algún lugar del mapa (o lo presione), recibirás un evento <em><strong>onMapClick(LatLng)</strong></em> que indicará la ubicación en el mapa en la que el usuario hizo clic.</p>
+					
+					
+					
+			<p align="justify"><b>B) Eventos de Cambio de Cámara.</b>		    </p>
+			<p align="justify"> Si utilizas objetos de escucha para los cambios de cámara, podrás llevar un registro de los movimientos de la cámara. 
+				Tu app puede recibir notificaciones de eventos de inicio, continuidad y finalización de los movimientos de la cámara. 
+			También puedes ver el motivo por el que se mueve la cámara, ya sea en respuesta a gestos del usuario, animaciones de API incorporadas o movimientos controlados 
+				por el desarrollador.</p>
+				
+
+			<p align="justify"><strong><em>En el siguiente ejemplo, se muestran todos los objetos de escucha de eventos de cámara disponibles:</em></strong></p>
+				<li><img src="../../../../../IMG/Grupo4/mapas 1.png" alt="" width="650" height="450"></li></br>
+
+					
+					
+				<li>
+				  <div align="justify">Cuando la cámara comienza a moverse, se invoca la devolución de llamada <strong><em>onCameraMoveStarted()</em></strong> del objeto de escucha <strong><em>OnCameraMoveStartedListener.</em></strong> El método de devolución de llamada recibe un motivo <em>(<strong>reason</strong>)</em> para el movimiento de la cámara..</div>
+				</li>
+				<div align="justify"></br>
+				  
+</div>
+				<li>
+				  <div align="justify">Cuando la cámara está en movimiento o el usuario interactúa con la pantalla táctil, 
+				    se invoca varias veces la devolución de llamada <strong><em>onCameraMove() </em></strong>del objeto de escucha OnCameraMoveListener.</div>
+				  </li>
+				<div align="justify"></br>
+</div>
+				<li><img src="../../../../../IMG/Grupo4/mapa 2.png" alt="" width="550" height="300"></li></br>
+				
+				<li>
+				  <div align="justify">Cuando la cámara deja de moverse y el usuario deja de interactuar con el mapa, se invoca la devolución de llamada <strong><em>OnCameraIdle()</em></strong> 
+				del objeto de escucha <em><strong>OnCameraIdleListener.</strong></em></div>
+				</li>
+				<div align="justify"></br>
+</div>
+				<li><img src="../../../../../IMG/Grupo4/mapa 3.png" alt="" width="650" height="400"></li></br>
+				
+				
+				<li>
+				  <div align="justify">Cuando se interrumpe el movimiento actual de la cámara, se invoca la devolución de llamada <strong><em>OnCameraMoveCanceled()</em></strong> del objeto de escucha 
+				    <em><strong>OnCameraMoveCanceledListener.</strong></em> </div>
+				</li>
+				<div align="justify"></br>
+</div>
+				<li><img src="../../../../../IMG/Grupo4/mapa 4.png" alt="" width="650" height="400"></li></br>
+				
+				<li>
+				  <div align="justify">Inmediatamente después de la devolución de llamada <strong><em>OnCameraMoveCanceled()</em></strong>, se invoca la devolución de llamada <em><strong>onCameraMoveStarted()</strong></em> con el nuevo motivo <em><strong>(reason). </strong></em><strong></strong></div>
+				</li>
+				<div align="justify"></br>
+				  
+  </li>
+</div>
+<h2 align="justify"><b>VII) CÁMARA Y VISTA</b>.</h2>
+			
+			<p align="justify">Los mapas en <em><strong>Maps SDK para Android</strong></em> se pueden inclinar y rotar con gestos sencillos, lo que brinda a los usuarios la capacidad de ajustar el mapa con una orientación que tenga sentido para ellos. 
+			En cualquier nivel de zoom, puede desplazarse por el mapa o cambiar su perspectiva con muy poca latencia gracias a la huella más pequeña de los mosaicos de mapas basados en vectores. </p>
+	
+						<p align="justify"><b>A) Introducción.</b></p>
+						
+						<p align="justify"> Al igual que Google Maps en la web, <strong><em>Maps SDK</em></strong> para Android representa la superficie del mundo (una esfera) en la pantalla de su dispositivo (un plano) usando la proyección Mercator. En dirección este y oeste, el mapa se repite infinitamente a medida que el mundo se envuelve sin problemas sobre sí mismo.
+				        <em><strong>El SDK de Maps</strong></em> para Android le permite cambiar el punto de vista del mapa del usuario modificando la cámara del mapa </p>
+						
+						<p align="justify"><b>B) Edificios 3D en el Mapa</b>.</p>
+						
+						<p align="justify"> Muchas ciudades, cuando se ven de cerca, tendrán edificios en 3D visibles. Puede desactivar los edificios 3D llamando <em><strong>GoogleMap.setBuildingsEnabled(false)</strong>.</em></p>
+						
+						
+						<p align="justify"><b>C) La Posición de la Cámara</b>.</p>
+						
+						<p align="justify">La vista del mapa se modela como una cámara mirando hacia abajo en un plano. La posición de la cámara (y por tanto la representación del mapa)
+						se especifica mediante las siguientes propiedades: objetivo (<em><strong>ubicación de latitud / longitud</strong></em>) , <em><strong>rumbo</strong></em> , <em><strong>inclinación</strong></em> y <em><strong>zoom</strong></em> .</p>
+						
+						<li><img src="../../../../../IMG/Grupo4/mapa 5.png" alt="" width="500" height="500"></li></br>
+						<h2><strong>VIII) ¿CÓMO DIBUJAR UN MAPA</strong>?</h2>
+						  
+						 <p align="justify"><b>A) Marcadores</b>.</p>
+						
+						<p align="justify">Los marcadores indican ubicaciones únicas en el mapa. Si deseas personalizar los marcadores, puedes cambiar 
+						el color predeterminado o reemplazar su ícono por una imagen personalizada. Las ventanas de información pueden proporcionarle contexto adicional a un marcador.</p>
+						
+						
+						<p align="justify"><b>B) Introducción</b>.</p>
+						
+						<p align="justify">Los marcadores identifican ubicaciones en el mapa. El marcador predeterminado utiliza un ícono estándar, que refleja el estilo de <em><strong>Google Maps</strong></em>. Es posible cambiar el color, la imagen o el punto de anclaje del 
+						ícono a través de la API. Los marcadores son objetos de tipo <em><strong>Marker</strong></em> y se agregan al mapa con el método <em><strong>GoogleMap.addMarker(markerOptions)</strong></em><strong>.</strong></p>
+						  
+						<p align="justify">Los marcadores están diseñados para ser interactivos. Reciben eventos de clic <em>(click)</em> de forma predeterminada y, a menudo, 
+						se utilizan con los objetos de escucha de eventos para mostrar ventanas de información</p> 
+						
+						
+						<p align="justify"><b>C) Agrega un Marcador</b>.</p>
+						
+						<p align="justify">En el siguiente ejemplo, se muestra cómo agregar un marcador a un mapa. 
+						El marcador se crea en las coordenadas 10,10 y muestra la string<strong><em> "Hola mundo"</em></strong> en una ventana de información cuando se hace clic en él.</p>
+												<li><img src="../../../../../IMG/Grupo4/mapa 6.png" alt="" width="400" height="150"></li></br>
+						
+						<p align="justify"><b>D) Asocia Datos a un Marcador</b>.</p>
+						
+						<p align="justify">Utiliza el método <em><strong>Marker.setTag()</strong></em> para almacenar un objeto de datos arbitrario con un marcador y el método <strong><em>Marker.getTag()</em></strong> para recuperar dicho objeto</p>
+
+												
+											
+						  	<p align="justify"><b>E) Configura un Marcador Para que sea Arrastrable</b>.</p>
+
+						<p align="justify">De forma predeterminada, los marcadores no son arrastrables. Debes configurarlos explícitamente como tales con el método 
+						<strong><em>MarkerOptions.draggable(boolean)</em></strong> antes de agregarlos al mapa o con el método <strong><em>Marker.setDraggable(boolean)</em></strong> 
+						después de agregarlos.</p> 
+						
+						
+						<p align="justify"><b>F) Controla los Eventos de Marcador</b>.</p>
+
+						<p align="justify">La API de Google Maps permite escuchar eventos de marcador y responder a ellos. Para escuchar estos eventos, debes configurar el objeto de escucha 
+						correspondiente en el objeto <strong><em>GoogleMap</em></strong> al que pertenecen los marcadores. 
+						<br></br>
+						Cuando se produzca el evento en uno de los marcadores del mapa, se invocará la devolución de llamada del objeto de escucha y se pasará el objeto <strong><em>Marker</em></strong> correspondiente como 
+						parámetro.</p></br>
+					 <h2><strong>IX) VENTANAS DE INFORMACIÓN</strong>.</h2>
+					 <p align="justify">Las ventanas de información son ventanas emergentes que muestran texto o imágenes encima del mapa. Están siempre ancladas a un marcador y, de forma predeterminada, 
+					 aparecen cuando se presiona el marcador.</p> 
+					 
+					 <p align="justify"><b>A) Introducción</b>.</p>
+
+						<p align="justify">Las ventanas de información te permiten mostrarles información a los usuarios cuando presionan un marcador. Solo se muestra una de estas ventanas a la vez. Si un usuario hace clic en un marcador, se cerrará la ventana de información actual y se mostrará la nueva. 
+
+						Ten en cuenta que, si el usuario hace clic en un marcador que actualmente muestra una ventana de información, se cerrará y se volverá a 
+						abrir esa misma ventana.</p> 
+						
+					
+					<p align="justify"><b>B) Agrega una Ventana de Información</b>.</p>
+
+						<p align="justify">La manera más simple de agregar una ventana de información es configurar los métodos <em><strong>title()</strong> y <strong>snippet()</strong></em> del marcador correspondiente. 
+
+							Si se configuran esas propiedades, se mostrará una ventana de información cada vez que se haga clic en el marcador.</p> 
+							
+						<li><img src="../../../../../IMG/Grupo4/mapa 7.png" alt="" width="450" height="100"></li></br>
+					
+					<p align="justify"><b>C) Muestra u Oculta una Ventana de Información</b>.</p>
+
+						<p align="justify">Las ventanas de información están diseñadas para responder a eventos táctiles de los usuarios. 
+						<br></br>
+							Si lo prefieres, puedes hacer que se muestre una ventana de información de manera programática. Para ello, llama a <strong><em>showInfoWindow()</em></strong> en el marcador de orientación. 
+							Llama a <strong><em>hideInfoWindow()</em></strong> para ocultarla.</p>
+												<li><img src="../../../../../IMG/Grupo4/mapa 8.png" alt="" width="450" height="100"></li>
+<div align="justify">
+  <ol>
+    <li></li>
+  </ol>
+</div>
+<div align="justify"></div></div>
 				</div>
 			</div>
 		</div>
