@@ -70,7 +70,7 @@
 				<div class="col-lg-12">
 					<h1>Desarrollo de Sistemas II</h1>
                     </br>
-                    <h1>Touch-Screen</h1>
+                    <h1>Sensores</h1>
 				</div>
 			</div>
 		</div>
@@ -83,9 +83,1931 @@
 			<div class="row">
 				<div class>
 				  <div class="inner-column">
-						<h1><span>Título:</span></h1>
-					<h4>Subtítulo:</h4>
+						<h1><span>Título:Sensores</span></h1>
 						<p>Contenido:</p>
+						<p>Descripción general de sensores </p>
+
+<p>La mayoría de los dispositivos con Android tienen sensores integrados que miden el movimiento, la orientación y diversas condiciones ambientales. Estos sensores son capaces de proporcionar datos sin procesar con alta precisión y exactitud, y son útiles para supervisar el movimiento o posicionamiento tridimensional del dispositivo, o si quieres supervisar los cambios en el entorno ambiental cerca de un dispositivo. Por ejemplo, un juego puede hacer un seguimiento de las lecturas del sensor de gravedad de un dispositivo para inferir gestos y movimientos complejos del usuario, como inclinación, agitación, rotación o balanceo. Del mismo modo, una aplicación meteorológica podría usar el sensor de temperatura y el sensor de humedad de un dispositivo para calcular e informar el punto de condensación, o una aplicación de viaje podría usar el sensor de campo geomagnético y el acelerómetro para informar la dirección de una brújula. </p>
+
+<p>Consulta los siguientes recursos relacionados: </p>
+
+<p>• Sensores </p>
+
+<p>• Sensores de movimiento </p>
+
+<p>• Sensores de posición </p>
+
+<p>• Sensores ambientales </p>
+
+<p>• Reproducción de acelerómetro </p>
+
+<p>• Demostraciones de API (SO: RotationVectorDemo) </p>
+
+<p>La plataforma de Android admite tres amplias categorías de sensores: </p>
+
+<p>• Sensores de movimiento </p>
+
+<p>Estos sensores miden las fuerzas de aceleración y las fuerzas de rotación en tres ejes. Esta categoría incluye acelerómetros, sensores de gravedad, giroscopios y sensores del vector de rotación. </p>
+
+<p>• Sensores ambientales </p>
+
+<p>Estos sensores miden varios parámetros ambientales, como la temperatura y la presión del aire ambiental, la iluminación y la humedad. Esta categoría incluye barómetros, fotómetros y termómetros. </p>
+
+<p>• Sensores de posición </p>
+
+<p>Estos sensores miden la posición física de un dispositivo. Esta categoría incluye sensores de orientación y magnetómetros. </p>
+
+<p>Puedes acceder a los sensores disponibles en el dispositivo y adquirir datos sin procesar del sensor mediante el marco de trabajo del sensor de Android. El marco de trabajo del sensor proporciona varias clases e interfaces que ayudan a realizar una amplia variedad de tareas relacionadas con el sensor. Por ejemplo, puedes usar el marco de trabajo del sensor para las siguientes tareas:</p>
+
+<p>• Determina qué sensores están disponibles en un dispositivo. </p>
+
+<p>• Determina las capacidades de un sensor individual, como su rango máximo, el fabricante, los requisitos de energía y la resolución. </p>
+
+<p>• Adquiere datos sin procesar del sensor y define la velocidad mínima con la que adquirirás los datos del sensor. </p>
+
+<p>• Registra y cancela el registro de oyentes de objetos de escucha de eventos que supervisan los cambios del sensor. </p>
+
+<p>En este tema, se proporciona una descripción general de los sensores que están disponibles en la plataforma de Android. También se proporciona una introducción al marco de trabajo del sensor. </p>
+
+<p>Introducción a los sensores </p>
+
+<p>El marco de trabajo del sensor de Android permite acceder a muchos tipos de sensores. Algunos de estos sensores se basan en hardware y otros en software. Los sensores basados en hardware son componentes físicos integrados en un dispositivo de mano o tablet. Para obtener los datos, miden directamente propiedades ambientales específicas, como la aceleración, la intensidad del campo geomagnético o el cambio angular. Los sensores basados en software no son dispositivos físicos, aunque imitan los sensores basados en hardware. Los sensores basados en software derivan sus datos de uno o más de los sensores basados en hardware y, a veces, se denominan sensores virtuales o sensores sintéticos. El sensor de aceleración lineal y el sensor de gravedad son ejemplos de sensores basados en software. En la tabla 1, se resumen los sensores que son compatibles con la plataforma de Android. </p>
+
+<p>Solo unos pocos dispositivos con Android tienen todos los tipos de sensores. Por ejemplo, la mayoría de los dispositivos manuales y tablets tienen un acelerómetro y un magnetómetro, pero solo unos pocos dispositivos tienen barómetros o termómetros. Además, un dispositivo puede tener más de un sensor de un tipo determinado. Por ejemplo, un dispositivo puede tener dos sensores de gravedad, cada uno con un rango diferente. </p>
+
+<p><b>Tabla 1: </b>Tipos de sensores compatibles con la plataforma de Android </p>
+
+<p>Sensor Tipo Descripción Usos habituales </p>
+
+<br />
+<p>TYPE_ACCELEROMETER Hardware Mide en m/s <sup>2</sup>la fuerza de aceleración que se aplica a un dispositivo en los tres ejes físicos (x, y, z), </p>
+
+<p>incluida la fuerza de gravedad. </p>
+
+<p>TYPE_AMBIENT_TEMPERATURE Hardware Mide la temperatura ambiente de la habitación en grados Celsius (°C). Consulta la siguiente nota. </p>
+
+<p>Detección de </p>
+
+<p>movimiento </p>
+
+<p>(agitación, </p>
+
+<p>inclinación, etc.). </p>
+
+<p>Supervisión de la temperatura del air</p>
+
+<br />
+<p>TYPE_GRAVITY Software o </p>
+
+<p>hardware </p>
+
+<p>Mide en m/s<sup>2</sup>la fuerza de gravedad que se aplica a un dispositivo en los tres ejes físicos (x, y, z). </p>
+
+<p>Detección de movimiento </p>
+
+<p>(agitación, </p>
+
+<p>inclinación, etc.).</p>
+
+<br />
+<p>TYPE_GYROSCOPE Hardware Mide en rad/s la velocidad de rotación de un dispositivo alrededor de cada uno de los tres ejes </p>
+
+<p>físicos (x, y, z). </p>
+
+<p>Detección de </p>
+
+<p>rotación (agitación,giro, etc.). </p>
+
+<br />
+<p>TYPE_LIGHT Hardware Mide el nivel de luz ambiental (iluminación) en lx. Control del brillo dla pantalla. </p>
+
+<br />
+<p>TYPE_LINEAR_ACCELERATION Software o </p>
+
+<p>hardware </p>
+
+<p>Mide en m/s<sup>2</sup>la fuerza de aceleración que se aplica a un dispositivo en los tres ejes físicos (x, y, z), excluyendo la fuerza de gravedad. </p>
+
+<p>Supervisión de la aceleración a lo largo de un solo ej</p>
+
+<br />
+<p>TYPE_MAGNETIC_FIELD Hardware Mide el campo geomagnético ambiental de los tres ejes físicos (x, y, z) en μT. </p>
+
+<p>TYPE_ORIENTATION Software Mide los grados de rotación de un dispositivo alrededor de los tres ejes físicos (x, y, z). A partir de </p>
+
+<p>la API nivel 3, puedes obtener la matriz de </p>
+
+<p>inclinación y la matriz de rotación de un dispositivo </p>
+
+<p>mediante el uso del sensor de gravedad y el sensor </p>
+
+<p>del campo geomagnético de un dispositivo usando </p>
+
+<p>el sensor de gravedad junto con el </p>
+
+<p>método getRotationMatrix(). </p>
+
+<p>TYPE_PRESSURE Hardware Mide la presión del aire del ambiente en hPa o mbar. </p>
+
+<p>TYPE_PROXIMITY Hardware Mide en cm la proximidad de un objeto con respecto a la pantalla de visualización de un dispositivo. Este </p>
+
+<p>sensor en general se usa para determinar si un </p>
+
+<p>dispositivo manual se está sosteniendo cerca del </p>
+
+<p>oído de una persona. </p>
+
+<p>TYPE_RELATIVE_HUMIDITY Hardware Mide en valor de porcentaje (%) la humedad relativa del ambiente. </p>
+
+<p>Creación de una brújula. </p>
+
+<p>Determinación de lposición del </p>
+
+<p>dispositivo. </p>
+
+<p>Supervisa los cambios de la presión del aire. </p>
+
+<p>Posición del teléfodurante una </p>
+
+<p>llamada. </p>
+
+<p>Supervisa el puntode condensación, lhumedad absolutala humedad relativ</p>
+
+<br />
+<p>TYPE_ROTATION_VECTOR Software o </p>
+
+<p>hardware </p>
+
+<p>Mide la orientación de un dispositivo mediante los tres elementos del vector de rotación del dispositivo. </p>
+
+<p>Detección de movimiento y detección de rotación. </p>
+
+<br />
+<p>TYPE_TEMPERATURE Hardware Mide la temperatura del dispositivo en grados Celsius (°C). La implementación de este sensor </p>
+
+<p>varía según el dispositivo; en la API nivel 14 se </p>
+
+<p>reemplazó por el </p>
+
+<p>sensor TYPE_AMBIENT_TEMPERATURE. </p>
+
+<p>Supervisión de temperaturas.</p>
+
+<br />
+<p>Marco de trabajo del sensor </p>
+
+<p>Puedes acceder a estos sensores y adquirir datos del sensor sin procesar con el marco de trabajo del sensor de Android. El marco de trabajo del sensor es parte del paquete android.hardware e incluye las siguientes clases e interfaces: </p>
+
+<p>SensorManager </p>
+
+<p>Puedes usar esta clase para crear una instancia del servicio del sensor. Esta clase proporciona varios métodos para acceder a sensores y escucharlos, registrar y cancelar el registro de objetos de escucha de sensores de eventos y adquirir información de orientación. También proporciona varias constantes del sensor que se usan para informar la exactitud del sensor, definir las velocidades de adquisición de datos y calibrar sensores. </p>
+
+<p>Sensor </p>
+
+<p>Puedes usar esta clase para crear una instancia de un sensor específico. Esta clase proporciona varios métodos que permiten determinar las capacidades de un sensor. </p>
+
+<p>SensorEvent </p>
+
+<p>El sistema usa esta clase para crear un objeto de evento de sensor, que proporciona información sobre un evento del sensor. Un objeto de evento de sensor incluye la siguiente información: los datos sin procesar del sensor, el tipo de sensor que generó el evento, la exactitud de los datos y la marca de tiempo del evento. </p>
+
+<p>SensorEventListener </p>
+
+<p>Puedes usar esta interfaz para crear dos métodos de devolución de llamada que reciben notificaciones (eventos del sensor) cuando cambian los valores del sensor o cuando cambia la exactitud del sensor. </p>
+
+<p>En una aplicación típica, estas API relacionadas con sensores se usan para realizar dos tareas básicas: </p>
+
+<p>• <b>Identificación de sensores y capacidades de los sensores </b></p>
+
+<p>La identificación de sensores y capacidades de sensores en el tiempo de ejecución es útil si la aplicación tiene características que dependen de tipos o capacidades de sensores específicos. Por ejemplo, es posible que quieras identificar todos los sensores que están presentes en un dispositivo e inhabilitar las funciones de la aplicación que dependen de sensores que no están presentes. Del mismo modo, es posible que quieras identificar todos los sensores de un tipo determinado para que puedas elegir la implementación del sensor que tenga el rendimiento óptimo para tu aplicación. </p>
+
+<p>• <b>Supervisión de los eventos del sensor </b></p>
+
+<p>La supervisión de los eventos del sensor es la manera en la que adquieres los datos sin procesar del sensor. Un evento de sensor ocurre cada vez que un sensor detecta un cambio en los parámetros que está midiendo. Un evento de sensor proporciona cuatro tipos de datos: el nombre del sensor que activó el evento, la marca de tiempo del evento, la exactitud del evento y los datos sin procesar del sensor que activaron el evento.</p>
+
+<p>Disponibilidad del sensor </p>
+
+<p>Si bien la disponibilidad del sensor varía de un dispositivo a otro, también puede variar de una versión de Android a otra. Esto se debe a que los sensores de Android se introdujeron en el transcurso de varias versiones de la plataforma. Por ejemplo, muchos sensores se introdujeron en Android 1.5 (API nivel 3), pero algunos no se implementaron ni estuvieron disponibles hasta Android 2.3 (API nivel 9). Asimismo, se introdujeron varios sensores en Android 2.3 (API nivel 9) y Android 4.0 (API nivel 14). Dos sensores dejaron de estar disponibles y se reemplazaron por sensores más recientes y mejorados. </p>
+
+<p>En la tabla 2, se resume la disponibilidad de los sensores en cada una de las plataformas. Solo se enumeran cuatro plataformas porque son las plataformas que involucraron cambios en los sensores. Los sensores enumerados como obsoletos seguirán estando disponibles en plataformas posteriores (siempre que el sensor esté presente en un dispositivo), en concordancia con la política de compatibilidad de versiones anteriores de Android. </p>
+
+<p><b>Tabla 2. </b>Disponibilidad de sensores por plataforma </p>
+
+<br />
+<p><sub>Sensor</sub>Android 4.0 (API nivel 14) </p>
+
+<p>Android 2.3 (API nivel 9) </p>
+
+<p>Android 2.2 (API nivel 8) </p>
+
+<p>Android 1.5 (API nivel 3) </p>
+
+<br />
+<p>TYPE_ACCELEROMETER Sí Sí Sí Sí TYPE_AMBIENT_TEMPERATURE Sí n/a n/a n/a TYPE_GRAVITY Sí Sí n/a n/a </p>
+
+<p>TYPE_GYROSCOPE Sí Sí n/a<sup>1 </sup>n/a<sup>1</sup> TYPE_LIGHT Sí Sí Sí Sí TYPE_LINEAR_ACCELERATION Sí Sí n/a n/a TYPE_MAGNETIC_FIELD Sí Sí Sí Sí TYPE_ORIENTATION Sí<sup>2 </sup>Sí<sup>2 </sup>Sí<sup>2 </sup>Sí TYPE_PRESSURE Sí Sí n/a<sup>1 </sup>n/a<sup>1</sup> TYPE_PROXIMITY Sí Sí Sí Sí TYPE_RELATIVE_HUMIDITY Sí n/a n/a n/a TYPE_ROTATION_VECTOR Sí Sí n/a n/a </p>
+
+<p>TYPE_TEMPERATURE Sí<sup>2 </sup>Sí Sí Sí </p>
+
+<p><b><sup>1 </sup></b>Este tipo de sensor se agregó en Android 1.5 (API nivel 3), pero no estuvo disponible para Android 2.3 (API nivel 9). </p>
+
+<p><b><sup>2 </sup></b>Este sensor está disponible, pero es obsoleto.</p>
+
+<p>Identificación de sensores y capacidades de sensores </p>
+
+<p>El marco de trabajo del sensor de Android proporciona varios métodos que te permiten determinar con facilidad en el tiempo de ejecución qué sensores están en un dispositivo. La API también proporciona métodos que permiten determinar las capacidades de cada sensor, como el rango máximo, la resolución y los requisitos de potencia. </p>
+
+<p>Para identificar los sensores que están en un dispositivo, primero debes obtener una referencia al servicio del sensor. Para ello, crea una instancia de la clase SensorManager llamando al método getSystemService() y pasando el argumento SENSOR_SERVICE. Por ejemplo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); </p>
+
+<p>Luego, puedes obtener una lista de cada sensor en un dispositivo llamando al método getSensorList() y utilizando la constante TYPE_ALL. Por ejemplo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>List&lt;Sensor&gt; deviceSensors = sensorManager.getSensorList(Sensor.TYPE_ALL); </p>
+
+<p>Si quieres enumerar todos los sensores de un tipo determinado, puedes usar otra constante en lugar de TYPE_ALL, como TYPE_GYROSCOPE, TYPE_LINEAR_ACCELERATION o TYPE_GRAVITY. </p>
+
+<p>También puedes determinar si un tipo específico de sensor existe en un dispositivo mediante el método getDefaultSensor() y pasar la constante de tipo para un sensor específico. Si un dispositivo tiene más de un sensor de un tipo determinado, uno de los sensores se debe designar como el sensor predeterminado. Si no existe un sensor predeterminado para un tipo de sensor dado, la llamada al método mostrará un valor nulo, lo que significa que el dispositivo no tiene ese tipo de sensor. Por ejemplo, en el siguiente código, se comprueba si hay un magnetómetro en un dispositivo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null){ // Success! There's a magnetometer. </p>
+
+<p>} else { </p>
+
+<p>// Failure! No magnetometer. </p>
+
+<p>} </p>
+
+<p><b>Nota: </b>Android no requiere que los fabricantes de dispositivos construyan ningún tipo particular de sensores en sus dispositivos con Android, por lo que los dispositivos pueden tener una amplia gama de configuraciones de sensor. </p>
+
+<p>Además de enumerar los sensores que están en un dispositivo, puedes usar los métodos públicos de la clase Sensor para determinar las capacidades y los atributos de los sensores individuales. Esto es útil si quieres que tu aplicación se comporte de manera diferente según los sensores o las </p>
+
+<p>capacidades de los sensores disponibles en un dispositivo. Por ejemplo, puedes usar los métodos getResolution() y getMaximumRange() para obtener la resolución de un sensor y el rango máximo de medición. También puedes usar el método getPower() para obtener los requisitos de energía de un sensor. </p>
+
+<p>Dos de los métodos públicos son particularmente útiles si quieres optimizar tu aplicación para diferentes sensores del fabricante o diferentes versiones de un sensor. Por ejemplo, si tu aplicación necesita supervisar gestos del usuario, como inclinar y agitar, puedes crear un conjunto de reglas y optimizaciones para dispositivos más nuevos, que tengan un sensor de gravedad específico, y otro conjunto de reglas de filtrado de datos y optimizaciones para dispositivos que no tengan sensor de gravedad y solo tengan un acelerómetro. En el siguiente ejemplo de código, se muestra cómo puedes usar los métodos getVendor() y getVersion() para hacer esto. En esta muestra, buscamos un sensor de gravedad que enumere a Google LLC como proveedor y que tenga el número de versión 3. Si ese sensor en particular no está presente en el dispositivo, intentamos usar el acelerómetro. </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor mSensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); mSensor = null; </p>
+
+<p>if (sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY) != null){ List&lt;Sensor&gt; gravSensors = sensorManager.getSensorList(Sensor.TYPE_GRAVITY); for(int i=0; i&lt;gravSensors.size(); i++) { </p>
+
+<p>if ((gravSensors.get(i).getVendor().contains("Google LLC")) &amp;&amp; </p>
+
+<p>(gravSensors.get(i).getVersion() == 3)){ </p>
+
+<p>// Use the version 3 gravity sensor. </p>
+
+<p>mSensor = gravSensors.get(i); </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>if (mSensor == null){ </p>
+
+<p>// Use the accelerometer. </p>
+
+<p>if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null){ mSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); } else{ </p>
+
+<p>// Sorry, there are no accelerometers on your device. </p>
+
+<p>// You can't play this game. </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>Otro método útil es el método getMinDelay(), que muestra el intervalo de tiempo mínimo (en microsegundos) que un sensor puede usar para detectar datos. Cualquier sensor que muestre un valor distinto de cero para el método getMinDelay() es un sensor de transmisión. Los sensores de </p>
+
+<p>transmisión detectan datos a intervalos regulares y se introdujeron en Android 2.3 (API nivel 9). Si un sensor muestra cero cuando llamas al método getMinDelay(), significa que el sensor no es un sensor de transmisión, porque informa datos solo cuando hay un cambio en los parámetros que está detectando. </p>
+
+<p>El método getMinDelay() es útil porque te permite determinar la velocidad máxima con la que un sensor puede adquirir datos. Si ciertas características de la aplicación requieren altas velocidades de adquisición de datos o un sensor de transmisión, puedes usar este método para determinar si un sensor cumple con esos requisitos y luego habilitar o inhabilitar las funciones relevantes en tu aplicación según corresponda. </p>
+
+<p><b>Precaución: </b>La velocidad máxima de adquisición de datos de un sensor no es necesariamente la velocidad con la que el marco del sensor entrega los datos a la aplicación. El marco de trabajo del sensor informa los datos a través de eventos del sensor, y varios factores influyen en la velocidad a la que la aplicación recibe los eventos del sensor. Para obtener más información, consulta Cómo supervisar los eventos del sensor. </p>
+
+<p>Cómo supervisar los eventos del sensor </p>
+
+<p>Para supervisar los datos sin procesar del sensor, debes implementar dos métodos de devolución de llamada expuestos a través de la </p>
+
+<p>interfaz SensorEventListener: onAccuracyChanged() y onSensorChanged(). El sistema Android llama a estos métodos siempre que ocurre lo siguiente: </p>
+
+<p>• <b>La exactitud de un sensor cambia. </b></p>
+
+<p>En este caso, el sistema invoca el método onAccuracyChanged(), que proporciona una referencia al objeto Sensor que cambió y la nueva exactitud del sensor. La exactitud está representada por una de las cuatro constantes de </p>
+
+<p>estado: SENSOR_STATUS_ACCURACY_LOW, SENSOR_STATUS_ACCURACY_MEDIUM, SENSOR_STATUS_ACCU RACY_HIGH o SENSOR_STATUS_UNRELIABLE. </p>
+
+<p>• <b>Un sensor informa un valor nuevo. </b></p>
+
+<p>En este caso, el sistema invoca el método onSensorChanged(), que proporciona un objeto SensorEvent. Un objeto SensorEvent contiene información sobre los nuevos datos del sensor, por ejemplo, la exactitud de los datos, el sensor que generó los datos, la marca de tiempo en la que se generaron los datos y los nuevos datos que registró el sensor. </p>
+
+<p>En el siguiente código, se muestra cómo usar el método onSensorChanged() para supervisar los datos del sensor de luz. En este ejemplo, se muestran los datos sin procesar del sensor en un TextView que se define en el archivo main.xml como sensor_data. </p>
+
+<p>KOTLINJAVA </p>
+
+<p>public class SensorActivity extends Activity implements SensorEventListener { private SensorManager sensorManager; </p>
+
+<p>private Sensor mLight; </p>
+
+<p>@Override </p>
+
+<p>public final void onCreate(Bundle savedInstanceState) { </p>
+
+<p>super.onCreate(savedInstanceState);</p>
+
+<p>setContentView(R.layout.main); </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); mLight = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT); </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>public final void onAccuracyChanged(Sensor sensor, int accuracy) { // Do something here if sensor accuracy changes. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>public final void onSensorChanged(SensorEvent event) { </p>
+
+<p>// The light sensor returns a single value. </p>
+
+<p>// Many sensors return 3 values, one for each axis. </p>
+
+<p>float lux = event.values[0]; </p>
+
+<p>// Do something with this sensor value. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onResume() { </p>
+
+<p>super.onResume(); </p>
+
+<p>sensorManager.registerListener(this, mLight, </p>
+
+<p>SensorManager.SENSOR_DELAY_NORMAL); </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onPause() { </p>
+
+<p>super.onPause(); </p>
+
+<p>sensorManager.unregisterListener(this); </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>En este ejemplo, el retraso de los datos predeterminado (SENSOR_DELAY_NORMAL) se especifica cuando se invoca el método registerListener(). El retraso de los datos (o la tasa de muestreo) controla el intervalo en el que los eventos del sensor se envían a la aplicación a través del método de devolución de llamada onSensorChanged(). El retraso de datos predeterminado es adecuado para supervisar los cambios típicos de orientación de la pantalla y utiliza un retraso de 200,000 microsegundos. Puedes especificar otros retrasos de datos, como SENSOR_DELAY_GAME (retraso de 20,000 microsegundos), SENSOR_DELAY_UI (retraso de 60,000 microsegundos) o SENSOR_DELAY_FASTEST (retraso de 0 microsegundos). A partir de Android 3.0 (API nivel 11), también puedes especificar el retraso como un valor absoluto (en microsegundos). </p>
+
+<p>El retraso que especificas es solo un retraso sugerido. El sistema Android y otras aplicaciones pueden modificar este retraso. Como práctica recomendada, debes evitar especificar del retraso más largo posible, porque el sistema en general usa un retraso menor que el que especificas (es decir, debes elegir la tasa de muestreo más baja que cumpla con las necesidades de tu aplicación). El uso</p>
+
+<p>de un retraso mayor impone una carga menor en el procesador y, por lo tanto, usa menos alimentación. </p>
+
+<p>No existe un método público para determinar la velocidad a la que el marco de trabajo del sensor envía eventos del sensor a tu aplicación; sin embargo, puedes usar las marcas de tiempo asociadas con cada evento del sensor para calcular la tasa de muestreo en varios eventos. No es necesario cambiar la tasa de muestreo (retraso) una vez definida. Si por algún motivo necesitas cambiar el retraso, deberás cancelar el registro y volver a registrar el objeto de escucha. </p>
+
+<p>También es importante tener en cuenta que este ejemplo utiliza los métodos de devolución de llamada onResume() y onPause() para registrar el evento y cancelar el registro del objeto de escucha del sensor. Como práctica recomendada, siempre debes desactivar los sensores que no necesitas, en especial, cuando la actividad está en pausa. De lo contrario, es posible que la batería se agote en unas horas, ya que algunos sensores tienen requisitos de alimentación intensa y pueden agotar la batería con rapidez. El sistema no inhabilitará los sensores automáticamente cuando la pantalla se apague. </p>
+
+<p>Cómo controlar diferentes configuraciones del sensor </p>
+
+<p>Android no especifica una configuración de sensor estándar para dispositivos, lo que significa que los fabricantes de dispositivos pueden incorporar cualquier configuración de sensor que deseen en sus dispositivos con Android. Como resultado, los dispositivos pueden incluir una variedad de sensores en una amplia gama de configuraciones. Si la aplicación se basa en un tipo específico de sensor, debes asegurarte de que el sensor esté presente en un dispositivo para que la aplicación se pueda ejecutar correctamente. </p>
+
+<p>Tienes dos opciones para garantizar que un sensor determinado esté presente en un dispositivo: </p>
+
+<p>• Detecta sensores en el tiempo de ejecución y habilita o inhabilita las características de la aplicación según corresponda. </p>
+
+<p>• Usa los filtros de Google Play para apuntar a dispositivos con configuraciones de sensor específicas. En las siguientes secciones, se analiza cada una de las opciones. </p>
+
+<p><b>Detecta los sensores en el tiempo de ejecución </b></p>
+
+<p>Si tu aplicación usa un tipo específico de sensor, pero no depende de él, puedes usar el marco de trabajo del sensor para detectar el sensor en el tiempo de ejecución y luego inhabilitar o habilitar las características de la aplicación según corresponda. Por ejemplo, una aplicación de navegación podría usar el sensor de temperatura, el sensor de presión, el sensor GPS y el sensor del campo geomagnético para mostrar la temperatura, la presión barométrica, la ubicación y la dirección de la brújula. Si un dispositivo no tiene sensor de presión, puedes usar el marco de trabajo del sensor para detectar la ausencia del sensor de presión en el tiempo de ejecución y luego inhabilitar la parte de la IU de la aplicación que muestra la presión. Por ejemplo, en el siguiente código, se comprueba si hay un sensor de presión en un dispositivo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>...</p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); if (sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE) != null){ // Success! There's a pressure sensor. </p>
+
+<p>} else { </p>
+
+<p>// Failure! No pressure sensor. </p>
+
+<p>} </p>
+
+<p>Usa los filtros de Google Play para orientar configuraciones específicas de sensores </p>
+
+<p>Si estás publicando tu aplicación en Google Play, puedes usar el elemento &lt;uses-feature&gt; en el archivo de manifiesto para filtrar la aplicación en los dispositivos que no tienen la configuración de sensor adecuada para tu aplicación. El elemento &lt;uses-feature&gt; tiene varios descriptores de hardware que te permiten filtrar aplicaciones según la presencia de sensores específicos. Algunos de los sensores que puedes incluir son los siguientes: acelerómetro, barómetro, brújula (campo geomagnético), giroscopio, luz y proximidad. La siguiente es una entrada de manifiesto de ejemplo que filtra las apps que no tienen un acelerómetro: </p>
+
+<p>&lt;uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" /&gt; </p>
+
+<p>Si agregas este elemento y descriptor al manifiesto de tu aplicación, los usuarios verán tu aplicación en Google Play solo si el dispositivo tiene un acelerómetro. </p>
+
+<p>Debes establecer el descriptor en android:required="true" solo si tu aplicación se basa completamente en un sensor específico. Si tu aplicación utiliza un sensor para alguna funcionalidad, pero aún se ejecuta sin el sensor, debes incluir el sensor en el elemento &lt;uses-feature&gt;, pero establecer el descriptor en android:required="false". Esto ayuda a garantizar que los dispositivos puedan instalar la app incluso si no tienen ese sensor en particular. Esta es también una práctica recomendada de administración de proyectos que te ayuda a hacer un seguimiento de las funciones que usa tu app. Ten en cuenta que, si la aplicación usa un sensor en particular, pero aún se ejecuta sin el sensor, debes detectar el sensor en el tiempo de ejecución y habilitar o inhabilitar las características de la aplicación según corresponda. </p>
+
+<p>Sistema de coordenadas del sensor </p>
+
+<p>En general, el marco de trabajo del sensor utiliza un sistema de coordenadas estándar de 3 ejes para expresar valores de datos. Para la mayoría de los sensores, el sistema de coordenadas se define en relación con la pantalla del dispositivo cuando el dispositivo se mantiene en su orientación predeterminada (consulta la figura 1). Cuando un dispositivo se mantiene en la orientación predeterminada, el eje X es horizontal y apunta hacia la derecha; el eje Y es vertical y apunta hacia arriba; y el eje Z apunta hacia el exterior de la pantalla. En este sistema, las coordenadas de la pantalla tienen valores Z negativos. Los siguientes sensores utilizan este sistema de coordenadas:</p>
+
+<p><b>Figura 1: </b>Sistema de coordenadas (en relación con un dispositivo) que usa la API del sensor • Sensor de aceleración </p>
+
+<p>• Sensor de gravedad </p>
+
+<p>• Giroscopio </p>
+
+<p>• Sensor de aceleración lineal </p>
+
+<p>• Sensor de campo geomagnético </p>
+
+<p>El punto más importante para comprender este sistema de coordenadas es que los ejes no cambian cuando cambia la orientación de la pantalla; es decir, el sistema de coordenadas nunca cambia a medida que el dispositivo se mueve. Este comportamiento es el mismo que el del sistema de coordenadas OpenGL. </p>
+
+<p>Otro punto que debes comprender es que tu aplicación no debe suponer que la orientación natural (predeterminada) de un dispositivo será la orientación vertical. La orientación natural de muchos dispositivos tablet es horizontal. Además, el sistema de coordenadas del sensor siempre se basa en la orientación natural del dispositivo. </p>
+
+<p>Finalmente, si la aplicación hace coincidir los datos del sensor con la visualización en pantalla, debes usar el método getRotation() para determinar la rotación de la pantalla y, luego, usar el método remapCoordinateSystem() para asignar las coordenadas del sensor a las coordenadas de la pantalla. Debes hacer esto incluso si el manifiesto especifica una pantalla de solo retrato. </p>
+
+<p><b>Nota: </b>Algunos sensores y métodos usan un sistema de coordenadas que es relativo al marco de referencia del mundo (en oposición al marco de referencia del dispositivo). Estos sensores y métodos muestran datos que representan el movimiento del dispositivo o la posición del dispositivo en relación con la Tierra. Para obtener más información, consulta el método <b>getOrientation()</b>, el método <b>getRotationMatrix()</b>, el sensor de orientación y el sensor del vector de rotación. </p>
+
+<p>Prácticas recomendadas para acceder a los sensores y usarlos </p>
+
+<p>Cuando diseñes la implementación del sensor, asegúrate de seguir las pautas que se analizan en esta sección. Estas pautas son prácticas recomendadas para cualquier persona que esté usando el marco de trabajo del sensor para acceder a los sensores y adquirir sus datos.</p>
+
+<p>Recopila solo datos de los sensores en segundo plano </p>
+
+<p>En los dispositivos que ejecutan Android 9 (API nivel 28) o posterior, las aplicaciones que se ejecutan en segundo plano tienen las siguientes restricciones: </p>
+
+<p>• Los sensores que usan el modo de generación de informes continuo, como acelerómetros y giroscopios, no reciben eventos. </p>
+
+<p>• Los sensores que utilizan los modos de generación de informes cuando se producen cambios o por única vez no reciben eventos. </p>
+
+<p>Teniendo en cuenta estas restricciones, es mejor detectar los eventos del sensor cuando la app está en primer plano o como parte de un servicio en primer plano. </p>
+
+<p>Cancela el registro de los objetos de escucha de los sensores </p>
+
+<p>Asegúrate de cancelar el registro de los objetos de escucha del sensor cuando hayas terminado de usar el sensor o cuando se detenga la actividad del sensor. Si se registra un objeto de escucha del sensor y se detiene la actividad, el sensor continuará adquiriendo datos y consumiendo recursos de </p>
+
+<p>la batería, a menos que canceles el registro del sensor. En el siguiente código, se muestra cómo usar el método onPause() para cancelar el registro de un objeto de escucha: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>... </p>
+
+<p>@Override </p>
+
+<p>protected void onPause() { </p>
+
+<p>super.onPause(); </p>
+
+<p>sensorManager.unregisterListener(this); </p>
+
+<p>} </p>
+
+<p>Para obtener más información, consulta unregisterListener(SensorEventListener). </p>
+
+<p>Haz una prueba con Android Emulator </p>
+
+<p>Android Emulator incluye un conjunto de controles de sensores virtuales que permiten probar sensores como el acelerómetro, la temperatura ambiente, el magnetómetro, la proximidad, la luz y más.</p>
+
+<p>El emulador usa una conexión con un dispositivo Android que ejecuta la app SdkControllerSensor. Ten en cuenta que esta app solo está disponible en dispositivos con Android 4.0 (API nivel 14) o versiones posteriores. (Si el dispositivo ejecuta Android 4.0, debe tener la revisión 2 instalada). La app <i>SdkControllerSensor </i>supervisa los cambios en los sensores del dispositivo y los transmite al emulador. El emulador se transforma en función de los nuevos valores que recibe de los sensores del dispositivo. </p>
+
+<p>Puedes ver el código fuente de la app <i>SdkControllerSensor </i>en la siguiente ubicación: </p>
+
+<p>$ <b><i>your-android-sdk-directory</i></b>/tools/apps/SdkController </p>
+
+<p>Para transferir datos entre tu dispositivo y el emulador, sigue estos pasos: </p>
+
+<p>1. Comprueba que la depuración de USB esté habilitada en tu dispositivo. </p>
+
+<p>2. Conecta el dispositivo a la máquina de desarrollo con un cable USB.</p>
+
+<p>3. Inicia la app <i>SdkControllerSensor </i>en tu dispositivo. </p>
+
+<p>4. En la app, selecciona los sensores que quieras emular. </p>
+
+<p>5. Ejecuta el siguiente comando adb: </p>
+
+<p>$ adb forward tcp:1968 tcp:1968 </p>
+
+<p>6. Inicia el emulador. Aplica las transformaciones al emulador moviendo el dispositivo. </p>
+
+<p><b>Nota: </b>Si los movimientos que haces en el dispositivo físico no transforman el emulador, intenta ejecutar el comando <b>adb </b>del paso 5 de nuevo. </p>
+
+<p>Para obtener más información, consulta la Guía de Android Emulator. </p>
+
+<p>No bloquees el método onSensorChanged() </p>
+
+<p>Los datos del sensor pueden cambiar a una velocidad alta, lo que significa que es posible que el sistema llame al método onSensorChanged(SensorEvent) con bastante frecuencia. Como práctica recomendada, debes hacer lo menos posible dentro del </p>
+
+<p>método onSensorChanged(SensorEvent) para no bloquearlo. Si tu aplicación requiere que hagas un filtro de datos o que reduzcas los datos del sensor, debes realizar ese trabajo fuera del método onSensorChanged(SensorEvent). </p>
+
+<p>Evita usar métodos o tipos de sensores obsoletos </p>
+
+<p>Varios métodos y constantes ya no están disponibles. En particular, el tipo de </p>
+
+<p>sensor TYPE_ORIENTATION es obsoleto. Para obtener datos de orientación, debes utilizar el método getOrientation() en su lugar. Del mismo modo, el tipo de sensor TYPE_TEMPERATURE es obsoleto. En su lugar, debes usar el tipo de sensor TYPE_AMBIENT_TEMPERATURE en dispositivos que ejecutan Android 4.0. </p>
+
+<p>Comprueba los sensores antes de usarlos </p>
+
+<p>Siempre comprueba que existe un sensor en un dispositivo antes de intentar obtener datos de él. No supongas que existe un sensor simplemente porque es un sensor de uso frecuente. Los fabricantes de dispositivos no están obligados a proporcionar sensores particulares en sus dispositivos. </p>
+
+<p>Elige los retrasos del sensor con cuidado </p>
+
+<p>Cuando registres un sensor con el método registerListener(), asegúrate de elegir un ritmo de entrega adecuado para tu aplicación o caso de uso. Los sensores pueden proporcionar datos a ritmos muy rápidos. Si permites que el sistema envíe datos adicionales que no necesitas, se desperdician recursos del sistema y se consume batería. </p>
+
+<p>Sensores de movimiento</p>
+
+<p>La plataforma Android proporciona varios sensores que te permiten supervisar el movimiento de un dispositivo. </p>
+
+<p>Las arquitecturas disponibles varían según el tipo de sensor: </p>
+
+<p>• Los sensores vectoriales de rotación, de gravedad, de aceleración lineal, de movimiento significativo, de contador de pasos y de detector de pasos se basan en hardware o en software. </p>
+
+<p>• Los sensores del acelerómetro y del giroscopio siempre están basados en hardware. </p>
+
+<p>La mayoría de los dispositivos Android tienen un acelerómetro, y ahora muchos incluyen un giroscopio. La disponibilidad de los sensores basados en software es más variada porque, a menudo, dependen de uno o más sensores de hardware para obtener sus datos. Según el dispositivo, estos sensores basados en software pueden obtener sus datos del acelerómetro y el magnetómetro, o del giroscopio. </p>
+
+<p>Los sensores de movimiento son útiles para supervisar el movimiento del dispositivo, como la inclinación, la vibración, la rotación o el balanceo. El movimiento suele ser un reflejo de la interacción directa del usuario (por ejemplo, un jugador que conduce un vehículo o controla una pelota), pero también puede ser un reflejo del entorno físico en el que se encuentra el dispositivo (por ejemplo, moviéndose contigo mientras viajas en automóvil). En el primer caso, estás supervisando un movimiento relacionado con el marco de referencia del dispositivo o de tu aplicación; en cambio, en el segundo, estás supervisando un movimiento relacionado con el marco de referencia terrestre. Los sensores de movimiento por sí solos no suelen utilizarse para supervisar la posición del dispositivo, pero pueden usarse con otros sensores, como el de campo geomagnético, para determinar la posición de un dispositivo en relación con el marco de referencia terrestre (consulta Sensores de posición para obtener más información). </p>
+
+<p>Todos los sensores de movimiento muestran matrices multidimensionales de valores de sensor para cada SensorEvent. Por ejemplo, durante un evento de un solo sensor, el acelerómetro muestra datos de fuerza de aceleración para los tres ejes de coordenadas, y el giroscopio muestra datos de velocidad de rotación para esos mismos ejes. Estos valores de datos se muestran en una matriz float (values), junto con otros parámetros SensorEvent. En la tabla 1, se resumen los sensores de movimiento disponibles en la plataforma Android. </p>
+
+<p><b>Tabla 1: </b>Sensores de movimiento compatibles con la plataforma Android </p>
+
+<p>Sensor Datos de eventos de los sensores Descripción Unidades de me</p>
+
+<p>TYPE_ACCELEROMETER SensorEvent.values[0] Indica la </p>
+
+<p>m/s<sup>2</sup> </p>
+
+<p>fuerza de </p>
+
+<p>aceleración </p>
+
+<p>en el eje x </p>
+
+<p>(incluida la </p>
+
+<p>gravedad). </p>
+
+<p>SensorEvent.values[1] Indica la </p>
+
+<p>fuerza de </p>
+
+<p>aceleración </p>
+
+<p>en el eje Y </p>
+
+<p>(incluida la </p>
+
+<p>gravedad). </p>
+
+<p>SensorEvent.values[2] Indica la </p>
+
+<p>fuerza de </p>
+
+<p>aceleración </p>
+
+<p>en el eje z </p>
+
+<p>(incluida la </p>
+
+<p>gravedad). </p>
+
+<p>TYPE_ACCELEROMETER_UNCALIBRATED SensorEvent.values[0] Indica la </p>
+
+<p>m/s<sup>2</sup> </p>
+
+<p>aceleración </p>
+
+<p>medida en el </p>
+
+<p>eje X sin </p>
+
+<p>compensación </p>
+
+<p>de sesgo. </p>
+
+<p>SensorEvent.values[1] Indica la </p>
+
+<p>aceleración </p>
+
+<p>medida en el </p>
+
+<p>eje Y sin </p>
+
+<p>compensación </p>
+
+<p>de sesgo. </p>
+
+<p>SensorEvent.values[2] Indica la </p>
+
+<p>aceleración </p>
+
+<p>medida en el </p>
+
+<p>eje Z sin </p>
+
+<p>compensación </p>
+
+<p>de sesgo. </p>
+
+<p>SensorEvent.values[3] Indica la </p>
+
+<p>aceleración </p>
+
+<p>medida en el </p>
+
+<p>eje X con </p>
+
+<p>compensación </p>
+
+<p>de sesgo </p>
+
+<p>estimada. </p>
+
+<p>SensorEvent.values[4] Indica la </p>
+
+<p>aceleración </p>
+
+<p>medida en el </p>
+
+<p>eje Y con </p>
+
+<p>compensación </p>
+
+<p>de sesgo </p>
+
+<p>estimada. </p>
+
+<p>SensorEvent.values[5] Indica la </p>
+
+<p>aceleración </p>
+
+<p>medida en el </p>
+
+<p>eje Z con </p>
+
+<p>compensación </p>
+
+<p>de sesgo </p>
+
+<p>estimada. </p>
+
+<p>TYPE_GRAVITY SensorEvent.values[0] Indica la </p>
+
+<p>m/s<sup>2</sup> </p>
+
+<p>fuerza de </p>
+
+<p>gravedad en </p>
+
+<p>el eje X. </p>
+
+<p>SensorEvent.values[1] Indica la </p>
+
+<p>fuerza de </p>
+
+<p>gravedad en </p>
+
+<p>el eje y. </p>
+
+<p>SensorEvent.values[2] Indica la </p>
+
+<p>fuerza de </p>
+
+<p>gravedad en </p>
+
+<p>el eje z. </p>
+
+<p>TYPE_GYROSCOPE SensorEvent.values[0] Indica la </p>
+
+<p>rad/s </p>
+
+<p>rotación </p>
+
+<p>alrededor del </p>
+
+<p>eje x. </p>
+
+<p>SensorEvent.values[1] Indica la </p>
+
+<p>rotación </p>
+
+<p>alrededor del </p>
+
+<p>eje y. </p>
+
+<p>SensorEvent.values[2] Indica la </p>
+
+<p>rotación </p>
+
+<p>alrededor del </p>
+
+<p>eje z. </p>
+
+<p>TYPE_GYROSCOPE_UNCALIBRATED SensorEvent.values[0] Indica la </p>
+
+<p>rad/s </p>
+
+<p>velocidad de </p>
+
+<p>rotación (sin </p>
+
+<p>compensación </p>
+
+<p>de variación) </p>
+
+<p>alrededor del </p>
+
+<p>eje x. </p>
+
+<p>SensorEvent.values[1] Indica la </p>
+
+<p>velocidad de </p>
+
+<p>rotación (sin </p>
+
+<p>compensación </p>
+
+<p>de variación) </p>
+
+<p>alrededor del </p>
+
+<p>eje y. </p>
+
+<p>SensorEvent.values[2] Indica la </p>
+
+<p>velocidad de </p>
+
+<p>rotación (sin </p>
+
+<p>compensación </p>
+
+<p>de variación) </p>
+
+<p>alrededor del </p>
+
+<p>eje z. </p>
+
+<p>SensorEvent.values[3] Indica la </p>
+
+<p>variación </p>
+
+<p>estimada </p>
+
+<p>alrededor del </p>
+
+<p>eje x. </p>
+
+<p>SensorEvent.values[4] Indica la </p>
+
+<p>variación </p>
+
+<p>estimada </p>
+
+<p>alrededor del </p>
+
+<p>eje y. </p>
+
+<p>SensorEvent.values[5] Indica la </p>
+
+<p>variación </p>
+
+<p>estimada </p>
+
+<p>alrededor del </p>
+
+<p>eje z. </p>
+
+<p>TYPE_LINEAR_ACCELERATION SensorEvent.values[0] Indica la </p>
+
+<p>m/s<sup>2</sup> </p>
+
+<p>fuerza de </p>
+
+<p>aceleración </p>
+
+<p>en el eje x (sin </p>
+
+<p>incluir la </p>
+
+<p>gravedad). </p>
+
+<p>SensorEvent.values[1] Indica la </p>
+
+<p>fuerza de </p>
+
+<p>aceleración </p>
+
+<p>en el eje y (sin </p>
+
+<p>incluir la </p>
+
+<p>gravedad). </p>
+
+<p>SensorEvent.values[2] Indica la </p>
+
+<p>fuerza de </p>
+
+<p>aceleración </p>
+
+<p>en el eje z (sin </p>
+
+<p>incluir la </p>
+
+<p>gravedad).</p>
+
+<br />
+<p>TYPE_ROTATION_VECTOR SensorEvent.values[0] Indica el componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación en el </p>
+
+<p>eje x (x * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[1] Indica el </p>
+
+<p>componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación en el </p>
+
+<p>eje y (y * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[2] Indica el </p>
+
+<p>componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación en el </p>
+
+<p>eje z (z * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[3] Indica el </p>
+
+<p>componente </p>
+
+<p>escalar del </p>
+
+<p>vector de </p>
+
+<p>rotación </p>
+
+<p>((cos(θ/2)).<sup>1</sup> </p>
+
+<p>Sin unidades </p>
+
+<br />
+<p>TYPE_SIGNIFICANT_MOTION N/D N/D N/D </p>
+
+<br />
+<p>TYPE_STEP_COUNTER SensorEvent.values[0] Indica la cantidad de </p>
+
+<p>pasos que dio </p>
+
+<p>el usuario </p>
+
+<p>desde el </p>
+
+<p>último reinicio </p>
+
+<p>mientras </p>
+
+<p>estaba </p>
+
+<p>activado el </p>
+
+<p>sensor. </p>
+
+<p>Pasos </p>
+
+<br />
+<p>TYPE_STEP_DETECTOR N/D N/D N/D <b><sup>1 </sup></b>El componente escalar es un valor opcional. </p>
+
+<p>El sensor vectorial de rotación y el sensor de gravedad son los sensores más utilizados para detectar y supervisar el movimiento. El sensor vectorial de rotación es muy versátil y puede utilizarse para una amplia gama de tareas relacionadas con el movimiento, como la detección de gestos y la supervisión de cambios angulares y de cambios de orientación relativos. Por ejemplo, el sensor vectorial de rotación es ideal si estás desarrollando un juego, una app de realidad aumentada, una </p>
+
+<p>brújula bidimensional o tridimensional, o una app de estabilización de cámara. En la mayoría de los casos, el uso de estos sensores es una mejor opción que utilizar el acelerómetro y el sensor de campo geomagnético, o el sensor de orientación. </p>
+
+<p>Sensores del Proyecto de código abierto de Android </p>
+
+<p>El Proyecto de código abierto de Android (AOSP) proporciona tres sensores de movimiento basados en software: uno de gravedad, uno de aceleración lineal y uno vectorial de rotación. Estos sensores se actualizaron en Android 4.0 y ahora utilizan el giroscopio de un dispositivo (además de otros sensores) para mejorar la estabilidad y el rendimiento. Si quieres probar esos sensores, puedes identificarlos utilizando los métodos getVendor() y getVersion() (el proveedor es Google LLC; el número de versión es 3). Es necesario identificar estos sensores por proveedor y número de versión, ya que el sistema Android considera que estos tres sensores son secundarios. Por ejemplo, si un fabricante de dispositivos proporciona su propio sensor de gravedad, entonces el de AOSP aparecerá como secundario. Los tres sensores dependen de un giroscopio: si un dispositivo no tiene giroscopio, no se mostrarán estos sensores y no se podrán utilizar. </p>
+
+<p>Cómo usar el sensor de gravedad </p>
+
+<p>El sensor de gravedad proporciona un vector tridimensional que indica la dirección y la magnitud de la gravedad. Por lo general, se utiliza este sensor para determinar la orientación relativa del dispositivo en el espacio. En el siguiente código, se muestra cómo obtener una instancia del sensor de gravedad predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY); </p>
+
+<p>Tanto las unidades como el sistema de coordenadas son los mismos que los que usa el sensor de aceleración (m/s<sup>2</sup>). </p>
+
+<p><b>Nota: </b>Cuando un dispositivo está en reposo, el resultado del sensor de gravedad debe ser idéntico al del acelerómetro. </p>
+
+<p>Cómo usar el acelerómetro lineal </p>
+
+<p>El sensor de aceleración lineal proporciona un vector tridimensional que representa la aceleración en cada eje del dispositivo, sin incluir la gravedad. Puedes utilizar este valor para detectar gestos. El valor también puede servir como entrada a un sistema de navegación inercial, que utiliza la navegación por estima. En el siguiente código, se muestra cómo obtener una instancia del sensor de aceleración lineal predeterminado:</p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION); </p>
+
+<p>Desde un punto de vista conceptual, este sensor proporciona datos de aceleración según la siguiente relación: </p>
+
+<p>linear acceleration = acceleration - acceleration due to gravity </p>
+
+<p>Por lo general, se utiliza cuando se desea obtener datos de aceleración sin la influencia de la gravedad. Por ejemplo, puedes usarlo para ver a qué velocidad se mueve tu auto. El sensor de aceleración lineal siempre tiene un desplazamiento, que se debe quitar. La forma más sencilla de hacerlo es incorporar un paso de calibración en tu app. Durante la calibración, se le puede pedir al usuario que coloque el dispositivo en una mesa y, a continuación, que lea los desplazamientos de los tres ejes. Luego, puedes restar ese desplazamiento de las lecturas directas del sensor de aceleración para obtener la aceleración lineal real. </p>
+
+<p>El sensor del sistema de coordinación es el mismo que el que usa el sensor de aceleración, así como las unidades de medida (m/s<sup>2</sup>). </p>
+
+<p>Cómo usar el sensor vectorial de rotación </p>
+
+<p>El vector de rotación representa la orientación del dispositivo como una combinación de un ángulo y un eje, en el que el dispositivo rota a través de un ángulo θ alrededor de un eje (x, y o z). En el siguiente código, se muestra cómo obtener una instancia del sensor vectorial de rotación predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR); </p>
+
+<p>Los tres elementos del vector de rotación se expresan de la siguiente manera:</p>
+<img src="../../../IMG/sen1.jpg"/>
+<p>Donde la magnitud del vector de rotación es igual a sin(θ/2), y la dirección del vector de rotación es igual a la dirección del eje de rotación. </p>
+<img src="../../../IMG/sen2.png"/>
+<p><b>Figura 1: </b>Sistema de coordenadas que usa el sensor vectorial de rotación </p>
+
+<p>Los tres elementos del vector de rotación son iguales a los tres últimos componentes de un cuaternio unitario (cos(θ/2), x*sin(θ/2), y*sin(θ/2) y z*sin(θ/2)). Los elementos del vector de rotación no tienen unidades. Los ejes x, y y z se definen de la misma manera que el sensor de aceleración. El sistema de coordenadas de referencia se define como una base ortonormal directa (consulta la figura 1). Este sistema de coordenadas tiene las siguientes características: </p>
+
+<p>• X se define como el producto vectorial Y x Z. Es tangencial al suelo en la posición actual del dispositivo y apunta aproximadamente hacia el este. </p>
+
+<p>• Y es tangencial al suelo en la posición actual del dispositivo y apunta hacia el polo norte geomagnético. </p>
+
+<p>• Z apunta hacia el cielo y es perpendicular al plano terrestre. </p>
+
+<p>Para ver una aplicación de ejemplo que muestre cómo utilizar el sensor vectorial de rotación, consulta RotationVectorDemo.java. </p>
+
+<p>Cómo usar el sensor de movimiento significativo </p>
+
+<p>El sensor de movimiento significativo activa un evento cada vez que se detecta un movimiento significativo; luego, se desactiva automáticamente. Un movimiento significativo es un movimiento que puede llevar a un cambio en la ubicación del usuario; por ejemplo, caminar, andar en bicicleta o estar </p>
+
+<p>sentado en un automóvil en movimiento. En el siguiente código, se muestra cómo obtener una instancia del sensor de movimiento significativo predeterminado y cómo registrar un receptor de eventos: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>private TriggerEventListener triggerEventListener; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_SIGNIFICANT_MOTION); </p>
+
+<p>triggerEventListener = new TriggerEventListener() { </p>
+
+<p>@Override </p>
+
+<p>public void onTrigger(TriggerEvent event) { </p>
+
+<p>// Do work </p>
+
+<p>} </p>
+
+<p>}; </p>
+
+<p>sensorManager.requestTriggerSensor(triggerEventListener, mSensor); Para obtener más información, consulta TriggerEventListener. </p>
+
+<p>Cómo usar el sensor del contador de pasos </p>
+
+<p>El sensor del contador de pasos muestra la cantidad de pasos que dio el usuario desde el último reinicio mientras estaba activado el sensor. Tiene más latencia (hasta 10 segundos) que el sensor del detector de pasos, pero también es más preciso. </p>
+
+<p><b>Nota: </b>Debes declarar el permiso <b>ACTIVITY_RECOGNITION </b>para que tu app pueda utilizar este sensor en dispositivos que ejecuten Android 10 (nivel de API 29) o una versión posterior. </p>
+
+<p>En el siguiente código, se muestra cómo obtener una instancia del sensor del contador de pasos predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER); </p>
+
+<p>Para preservar la batería de los dispositivos que ejecutan tu app, debes utilizar la clase JobScheduler a fin de recuperar el valor actual del sensor del contador de pasos en un intervalo específico. Si bien distintos tipos de apps requieren diferentes intervalos de lectura del sensor, deberías hacer que ese intervalo sea lo más largo posible, a menos que tu app requiera datos del sensor en tiempo real.</p>
+
+<p>Cómo usar el sensor del detector de pasos </p>
+
+<p>Este sensor activa un evento cada vez que el usuario da un paso. Se espera que la latencia sea inferior a 2 segundos. </p>
+
+<p><b>Nota: </b>Debes declarar el permiso <b>ACTIVITY_RECOGNITION </b>para que tu app pueda utilizar este sensor en dispositivos que ejecuten Android 10 (nivel de API 29) o una versión posterior. </p>
+
+<p>En el siguiente código, se muestra cómo obtener una instancia del sensor del detector de pasos predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR); </p>
+
+<p>Cómo trabajar con datos sin procesar </p>
+
+<p>Los siguientes sensores le proporcionan a tu app datos sin procesar sobre las fuerzas lineales y de rotación que se aplican al dispositivo. Para utilizar de forma efectiva los valores de esos sensores, es necesario filtrar los factores del entorno, como la gravedad. También puede ser necesario aplicar un algoritmo de suavizamiento a la tendencia de los valores para reducir el ruido. </p>
+
+<p>Cómo usar el acelerómetro </p>
+
+<p>Un sensor de aceleración mide la aceleración aplicada al dispositivo, incluida la fuerza de gravedad. En el siguiente código, se muestra cómo obtener una instancia del sensor de aceleración predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); </p>
+
+<p>Desde un punto de vista conceptual, un sensor de aceleración determina la aceleración que se aplica a un dispositivo (Ad) midiendo las fuerzas que se aplican al propio sensor (Fs) mediante la siguiente relación:</p>
+<img src="../../../IMG/sen3.png"/>
+<p>Sin embargo, la fuerza de gravedad siempre influye en la aceleración medida según la siguiente relación: </p>
+<img src="../../../IMG/sen4.png"/>
+<p>Por este motivo, cuando el dispositivo está sobre una mesa (y no acelera), el acelerómetro lee una magnitud de g = 9.81 m/s.<sup>2</sup>. Del mismo modo, cuando el dispositivo está en caída libre y, por lo tanto, acelera rápidamente hacia el suelo a 9.81 m/s<sup>2</sup>, su acelerómetro lee una magnitud de g = 0 m/s<sup>2</sup>. En consecuencia, para medir la aceleración real del dispositivo, debe quitarse la contribución de la fuerza de gravedad de los datos del acelerómetro. Esto puede lograrse aplicando un filtro de paso alto. Por el contrario, se puede utilizar un filtro de paso bajo para aislar la fuerza de gravedad. En el siguiente ejemplo, se muestra cómo puedes hacerlo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>public void onSensorChanged(SensorEvent event){ </p>
+
+<p>// In this example, alpha is calculated as t / (t + dT), </p>
+
+<p>// where t is the low-pass filter's time-constant and </p>
+
+<p>// dT is the event delivery rate. </p>
+
+<p>final float alpha = 0.8; </p>
+
+<p>// Isolate the force of gravity with the low-pass filter. </p>
+
+<p>gravity[0] = alpha * gravity[0] + (1 - alpha) * event.values[0]; </p>
+
+<p>gravity[1] = alpha * gravity[1] + (1 - alpha) * event.values[1]; </p>
+
+<p>gravity[2] = alpha * gravity[2] + (1 - alpha) * event.values[2]; </p>
+
+<p>// Remove the gravity contribution with the high-pass filter. </p>
+
+<p>linear_acceleration[0] = event.values[0] - gravity[0]; </p>
+
+<p>linear_acceleration[1] = event.values[1] - gravity[1]; </p>
+
+<p>linear_acceleration[2] = event.values[2] - gravity[2]; </p>
+
+<p>} </p>
+
+<p><b>Nota: </b>Puedes utilizar técnicas diferentes para filtrar los datos de los sensores. El ejemplo de código anterior utiliza una simple constante de filtro (Alfa) para crear un filtro de paso bajo. Esta constante de filtro se obtiene de una constante de tiempo (t), que es una representación aproximada de la latencia que el filtro agrega a los eventos del sensor, y la tasa de entrega de eventos del sensor (dt). Para fines de demostración, el ejemplo de código utiliza un valor de Alfa de 0.8. Si utilizas este método de filtrado, es posible que debas elegir otro valor de Alfa. </p>
+
+<p>Los acelerómetros utilizan el sensor estándar del sistema de coordinación. En la práctica, esto significa que se aplican las siguientes condiciones cuando se coloca un dispositivo en posición horizontal sobre una mesa en su orientación natural: </p>
+
+<p>• Si corres el dispositivo a la izquierda (para que se mueva hacia la derecha), el valor de la aceleración x será positivo. </p>
+
+<p>• Si aprietas el dispositivo hacia abajo (para que se aleje de ti), el valor de aceleración y será positivo. </p>
+
+<p>• Si levantas el dispositivo con una aceleración de A m/s<sup>2</sup>, el valor de aceleración z será igual a A + 9.81, que se corresponderá con la aceleración del dispositivo (+A m/s<sup>2</sup>) menos la fuerza de gravedad (-9.81 m/s<sup>2</sup>).</p>
+
+<p>• El dispositivo estacionario tendrá un valor de aceleración de +9.81, que se corresponderá con la aceleración del dispositivo (0 m/s<sup>2 </sup>menos la fuerza de gravedad, es decir, -9.81 m/s<sup>2</sup>). </p>
+
+<p>En general, se recomienda usar el acelerómetro para supervisar el movimiento del dispositivo. Casi todos los teléfonos y tablets Android incluyen uno y utilizan aproximadamente 10 veces menos batería que los otros sensores de movimiento. Una desventaja es que posiblemente debas implementar filtros de paso bajo y alto para eliminar las fuerzas gravitacionales y reducir el ruido. </p>
+
+<p>El SDK de Android proporciona una aplicación de ejemplo que muestra cómo utilizar el sensor de aceleración (AccelerometerPlay). </p>
+
+<p>Cómo usar el giroscopio </p>
+
+<p>El giroscopio mide la velocidad de rotación en rad/s alrededor de los ejes x, y y z de un dispositivo. En el siguiente código, se muestra cómo obtener una instancia del giroscopio predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE); </p>
+
+<p>El sensor del sistema de coordinación es el mismo que el que se usa para el sensor de aceleración. La rotación es positiva en sentido contrario a las agujas del reloj; es decir, mirando desde algún lugar positivo de los ejes x, y o z de un dispositivo situado en el origen, se obtendría una rotación positiva si el dispositivo pareciera estar girando en sentido contrario a las agujas del reloj. Esta es la definición matemática estándar de rotación positiva y no es la misma que la definición de alabeo que utiliza el sensor de orientación. </p>
+
+<p>Por lo general, se integra el resultado del giroscopio a lo largo del tiempo para calcular una rotación que describa el cambio de los ángulos. Por ejemplo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>// Create a constant to convert nanoseconds to seconds. </p>
+
+<p>private static final float NS2S = 1.0f / 1000000000.0f; </p>
+
+<p>private final float[] deltaRotationVector = new float[4](); </p>
+
+<p>private float timestamp; </p>
+
+<p>public void onSensorChanged(SensorEvent event) { </p>
+
+<p>// This timestep's delta rotation to be multiplied by the current rotation // after computing it from the gyro sample data. </p>
+
+<p>if (timestamp != 0) { </p>
+
+<p>final float dT = (event.timestamp - timestamp) * NS2S; </p>
+
+<p>// Axis of the rotation sample, not normalized yet. </p>
+
+<p>float axisX = event.values[0]; </p>
+
+<p>float axisY = event.values[1]; </p>
+
+<p>float axisZ = event.values[2];</p>
+
+<p>// Calculate the angular speed of the sample </p>
+
+<p>float omegaMagnitude = sqrt(axisX*axisX + axisY*axisY + axisZ*axisZ); </p>
+
+<p>// Normalize the rotation vector if it's big enough to get the axis // (that is, EPSILON should represent your maximum allowable margin of error) if (omegaMagnitude &gt; EPSILON) { </p>
+
+<p>axisX /= omegaMagnitude; </p>
+
+<p>axisY /= omegaMagnitude; </p>
+
+<p>axisZ /= omegaMagnitude; </p>
+
+<p>} </p>
+
+<p>// Integrate around this axis with the angular speed by the timestep // in order to get a delta rotation from this sample over the timestep // We will convert this axis-angle representation of the delta rotation // into a quaternion before turning it into the rotation matrix. </p>
+
+<p>float thetaOverTwo = omegaMagnitude * dT / 2.0f; </p>
+
+<p>float sinThetaOverTwo = sin(thetaOverTwo); </p>
+
+<p>float cosThetaOverTwo = cos(thetaOverTwo); </p>
+
+<p>deltaRotationVector[0] = sinThetaOverTwo * axisX; </p>
+
+<p>deltaRotationVector[1] = sinThetaOverTwo * axisY; </p>
+
+<p>deltaRotationVector[2] = sinThetaOverTwo * axisZ; </p>
+
+<p>deltaRotationVector[3] = cosThetaOverTwo; </p>
+
+<p>} </p>
+
+<p>timestamp = event.timestamp; </p>
+
+<p>float[] deltaRotationMatrix = new float[9]; </p>
+
+<p>SensorManager.getRotationMatrixFromVector(deltaRotationMatrix, </p>
+
+<p>deltaRotationVector); </p>
+
+<p>// User code should concatenate the delta rotation we computed with the current rotation </p>
+
+<p>// in order to get the updated rotation. </p>
+
+<p>// rotationCurrent = rotationCurrent * deltaRotationMatrix; </p>
+
+<p>} </p>
+
+<p>Los giroscopios estándar proporcionan datos de rotación sin filtros ni correcciones de ruido y variación (sesgo). En la práctica, el ruido y la variación del giroscopio introducen errores que se deben compensar. Por lo general, se determinan la variación (sesgo) y el ruido mediante la supervisión de otros sensores, como el sensor de gravedad o el acelerómetro. </p>
+
+<p>Cómo usar el giroscopio no calibrado </p>
+
+<p>El giroscopio no calibrado es similar al giroscopio convencional, salvo que no se aplica ninguna compensación de giro a la velocidad de rotación. La calibración de fábrica y la compensación de temperatura también se aplican al índice de rotación. El giroscopio no calibrado es útil para el posprocesamiento y la fusión de datos de orientación. En general, gyroscope_event.values[0] se aproxima a uncalibrated_gyroscope_event.values[0] - </p>
+
+<p>uncalibrated_gyroscope_event.values[3]. Es decir:</p>
+
+<p>calibrated_x ~= uncalibrated_x - bias_estimate_x </p>
+
+<p><b>Nota: </b>Los sensores no calibrados proporcionan más resultados sin procesar y pueden incluir algún sesgo, aunque sus mediciones contienen menos saltos de correcciones aplicadas a través de la calibración. Es posible que en algunas aplicaciones se prefieran estos resultados sin calibrar como más fluidos y confiables. Por ejemplo, si una aplicación intenta realizar su propia fusión de sensores, introducir calibraciones puede distorsionar los resultados. </p>
+
+<p>Además de las velocidades de rotación, el giroscopio no calibrado también proporciona la variación estimada alrededor de cada eje. En el siguiente código, se muestra cómo obtener una instancia del giroscopio no calibrado predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE_UNCALIBRATED); </p>
+
+<p>Sensores de posición </p>
+
+<p>La plataforma Android proporciona dos sensores que te permiten determinar la posición de un dispositivo: el sensor de campos geomagnéticos y el acelerómetro. En esta plataforma, también se encuentra un sensor (llamado <i>sensor de proximidad</i>) que permite determinar cuán cerca de un objeto se encuentra la cara de un dispositivo. El sensor de campos geomagnéticos y el sensor de proximidad se basan en hardware. La mayoría de los fabricantes de dispositivos portátiles y tablets incluyen un sensor de campos geomagnéticos. De la misma manera, los fabricantes de dispositivos portátiles a menudo incluyen un sensor de proximidad para determinar cuándo el usuario está sosteniendo un dispositivo portátil cerca de su rostro (por ejemplo, durante una llamada telefónica). Para determinar la orientación de un dispositivo, puedes usar las lecturas del acelerómetro del dispositivo y el sensor de campos geomagnéticos. </p>
+
+<p><b>Nota: </b>El sensor de orientación quedó obsoleto en Android 2.2 (API nivel 8) y el tipo de sensor de orientación quedó obsoleto en Android 4.4W (API nivel 20). </p>
+
+<p>Los sensores de posición son útiles para determinar la posición física de un dispositivo en el marco de referencia mundial. Por ejemplo, puedes usar el sensor de campos geomagnéticos junto con el acelerómetro para determinar la posición de un dispositivo relativa al polo norte magnético. También puedes usar estos sensores para determinar la orientación de un dispositivo en el marco de referencia de la aplicación. Los sensores de posición no suelen usarse para supervisar el movimiento del dispositivo, por ejemplo, si se sacude, se inclina o se empuja (para obtener más información, consulta Sensores de movimiento). </p>
+
+<p>El sensor de campos geomagnéticos y el acelerómetro devuelven matrices multidimensionales de valores del sensor para cada SensorEvent. Por ejemplo, el sensor de campos geomagnéticos proporciona valores de fuerza de dicho campo para cada uno de los tres ejes de coordenadas durante un evento de sensor único. De la misma manera, el sensor acelerómetro mide la aceleración que se aplica a un dispositivo durante un evento de sensor. Para obtener más información sobre los sistemas de coordenadas que utilizan los sensores, consulta Sistemas de coordenadas de sensores. El sensor de proximidad proporciona un único valor para cada evento de sensor. En la tabla 1, se resumen los sensores de posición compatibles con la plataforma Android.</p>
+
+<p><b>Tabla 1. </b>Sensores de posición compatibles con la plataforma Android </p>
+
+<p>Sensor Datos de eventos de los sensores Descripción Unidades de m</p>
+
+<br />
+<p>TYPE_GAME_ROTATION_VECTOR SensorEvent.values[0] Indica el componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación junto </p>
+
+<p>al eje x (x * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[1] Indica el </p>
+
+<p>componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación junto </p>
+
+<p>al eje y (y * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[2] Indica el </p>
+
+<p>componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación junto </p>
+
+<p>al eje z (z * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>TYPE_GEOMAGNETIC_ROTATION_VECTOR SensorEvent.values[0] Indica el componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación junto </p>
+
+<p>al eje x (x * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[1] Indica el </p>
+
+<p>componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación junto </p>
+
+<p>al eje y (y * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>SensorEvent.values[2] Indica el </p>
+
+<p>componente </p>
+
+<p>vectorial de </p>
+
+<p>rotación junto </p>
+
+<p>al eje z (z * </p>
+
+<p>sin(θ/2)). </p>
+
+<p>TYPE_MAGNETIC_FIELD SensorEvent.values[0] Fuerza del campo </p>
+
+<p>Sin unidades Sin unidades μT</p>
+
+<br />
+<p>geomagnético </p>
+
+<p>junto al eje x. </p>
+
+<p>SensorEvent.values[1] Fuerza del </p>
+
+<p>campo </p>
+
+<p>geomagnético </p>
+
+<p>junto al eje y. </p>
+
+<p>SensorEvent.values[2] Fuerza del </p>
+
+<p>campo </p>
+
+<p>geomagnético </p>
+
+<p>junto al eje z. </p>
+
+<p>TYPE_MAGNETIC_FIELD_UNCALIBRATED SensorEvent.values[0] Fuerza del </p>
+
+<p>μT </p>
+
+<p>campo </p>
+
+<p>geomagnético </p>
+
+<p>(sin </p>
+
+<p>calibración de </p>
+
+<p>hierro </p>
+
+<p>resistente) </p>
+
+<p>junto al eje x. </p>
+
+<p>SensorEvent.values[1] Fuerza del </p>
+
+<p>campo </p>
+
+<p>geomagnético </p>
+
+<p>(sin </p>
+
+<p>calibración de </p>
+
+<p>hierro </p>
+
+<p>resistente) </p>
+
+<p>junto al eje y. </p>
+
+<p>SensorEvent.values[2] Fuerza del </p>
+
+<p>campo </p>
+
+<p>geomagnético </p>
+
+<p>(sin </p>
+
+<p>calibración de </p>
+
+<p>hierro </p>
+
+<p>resistente) </p>
+
+<p>junto al eje z. </p>
+
+<p>SensorEvent.values[3] Estimación </p>
+
+<p>del sesgo de </p>
+
+<p>hierro junto al </p>
+
+<p>eje x. </p>
+
+<p>SensorEvent.values[4] Estimación </p>
+
+<p>del sesgo de </p>
+
+<p>hierro junto al </p>
+
+<p>eje y.</p>
+
+<br />
+<p>SensorEvent.values[5] Estimación </p>
+
+<p>del sesgo de </p>
+
+<p>hierro junto al </p>
+
+<p>eje z. </p>
+
+<p>TYPE_ORIENTATION<sup>1 </sup>SensorEvent.values[0] Azimuth (ángulo en </p>
+
+<p>torno al eje </p>
+
+<p>z). </p>
+
+<p>SensorEvent.values[1] Pitch (ángulo </p>
+
+<p>en torno al </p>
+
+<p>eje x). </p>
+
+<p>SensorEvent.values[2] Roll (ángulo </p>
+
+<p>en torno al </p>
+
+<p>eje y). </p>
+
+<p>TYPE_PROXIMITY SensorEvent.values[0] Distancia respecto del </p>
+
+<p>objeto.<sup>2</sup> </p>
+
+<p>Grados cm </p>
+
+<br />
+<p><b><sup>1</sup></b>Este sensor quedó obsoleto en Android 2.2 (API nivel 8) y este tipo de sensor quedó obsoleto en Android 4.4W (API nivel 20). El marco de trabajo del sensor proporciona métodos alternativos para conseguir la orientación del dispositivo, que se analizan en Cómo computar la orientación del dispositivo. </p>
+
+<p><b><sup>2 </sup></b>Algunos sensores de proximidad solo proporcionan valores binarios que representan la cercanía y la lejanía. </p>
+
+<p>Cómo usar el sensor del vector de rotación del juego </p>
+
+<p>El sensor del vector de rotación del juego es idéntico al sensor del vector de rotación, excepto que no utiliza el campo geomagnético. Por lo tanto, el eje Y no apunta al norte, sino a otra referencia. A la referencia se le permite desviarse con el mismo orden de magnitud que las desviaciones del giroscopio en torno al eje Z. </p>
+
+<p>Dado que el sensor del vector de rotación del juego no utiliza el campo magnético, las rotaciones relativas son más precisas y no se ven afectadas por los cambios en el campo magnético. Puedes utilizar este sensor en un juego si no interesa dónde se encuentra el norte y el vector de rotación normal no se ajusta a tus necesidades porque depende del campo magnético. </p>
+
+<p>El siguiente código muestra cómo obtener una instancia del sensor del vector de rotación predeterminado del juego: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);</p>
+
+<p>Cómo usar el sensor del vector de rotación geomagnético </p>
+
+<p>El sensor del vector de rotación geomagnético es similar al sensor del vector de rotación, pero utiliza un magnetómetro en lugar de un giroscopio. La precisión de este sensor es inferior a la del sensor del vector de rotación normal, pero el consumo energético se ve reducido. Solo debes usar este sensor si deseas recopilar información de rotación en segundo plano sin gastar demasiada batería. Este sensor resulta más útil cuando se usa junto con el procesamiento por lotes. </p>
+
+<p>El siguiente código muestra cómo obtener una instancia del sensor del vector de rotación geomagnético predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR); </p>
+
+<p>Cómo computar la orientación del dispositivo </p>
+
+<p>Al computar la orientación de un dispositivo, puedes supervisar la orientación del dispositivo relativa al marco de referencia de la Tierra (específicamente, el polo norte magnético). El siguiente código muestra cómo computar la orientación de un dispositivo: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>... </p>
+
+<p>// Rotation matrix based on current readings from accelerometer and magnetometer. final float[] rotationMatrix = new float[9]; </p>
+
+<p>SensorManager.getRotationMatrix(rotationMatrix, null, </p>
+
+<p>accelerometerReading, magnetometerReading); </p>
+
+<p>// Express the updated rotation matrix as three orientation angles. final float[] orientationAngles = new float[3]; </p>
+
+<p>SensorManager.getOrientation(rotationMatrix, orientationAngles); </p>
+
+<p>El sistema computa los ángulos de orientación utilizando el sensor de campos geomagnéticos de un dispositivo junto con el acelerómetro del dispositivo. Cuando se usan estos dos sensores de hardware, el sistema proporciona datos para los siguientes tres ángulos de orientación: </p>
+
+<p>• <b>Azimuth (grados de rotación sobre el eje z). </b>Este es el ángulo entre la dirección del compás actual del dispositivo y el norte magnético. Si el borde superior del dispositivo apunta al norte magnético, el valor azimuth es de 0 grados; si el borde superior apunta al sur, el valor azimuth es de 180 grados. De igual modo, si el borde superior apunta al este, el valor azimuth es de 90 grados; en cambio, si apunta al oeste, el valor azimuth es de 270 grados.</p>
+
+<p>• <b>Pitch (grados de rotación sobre el eje x). </b>Este es el ángulo entre un plano paralelo a la pantalla del dispositivo y un plano paralelo al suelo. Si sostienes el dispositivo paralelo al suelo con el borde inferior lo más cerca posible de tu cuerpo e inclinas el borde superior del dispositivo hacia el suelo, el valor del ángulo de orientación pitch se convierte en positivo. La inclinación en sentido opuesto, es decir, alejando el borde superior del dispositivo respecto del suelo, provoca que el ángulo pitch se convierta en negativo. El rango de valores va de -180 grados a 180 grados. </p>
+
+<p>• <b>Roll (grados de rotación en torno al eje y). </b>Este es el ángulo entre un plano perpendicular a la pantalla del dispositivo y un plano perpendicular al suelo. Si sostienes el dispositivo paralelo al suelo con el borde inferior lo más cerca posible de tu cuerpo e inclinas el borde izquierdo del dispositivo hacia el suelo, el valor del ángulo de orientación roll se convierte en positivo. La inclinación en sentido opuesto, es decir, acerando el borde derecho del dispositivo hacia el suelo, provoca que el ángulo roll se convierta en negativo. El rango de valores va de -90 grados a 90 grados. </p>
+
+<p><b>Nota:</b>La definición de ángulo roll del sensor se modificó para que refleje la amplia mayoría de implementaciones en el ecosistema del geosensor. </p>
+
+<p>Ten en cuenta que estos ángulos trabajan a partir de un sistema de coordenadas diferente que el utilizado para la aviación (para orientaciones yaw, pitch y roll). En el sistema de aviación, el eje x se encuentra junto al lado largo del plano, desde la cola hasta la punta. </p>
+
+<p>Para derivar sus datos, el sensor de orientación procesa los datos del sensor sin procesar obtenidos del acelerómetro y del sensor de campos geomagnéticos. Dado que hay una gran carga de procesamiento, la precisión y la exactitud del sensor de orientación se ven reducidas. Específicamente, este sensor solo es confiable cuando el ángulo roll es 0. Como consecuencia, el sensor de orientación quedó obsoleto en Android 2.2 (API nivel 8) y el tipo de sensor de orientación quedó obsoleto en Android 4.4W (API nivel 20). En lugar de utilizar datos sin procesar obtenidos del sensor de orientación, recomendamos que utilices el método getRotationMatrix() junto con el método getOrientation() para computar los valores de orientación, tal como se muestra en el siguiente ejemplo de código. Como parte de este proceso, puedes usar el </p>
+
+<p>método remapCoordinateSystem() para traducir los valores de orientación al marco de referencia de la aplicación. </p>
+
+<p>KOTLINJAVA </p>
+
+<p>public class SensorActivity extends Activity implements SensorEventListener { </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private final float[] accelerometerReading = new float[3]; </p>
+
+<p>private final float[] magnetometerReading = new float[3]; </p>
+
+<p>private final float[] rotationMatrix = new float[9]; </p>
+
+<p>private final float[] orientationAngles = new float[3]; </p>
+
+<p>@Override </p>
+
+<p>public void onCreate(Bundle savedInstanceState) { </p>
+
+<p>super.onCreate(savedInstanceState); </p>
+
+<p>setContentView(R.layout.main); </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); } </p>
+
+<p>@Override</p>
+
+<p>public void onAccuracyChanged(Sensor sensor, int accuracy) { </p>
+
+<p>// Do something here if sensor accuracy changes. </p>
+
+<p>// You must implement this callback in your code. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onResume() { </p>
+
+<p>super.onResume(); </p>
+
+<p>// Get updates from the accelerometer and magnetometer at a constant rate. // To make batch operations more efficient and reduce power consumption, // provide support for delaying updates to the application. </p>
+
+<p>// </p>
+
+<p>// In this example, the sensor reporting delay is small enough such that // the application receives an update before the system checks the sensor // readings again. </p>
+
+<p>Sensor accelerometer = </p>
+
+<p>sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); </p>
+
+<p>if (accelerometer != null) { </p>
+
+<p>sensorManager.registerListener(this, accelerometer, </p>
+
+<p>SensorManager.SENSOR_DELAY_NORMAL, SensorManager.SENSOR_DELAY_UI); } </p>
+
+<p>Sensor magneticField = </p>
+
+<p>sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD); </p>
+
+<p>if (magneticField != null) { </p>
+
+<p>sensorManager.registerListener(this, magneticField, </p>
+
+<p>SensorManager.SENSOR_DELAY_NORMAL, SensorManager.SENSOR_DELAY_UI); } </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onPause() { </p>
+
+<p>super.onPause(); </p>
+
+<p>// Don't receive any more updates from either sensor. </p>
+
+<p>sensorManager.unregisterListener(this); </p>
+
+<p>} </p>
+
+<p>// Get readings from accelerometer and magnetometer. To simplify calculations, // consider storing these readings as unit vectors. </p>
+
+<p>@Override </p>
+
+<p>public void onSensorChanged(SensorEvent event) { </p>
+
+<p>if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) { </p>
+
+<p>System.arraycopy(event.values, 0, accelerometerReading, </p>
+
+<p>0, accelerometerReading.length); </p>
+
+<p>} else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) { System.arraycopy(event.values, 0, magnetometerReading, </p>
+
+<p>0, magnetometerReading.length);</p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>// Compute the three orientation angles based on the most recent readings from // the device's accelerometer and magnetometer. </p>
+
+<p>public void updateOrientationAngles() { </p>
+
+<p>// Update rotation matrix, which is needed to update orientation angles. SensorManager.getRotationMatrix(rotationMatrix, null, </p>
+
+<p>accelerometerReading, mMagnetometerReading); </p>
+
+<p>// "mRotationMatrix" now has up-to-date information. </p>
+
+<p>SensorManager.getOrientation(rotationMatrix, mOrientationAngles); </p>
+
+<p>// "mOrientationAngles" now has up-to-date information. </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>En general, no es necesario procesar ni filtrar datos sin procesar sobre los ángulos de orientación del dispositivo; solo necesitas traducir el sistema de coordenadas del sensor al marco de referencia de la aplicación. </p>
+
+<p>Cómo usar el sensor de campo geomagnético </p>
+
+<p>El sensor de campo geomagnético permite supervisar los cambios que se producen en el campo magnético de la Tierra. El siguiente código muestra cómo obtener una instancia del sensor de campo geomagnético predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD); </p>
+
+<p>Este sensor proporciona datos sin procesar sobre la fuerza del campo (en μT) para cada uno de los tres ejes de coordenadas. En general, no es necesario usar este sensor directamente. En cambio, puedes usar el sensor del vector de rotación para determinar el movimiento rotatorio sin procesar, o bien puedes usar el acelerómetro y el sensor de campo geomagnético junto con el método getRotationMatrix() para obtener la matriz de rotación y la matriz de inclinación. A continuación, puedes usar estas matrices con los </p>
+
+<p>métodos getOrientation() y getInclination() para obtener los datos de azimuth e inclinación geomagnética. </p>
+
+<p><b>Nota: </b>Al probar la app, puedes mejorar la precisión del sensor si mueves el dispositivo formando un 8 horizontal en el aire.</p>
+
+<p>Cómo usar el magnetómetro sin calibrar </p>
+
+<p>El magnetómetro sin calibrar es parecido al sensor de campo geomagnético, excepto que al campo magnético no se le aplica calibración de hierro resistente. Sí se le aplican la calibración de fábrica y la compensación de temperatura. El magnetómetro sin calibrar es útil para controlar las estimaciones defectuosas de hierro resistente. En general, geomagneticsensor_event.values[0] se aproxima a uncalibrated_magnetometer_event.values[0] - </p>
+
+<p>uncalibrated_magnetometer_event.values[3]. Es decir: </p>
+
+<p>calibrated_x ~= uncalibrated_x - bias_estimate_x </p>
+
+<p><b>Nota: </b>Los sensores no calibrados proporcionan más resultados sin procesar y pueden incluir algún sesgo, aunque sus mediciones contienen menos saltos de correcciones aplicadas a través de la calibración. Es posible que en algunas aplicaciones se prefieran estos resultados sin calibrar como más fluidos y confiables. Por ejemplo, si una aplicación intenta realizar su propia fusión de sensores, introducir calibraciones puede distorsionar los resultados. </p>
+
+<p>Además del campo magnético, el magnetómetro sin calibrar también proporciona el sesgo de hierro resistente estimado para cada eje. El siguiente código muestra cómo obtener una instancia del magnetómetro sin calibrar predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED); </p>
+
+<p>Cómo usar el sensor de proximidad </p>
+
+<p>El sensor de proximidad permite determinar a qué distancia se encuentra un objeto respecto de un dispositivo. El siguiente código muestra cómo obtener una instancia del sensor de proximidad predeterminado: </p>
+
+<p>KOTLINJAVA </p>
+
+<p>private SensorManager sensorManager; </p>
+
+<p>private Sensor sensor; </p>
+
+<p>... </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY); </p>
+
+<p>El sensor de proximidad a menudo se utiliza para determinar a qué distancia se encuentra la cabeza de una persona respecto de la cara de un dispositivo móvil (por ejemplo, cuando un usuario realiza o recibe una llamada telefónica). La mayoría de los sensores de proximidad informan la distancia absoluta en centímetros, pero algunos informan solo valores de cercanía y lejanía. El siguiente código muestra cómo usar el sensor de proximidad: </p>
+
+<p>KOTLINJAVA</p>
+
+<p>public class SensorActivity extends Activity implements SensorEventListener { private SensorManager sensorManager; </p>
+
+<p>private Sensor proximity; </p>
+
+<p>@Override </p>
+
+<p>public final void onCreate(Bundle savedInstanceState) { </p>
+
+<p>super.onCreate(savedInstanceState); </p>
+
+<p>setContentView(R.layout.main); </p>
+
+<p>// Get an instance of the sensor service, and use that to get an instance of // a particular sensor. </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); proximity = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY); } </p>
+
+<p>@Override </p>
+
+<p>public final void onAccuracyChanged(Sensor sensor, int accuracy) { // Do something here if sensor accuracy changes. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>public final void onSensorChanged(SensorEvent event) { </p>
+
+<p>float distance = event.values[0]; </p>
+
+<p>// Do something with this sensor data. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onResume() { </p>
+
+<p>// Register a listener for the sensor. </p>
+
+<p>super.onResume(); </p>
+
+<p>sensorManager.registerListener(this, proximity, </p>
+
+<p>SensorManager.SENSOR_DELAY_NORMAL); </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onPause() { </p>
+
+<p>// Be sure to unregister the sensor when the activity pauses. </p>
+
+<p>super.onPause(); </p>
+
+<p>sensorManager.unregisterListener(this); </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p><b>Nota: </b>Algunos sensores de proximidad informan valores binarios que indican si el objeto se encuentra "cerca" o "lejos". En este caso, el sensor a menudo informa el valor de rango máximo en cuanto a lejanía y un valor menor para cercanía. Generalmente, el valor de lejanía es &gt; 5 cm, pero puede variar según el sensor. Puedes usar el método <b>getMaximumRange() </b>para determinar el rango máximo de un sensor.</p>
+
+<p>Sensores de entorno </p>
+
+<p>La plataforma de Android proporciona cuatro sensores que permiten supervisar varias propiedades del entorno. Puedes usar estos sensores para supervisar la humedad ambiental relativa, la iluminación, la presión ambiental y la temperatura ambiente cerca de un dispositivo con Android. Los cuatro sensores de entorno están basados en hardware y están disponibles solo si un fabricante de dispositivos los incorporó en el dispositivo. A excepción del sensor de luz, que la mayoría de los fabricantes de dispositivos utilizan para controlar el brillo de la pantalla, los sensores de entorno no siempre están disponibles en los dispositivos. Debido a esto, es particularmente importante que verifiques en el tiempo de ejecución si existe un sensor de entorno antes de intentar adquirir datos de él. </p>
+
+<p>A diferencia de la mayoría de los sensores de movimiento y de posición, que muestran un arreglo multidimensional de valores de sensor para cada SensorEvent, los sensores de entorno devuelven un único valor de sensor para cada evento de datos. Por ejemplo, la temperatura en °C o la presión en hPa. Además, a diferencia de los sensores de movimiento y de posición, que suelen requerir filtrado alto o bajo, los sensores de entorno no suelen requerir ningún tipo de filtrado o procesamiento de datos. En la tabla 1, se proporciona un resumen de los sensores de entorno compatibles con la plataforma de Android. </p>
+
+<p><b>Tabla 1: </b>Sensores de entorno compatibles con la plataforma de Android. </p>
+
+<p>Sensor Datos del evento del sensor Unidades de medición Descripción de los </p>
+
+<p>TYPE_AMBIENT_TEMPERATURE event.values[0] °C Temperatura ambientTYPE_LIGHT event.values[0] lx Iluminación TYPE_PRESSURE event.values[0] hPa o mbar Presión de aire ambieTYPE_RELATIVE_HUMIDITY event.values[0] % Humedad relativa amb</p>
+
+<p>TYPE_TEMPERATURE event.values[0] °C Temperatura del dispositivo<sup>1</sup> </p>
+
+<p><b><sup>1 </sup></b>Las implementaciones varían de un dispositivo a otro. Este sensor quedó en desuso en Android 4.0 (API nivel 14). </p>
+
+<p>Cómo usar los sensores de luz, presión y temperatura </p>
+
+<p>Los datos sin procesar que obtienes de los sensores de luz, presión y temperatura en general no requieren calibración, filtrado ni modificación, lo que los convierte en algunos de los sensores más fáciles de usar. Para adquirir datos de estos sensores, primero debes crear una instancia de la clase SensorManager, que puedes usar para obtener una instancia de un sensor físico. Luego, registra un objeto de escucha de un sensor en el método onResume() y comienza a controlar los datos entrantes del sensor en el método de devolución de llamadas onSensorChanged(). En el siguiente código, se muestra cómo hacerlo: </p>
+
+<p>KOTLINJAVA</p>
+
+<p>public class SensorActivity extends Activity implements SensorEventListener { private SensorManager sensorManager; </p>
+
+<p>private Sensor pressure; </p>
+
+<p>@Override </p>
+
+<p>public final void onCreate(Bundle savedInstanceState) { </p>
+
+<p>super.onCreate(savedInstanceState); </p>
+
+<p>setContentView(R.layout.main); </p>
+
+<p>// Get an instance of the sensor service, and use that to get an instance of </p>
+
+<p>// a particular sensor. </p>
+
+<p>sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE); pressure = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE); </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>public final void onAccuracyChanged(Sensor sensor, int accuracy) { // Do something here if sensor accuracy changes. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>public final void onSensorChanged(SensorEvent event) { </p>
+
+<p>float millibarsOfPressure = event.values[0]; </p>
+
+<p>// Do something with this sensor data. </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onResume() { </p>
+
+<p>// Register a listener for the sensor. </p>
+
+<p>super.onResume(); </p>
+
+<p>sensorManager.registerListener(this, pressure, </p>
+
+<p>SensorManager.SENSOR_DELAY_NORMAL); </p>
+
+<p>} </p>
+
+<p>@Override </p>
+
+<p>protected void onPause() { </p>
+
+<p>// Be sure to unregister the sensor when the activity pauses. </p>
+
+<p>super.onPause(); </p>
+
+<p>sensorManager.unregisterListener(this); </p>
+
+<p>} </p>
+
+<p>} </p>
+
+<p>Siempre debes incluir implementaciones de los métodos de devolución de </p>
+
+<p>llamadas onAccuracyChanged() y onSensorChanged(). Además, asegúrate de cancelar siempre el registro de un sensor cuando una actividad se detenga. Esto evita que un sensor envíe continuamente datos y agote la batería.</p>
+
+<p>Cómo usar el sensor de humedad </p>
+
+<p>Puedes adquirir datos de humedad relativa sin procesar con el sensor de humedad de la misma manera que usas los sensores de luz, presión y temperatura. Sin embargo, si un dispositivo tiene un sensor de humedad (TYPE_RELATIVE_HUMIDITY) y un sensor de temperatura (TYPE_AMBIENT_TEMPERATURE), puedes usar estos dos flujos de datos para calcular el punto de condensación y la humedad absoluta. </p>
+
+<p>Punto de condensación </p>
+
+<p>El punto de condensación es la temperatura a la cual se debe enfriar un volumen dado de aire a presión barométrica constante para que el vapor del agua se condense en agua. En la siguiente ecuación, se muestra cómo calcular el punto de condensación: </p>
+<img src="../../../IMG/sen5.png"/>
+<p>Donde: </p>
+
+<p>• td = temperatura del punto de condensación en °C </p>
+
+<p>• t = temperatura real en °C </p>
+
+<p>• RH = humedad relativa real en porcentaje (%) </p>
+
+<p>• m = 17.62 </p>
+
+<p>• Tn = 243.12 </p>
+
+<p>Humedad absoluta </p>
+
+<p>La humedad absoluta es la masa de vapor de agua en un volumen determinado de aire seco. La humedad absoluta se mide en gramos/metro<sup>3</sup>. En la siguiente ecuación, se muestra cómo calcular la humedad absoluta: </p>
+<img src="../../../IMG/sen6.png"/>
+<p>Donde: </p>
+
+<p>• dv = humedad absoluta en gramos/metro<sup>3</sup> </p>
+
+<p>• t = temperatura real en °C </p>
+
+<p>• RH = humedad relativa real en porcentaje (%) </p>
+
+<p>• m = 17.62 </p>
+
+<p>• Tn = 243.12 °C</p>
+
+<p>• A = 6.112 hPa</p>
+
 					</div>
 				</div>
 			</div>
