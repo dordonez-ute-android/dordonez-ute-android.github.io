@@ -86,12 +86,411 @@
 			<div class="row">
 				<div class>
 				  <div class="inner-column">
-						<h1><span>Broadcast Receivers:</span></h1>
-					
+						<h1><span>Procesos y Subprocesos:</span></h1>
+
 						<p>Contenido:</p>
-						<p>El procesamiento de datos en segundo plano es una parte importante a la hora de crear una aplicación que sea eficaz para los usuarios y funcione de manera adecuada en la plataforma de Android. </p>
-						<p>Por lo tanto se define las categorías de tareas en segundo plano donde tiene criterios de categorización y recomendaciones a las API que se debe usar para ser ejecutadas</p>
-					  <p><b>Accede aquí para tener más información</b></p>
+						<p><b>Guía para el procesamiento en segundo plano</b></p>
+
+						<p>El procesamiento de datos en segundo plano es una parte importante a la hora de crear una aplicación que sea eficaz para los usuarios y funcione de manera adecuada en la plataforma de Android. Esta guía define las categorías de tareas en segundo plano, proporciona criterios de categorización y recomienda las API que deberías usar para ejecutarlas.</p>
+						
+						<p><b>Principio rector</b></p>
+						
+						<p>En general, toda tarea que lleve más de unos pocos milisegundos debería delegarse a un subproceso en segundo plano. Las tareas comunes de larga duración incluyen, por ejemplo, decodificar un mapa de bits, acceder al almacenamiento, desarrollar un modelo de aprendizaje automático (AA) o enviar solicitudes de red.</p>
+						
+						<p><b>Categorías de tareas en segundo plano</b></p>
+						
+						<p>Las tareas en segundo plano se dividen en las siguientes categorías principales:</p>
+						
+						<p>· Inmediata</p>
+						
+						<p>· Diferida</p>
+						
+						<p>· Exacta</p>
+						
+						<p>A fin de categorizar una tarea, responde las siguientes preguntas y recorre el árbol de decisión de la figura 1 según corresponda:</p>
+						
+						<p><b>¿La tarea debe completarse mientras el usuario está interactuando con la aplicación?</b></p>
+						
+						<p>Si es así, esa tarea debería clasificarse como <i>inmediata</i>. De lo contrario, pasa a la segunda pregunta.</p>
+						
+						<p><b>¿La tarea debe ejecutarse en un momento exacto?</b></p>
+						
+						<p>Si necesitas ejecutarla en un momento preciso, clasifica la tarea como <i>exacta</i>.</p>
+						
+						<p>La mayoría de las tareas no necesitan ejecutarse en un momento exacto. Por lo general, las tareas admiten algunas variaciones cuando se ejecutan en función de ciertas condiciones, como la disponibilidad de la red y la batería restante. Las tareas que no necesitan ejecutarse en un momento exacto deben clasificarse como <i>diferidas</i>.</p>
+						<img src="../../../../../IMG/br1.jpg">
+						<p><b>Figura 1:</b> Este árbol de decisión te ayudará a determinar qué categoría es la más adecuada para tu tarea en segundo plano.</p>
+						
+						<p><b>Tareas inmediatas</b></p>
+						
+						<p>Para tareas que necesitan ejecutarse de inmediato y procesarse de forma continua, incluso cuando el usuario coloca la aplicación en segundo plano o se reinicia el dispositivo, te recomendamos que uses <a href="https://developer.android.com/topic/libraries/architecture/workmanager">WorkManager</a> y su versión compatible con las <a href="https://developer.android.com/topic/libraries/architecture/workmanager/advanced/long-running">tareas de larga duración</a>.</p>
+						
+						<p>En casos específicos, como la reproducción de contenido multimedia o la navegación activa, te recomendamos que uses directamente los <href="#Foreground">servicios en primer plano</a>.</p>
+						
+						<p><b>Tareas diferidas</b></p>
+						
+						<p>Toda tarea que no esté conectada a una interacción del usuario de forma directa y pueda ejecutarse en cualquier momento puede ser diferida. La solución recomendada para las tareas diferidas es <a href="https://developer.android.com/topic/libraries/architecture/workmanager">WorkManager</a>.</p>
+						
+						<p>WorkManager facilita la programación de tareas diferibles y asíncronas que se deben ejecutar incluso si se cierra la app o se reinicia el dispositivo. Consulta la documentación de <a href="https://developer.android.com/topic/libraries/architecture/workmanager">WorkManager</a> para descubrir cómo programar estos tipos de tareas.</p>
+						
+						<p><b>Tareas exactas</b></p>
+						
+						<p>Una tarea que debe ejecutarse en un momento exacto puede usar <a href="https://developer.android.com/reference/android/app/AlarmManager">AlarmManager</a>.</p>
+						
+						<p><b>Cómo crear varios subprocesos</b></p>
+						
+						<p>Un <a href="https://developer.android.com/reference/java/util/concurrent/ThreadPoolExecutor">conjunto de subprocesos</a> es una colección administrada de subprocesos que ejecuta tareas en paralelo desde una cola. Se ejecutan las tareas nuevas en los subprocesos existentes a medida que quedan inactivas. Para enviar una tarea a un conjunto de subprocesos, usa la interfaz <a href="https://developer.android.com/reference/java/util/concurrent/ExecutorService"><b>ExecutorService</b></a>. Ten en cuenta que <b>ExecutorService</b> no tiene nada que ver con <a href="https://developer.android.com/guide/components/services">Servicios</a>, el componente de la aplicación de Android.</p>
+						
+						<p>Crear subprocesos es costoso, por lo que debes crear un conjunto de subprocesos solamente una vez cuando se inicializa tu app. Asegúrate de guardar la instancia de <a href="https://developer.android.com/reference/java/util/concurrent/ExecutorService">ExecutorService</a> en tu clase Application o en un <a href="https://developer.android.com/training/dependency-injection/manual">contenedor de inyección de dependencias</a>. En el siguiente ejemplo, se crea un conjunto de subprocesos que podemos usar para ejecutar tareas en segundo plano.</p>
+						<img src="../../../../../IMG/br2.jpg">
+						<p><b>Cómo ejecutar en un subproceso en segundo plano</b></p>
+						
+						<p>Cuando haces una solicitud de red en el subproceso principal, esta espera o se <i>bloquea</i> hasta que recibe una respuesta. Como el subproceso está bloqueado, el SO no puede llamar a onDraw() y tu app se detiene, lo que podría generar un diálogo Aplicación no responde (ANR). Para evitar esto, ejecutemos esta operación en un subproceso en segundo plano.</p>
+						
+						<p>Primero, veamos nuestra clase Repository y cómo realiza la solicitud de red:</p>
+						<img src="../../../../../IMG/br3.jpg">
+						<img src="../../../../../IMG/br4.jpg">
+						<p>La clase makeLoginRequest() es síncrona y bloquea el subproceso de llamada. Para modelar la respuesta de la solicitud de red, tenemos nuestra propia clase Result.</p>
+						
+						<p>ViewModel activa la solicitud de red cuando el usuario presiona, por ejemplo, un botón:</p>
+						<img src="../../../../../IMG/br5.jpg">
+						<p>Con el código anterior, LoginViewModel bloquea el subproceso principal cuando realiza la solicitud de red. Podemos usar el conjunto de subprocesos del que creamos una instancia para mover la ejecución a un subproceso en segundo plano. Primero, según los <a href="https://developer.android.com/dependency-injection">principios de inyección de dependencias</a>, LoginRepository toma una instancia de <a href="https://developer.android.com/reference/java/util/concurrent/Executor">Executor</a>, en lugar de ExecutorService, porque ejecuta código y no administra subprocesos:</p>
+						<img src="../../../../../IMG/br6.jpg">
+						<p>El método <href="#execute(java.lang.Runnable)">execute()</a> del ejecutor toma una interfaz <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html">Runnable</a>. Runnable es una interfaz de método único (SAM) con un método run() que se ejecuta en un subproceso cuando se lo invoca.</p>
+						
+						<p>Ahora, creemos otra función llamada makeLoginRequest() que pase la ejecución al subproceso en segundo plano y, por el momento, ignore la respuesta:</p>
+						<img src="../../../../../IMG/br7.jpg">
+						<p>Dentro del método execute(), creamos una interfaz Runnable nueva con el bloque de código que queremos ejecutar en el subproceso en segundo plano; en nuestro caso, el método de solicitud de red síncrona. De forma interna, el ExecutorService administra la interfaz Runnable y la ejecuta en un subproceso disponible.</p>
+						
+						<p><b>Nota:</b> En Kotlin, puedes usar una expresión lambda para crear una clase anónima que implemente la interfaz SAM.</p>
+						
+						<p><b>Consideraciones</b></p>
+						
+						<p>Cualquier subproceso de tu app puede ejecutarse en paralelo con otros subprocesos, incluido el subproceso principal, por lo que debes asegurarte de que tu código sea seguro para los subprocesos. Ten en cuenta que, en nuestro ejemplo, evitamos escribir en variables compartidas entre subprocesos y, en cambio, pasamos datos inmutables. Esta es una buena práctica, ya que cada subproceso funciona con su propia instancia de datos y evitamos la complejidad de la sincronización.</p>
+						
+						<p>Si necesitas compartir el estado entre subprocesos, debes tener cuidado y administrar el acceso desde los subprocesos mediante mecanismos de sincronización, como bloqueos, lo que está fuera del alcance de esta guía. Siempre que sea posible, debes evitar compartir el estado mutable entre subprocesos.</p>
+						
+						<p><b>Cómo usar controladores</b></p>
+						
+						<p>Puedes usar un <a href="https://developer.android.com/reference/android/os/Handler">Handler</a> para poner en cola una acción que se ejecutará en un subproceso diferente. Para especificar el subproceso en el que se ejecutará la acción, crea el Handler usando un <a href="https://developer.android.com/reference/android/os/Looper">Looper</a> para el subproceso. Un Looper es un objeto que ejecuta el bucle de mensajes para un subproceso asociado. Una vez que hayas creado un Handler, puedes usar el método <href="#post(java.lang.Runnable)">post(Runnable)</a> para ejecutar un bloque de código en el subproceso correspondiente.</p>
+						
+						<p>Looper incluye una función auxiliar, <href="#getMainLooper()">getMainLooper()</a>, que recupera el objeto Looper del subproceso principal. Puedes ejecutar código en el subproceso principal con este Looper para crear un Handler. Como es algo que puedes hacer con bastante frecuencia, también puedes guardar una instancia del Handler en el mismo lugar en que guardaste el ExecutorService:</p>
+						<img src="../../../../../IMG/br8.jpg">
+						<p>Se recomienda insertar el controlador en el Repository, ya que brinda más flexibilidad. Por ejemplo, en el futuro, es posible que quieras pasar un Handler diferente para programar tareas en un subproceso separado. Si siempre te comunicas con el mismo subproceso, puedes pasar el Handler al constructor del Repository, como se muestra en el siguiente ejemplo.</p>
+						<img src="../../../../../IMG/br9.jpg">
+						<p>Como alternativa, si buscas mayor flexibilidad, puedes pasar un controlador a cada función:</p>
+						<img src="../../../../../IMG/br10.jpg">
+						<p>En este ejemplo, la devolución de llamada que se pasó a la llamada makeLoginRequest del repositorio se ejecuta en el subproceso principal. De esta forma, puedes modificar directamente la IU desde la devolución de llamada o usar LiveData.setValue() para comunicarte con la IU.</p>
+						
+						<p><b>Cómo configurar un conjunto de subprocesos</b></p>
+						
+						<p>Puedes crear un conjunto de subprocesos usando una de las funciones de ayuda <a href="https://developer.android.com/reference/java/util/concurrent/Executors">Executor</a> con configuraciones predefinidas, como se muestra en el código de ejemplo anterior. Como alternativa, si deseas personalizar los detalles del conjunto de subprocesos, puedes crear una instancia usando directamente <a href="https://developer.android.com/reference/java/util/concurrent/ThreadPoolExecutor">ThreadPoolExecutor</a>. Puedes configurar los siguientes detalles:</p>
+						
+						<p>· Tamaño inicial y máximo del conjunto.</p>
+						
+						<p>· <i>Tiempo de mantenimiento de conexión</i> y unidad de tiempo. El tiempo de mantenimiento de actividad es la duración máxima que un subproceso puede permanecer inactivo antes de cerrarse.</p>
+						
+						<p>· Una cola de entrada que conserve tareas del objeto Runnable. Esta cola debe implementar la interfaz <a href="https://developer.android.com/reference/java/util/concurrent/BlockingQueue">BlockingQueue</a>. Para cumplir con los requisitos de tu app, puedes elegir entre las implementaciones de cola disponibles. </p>
+						<img src="../../../../../IMG/br11.jpg">
+						<p>Este es un ejemplo en el que se especifica el tamaño del conjunto de subprocesos en función de la cantidad total de núcleos de procesador, un tiempo de mantenimiento de actividad de un segundo y una cola de entrada.</p>
+						
+						<p><b>Optimizaciones en segundo plano</b></p>
+						
+						<p>Los procesos en segundo plano pueden consumir mucha memoria y batería. Por ejemplo, una emisión implícita puede iniciar muchos procesos en segundo plano que se registraron para recibirla, incluso si esos procesos no realizan mucho trabajo. Esto puede afectar de manera considerable tanto el rendimiento del dispositivo como la experiencia del usuario.</p>
+						
+						<p><b>Para solucionar este problema, en Android 7.0 (API nivel 24) se aplican las siguientes restricciones:</b></p>
+						
+						<p>· Las apps que se orientan a Android 7.0 (API nivel 24) y versiones posteriores no recibirán emisiones de <href="#CONNECTIVITY_ACTION">CONNECTIVITY_ACTION</a> si declaran su receptor de emisión en el manifiesto. Las apps seguirán recibiendo emisiones de <href="#CONNECTIVITY_ACTION">CONNECTIVITY_ACTION</a> si registran su <a href="https://developer.android.com/reference/android/content/BroadcastReceiver">BroadcastReceiver</a> con <href="#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter)">Context.registerReceiver()</a> y ese contexto sigue siendo válido.</p>
+						
+						<p>· Las apps no pueden enviar ni recibir emisiones <href="#ACTION_NEW_PICTURE">ACTION_NEW_PICTURE</a> ni <href="#ACTION_NEW_VIDEO">ACTION_NEW_VIDEO</a>. Esta optimización afecta a todas las apps, no solo a las orientadas a Android 7.0 (API nivel 24).</p>
+						
+						<p>Si tu app usa alguno de estos intents, debes quitarles las dependencias tan pronto como sea posible para orientar de manera correcta a dispositivos con Android 7.0 o versiones posteriores. El marco de trabajo de Android proporciona varias soluciones para mitigar la necesidad de estas emisiones implícitas. Por ejemplo, <a href="https://developer.android.com/reference/android/app/job/JobScheduler">JobScheduler</a> y el nuevo <a href="https://developer.android.com/arch/work">WorkManager</a> proporcionan mecanismos eficaces para programar operaciones de red cuando se cumplen condiciones específicas, como una conexión a una red no medida. Ahora también puedes usar <a href="https://developer.android.com/reference/android/app/job/JobScheduler">JobScheduler</a> para reaccionar a los cambios realizados en los proveedores de contenido. Los objetos <a href="https://developer.android.com/reference/android/app/job/JobInfo">JobInfo</a> encapsulan los parámetros que <a href="https://developer.android.com/reference/android/app/job/JobScheduler">JobScheduler</a> usa para programar el trabajo. Cuando se cumplen las condiciones del trabajo, el sistema lo ejecuta en el <a href="https://developer.android.com/reference/android/app/job/JobService">JobService</a>.</p>
+						
+						<p><b>Restricciones iniciadas por el usuario</b></p>
+						
+						<p>A partir de Android 9 (API nivel 28), si una app muestra comportamientos perjudiciales como los que se describen en <a href="https://developer.android.com/topic/performance/vitals">Android vitals</a>, el sistema le solicita al usuario que restrinja el acceso de esa app a los recursos del sistema.</p>
+						
+						<p>Si el sistema noto que una app está consumiendo recursos excesivos, le envía una notificación al usuario y le da la opción de restringir las acciones de la app. Entre los comportamientos que pueden activar la notificación, se incluyen los siguientes:</p>
+						
+						<p>· Bloqueos de activación excesivos: 1 bloqueo de activación parcial retenido durante una hora cuando la pantalla está apagada.</p>
+						
+						<p>· Servicios en segundo plano excesivos: Si la app está orientada a niveles de API inferiores a 26 y tiene demasiados servicios en segundo plano.</p>
+						
+						<p>Las restricciones precisas que se imponen son determinadas por el fabricante del dispositivo. Por ejemplo, en las compilaciones de AOSP, las apps restringidas no pueden ejecutar tareas, activar alarmas ni usar la red, excepto cuando están en primer plano. (A fin de conocer los criterios que se usan para determinar si una app está en primer plano, consulta <href="#services">Limitaciones del servicio en segundo plano</a>). Las restricciones específicas se enumeran en <a href="https://developer.android.com/topic/performance/power/power-details">Restricciones de administración de energía</a>.</p>
+						
+						<p><b>Restricciones para la recepción de emisiones de actividad de red</b></p>
+						
+						<p>Las apps que se orienten a Android 7.0 (API nivel 24) no recibirán emisiones de <href="#CONNECTIVITY_ACTION">CONNECTIVITY_ACTION</a> si se registran para recibirlas en su manifiesto, y no se iniciarán los procesos que dependan de esta emisión. Esto podría ser un problema para las apps que deseen detectar los cambios de red o realizar actividades de red masivas cuando se conecte el dispositivo a una red no medida. En el marco de trabajo de Android, ya existen varias soluciones para evitar esta restricción, pero elegir la correcta depende del objetivo de tu app.</p>
+						
+						<p><b>Nota:</b> Un <a href="https://developer.android.com/reference/android/content/BroadcastReceiver">BroadcastReceiver</a> registrado con <href="#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter)">Context.registerReceiver()</a> continúa recibiendo estas emisiones mientras se ejecuta la app.</p>
+						
+						<p><b>Cómo programar trabajos de red en conexiones no medidas</b></p>
+						
+						<p>Cuando uses la clase JobInfo.Builder para compilar tu objeto JobInfo, aplica el método setRequiredNetworkType() y pasa JobInfo.NETWORK_TYPE_UNMETERED como parámetro de trabajo. En el siguiente ejemplo de código, se programa un servicio para que se ejecute cuando el dispositivo se conecte a una red no medida y se cargue:</p>
+						<img src="../../../../../IMG/br12.jpg">
+						<p>Cuando se cumplan las condiciones para el trabajo, la app recibirá una devolución de llamada para ejecutar el método <href="#onStartJob(android.app.job.JobParameters)">onStartJob()</a> en la JobService.class especificada. Para ver más ejemplos de la implementación de <a href="https://developer.android.com/reference/android/app/job/JobScheduler">JobScheduler</a>, consulta la <a href="https://developer.android.com/samples/JobScheduler">app de ejemplo de JobScheduler</a>.</p>
+						
+						<p>Una nueva alternativa a JobScheduler es WorkManager, una API que te permite programar tareas en segundo plano que necesitan una finalización garantizada, independientemente de si el proceso de la app está activo o no. WorkManager elige la forma adecuada de ejecutar el trabajo (ya sea directamente en un subproceso del proceso de la app o en JobScheduler, FirebaseJobDispatcher o AlarmManager) según factores como el nivel de API del dispositivo. Además, WorkManager no requiere Servicios de Play y proporciona varias funciones avanzadas, como encadenar tareas o verificar el estado de una tarea. Para obtener más información, consulta <a href="https://developer.android.com/arch/work">WorkManager</a>.</p>
+						
+						<p><b>Cómo supervisar la conectividad de red mientras se ejecuta la app</b></p>
+						
+						<p>Las apps que están en ejecución pueden detectar CONNECTIVITY_CHANGE con un BroadcastReceiver registrado. Sin embargo, la API de ConnectivityManager proporciona un método más sólido para solicitar una devolución de llamada solo cuando se cumplen las condiciones de red especificadas.</p>
+						
+						<p>Los objetos <a href="https://developer.android.com/reference/android/net/NetworkRequest">NetworkRequest</a> definen los parámetros de la validación de llamada de la red en términos de <a href="https://developer.android.com/reference/android/net/NetworkCapabilities">NetworkCapabilities</a>. </p>
+						
+						<p>Crear objetos NetworkRequest con clase NetworkRequest.Builder. registerNetworkCallback() luego pasa el objeto NetworkRequest al sistema. Cuando se cumplen las condiciones de red, la app recibe una devolución de llamada para ejecutar el método onAvailable() definido en su clase ConnectivityManager.NetworkCallback.</p>
+						
+						<p>La app continúa recibiendo devoluciones de llamada hasta que se cierra o llama a <href="#unregisterNetworkCallback(android.app.PendingIntent)">unregisterNetworkCallback()</a>.</p>
+						
+						<p><b>Restricciones para la recepción de emisiones de imagen y video</b></p>
+						
+						<p>En Android 7.0 (API nivel 24), las apps no pueden enviar ni recibir emisiones de <href="#ACTION_NEW_PICTURE">ACTION_NEW_PICTURE</a> ni de <href="#ACTION_NEW_VIDEO">ACTION_NEW_VIDEO</a>. Esta restricción ayuda a aliviar el rendimiento y afecta la experiencia del usuario cuando se deben activar varias apps para procesar una nueva imagen o un nuevo video. Como alternativa, Android 7.0 (API nivel 24) extiende <a href="https://developer.android.com/reference/android/app/job/JobInfo">JobInfo</a> y <a href="https://developer.android.com/reference/android/app/job/JobParameters">JobParameters</a>.</p>
+						
+						<p><b>Cómo activar trabajos durante cambios de URI de contenido</b></p>
+						
+						<p>Para activar trabajos durante cambios de URI de contenido, en Android 7.0 (API nivel 24) se extiende la API de <a href="https://developer.android.com/reference/android/app/job/JobInfo">JobInfo</a> con los siguientes métodos:</p>
+						
+						<p>· <b>JobInfo.TriggerContentUri()</b></p>
+						
+						<p>Encapsula los parámetros necesarios para activar un trabajo durante los cambios de URI de contenido.</p>
+						
+						<p>· <b>JobInfo.Builder.addTriggerContentUri()</b></p>
+						
+						<p>Pasa un objeto TriggerContentUri a <a href="https://developer.android.com/reference/android/app/job/JobInfo">JobInfo</a>. Un <a href="https://developer.android.com/reference/android/database/ContentObserver">ContentObserver</a> controla el URI de contenido encapsulado. Si hay varios objetos TriggerContentUri asociados a un trabajo, el sistema realizará una devolución de llamada incluso aunque se informe un cambio en un solo URI de contenido.</p>
+						
+						<p>Si cambia algún desencadenante del URI determinado, agrega el TriggerContentUri.FLAG_NOTIFY_FOR_DESCENDANTS para activar el trabajo. Esta marca corresponde al parámetro notifyForDescendants que se pasa a <href="#registerContentObserver(android.net.Uri,%20boolean,%20android.database.ContentObserver)">registerContentObserver()</a>.</p>
+						
+						<p>En el siguiente código de muestra, se programa un trabajo para que se active cuando el sistema informe un cambio en el URI de contenido, MEDIA_URI:</p>
+						<img src="../../../../../IMG/br13.jpg">
+						<p>Cuando el sistema informa un cambio en los URI especificados, la app recibe una devolución de llamada y se pasa un objeto <a href="https://developer.android.com/reference/android/app/job/JobParameters">JobParameters</a> al método <href="#onStartJob(android.app.job.JobParameters)">onStartJob()</a> en MediaContentJob.class.</p>
+						
+						<p><b>Como determinar que autoridades de contenido activaron un trabajo</b></p>
+						
+						<p>Se extiende los JobParameters para permitir que las apps reciban información útil sobre qué autoridades de contenido y URI activaron el trabajo, como son:</p>
+						
+						<p><i>Uri[] getTriggeredContentUris()</i></p>
+						
+						<p>Muestra un arreglo de URI que activara el trabajo. Este será null si ninguno de los URI activó el trabajo o si el número de URI modificados es mayor que 50.</p>
+						
+						<p><i>String[] getTriggeredContentAuthorities()</i></p>
+						
+						<p>Muestra un arreglo de strings de autoridades de contenido que activara el trabajo. Si el arreglo que se muestra no es null, usa getTriggeredContentUris() para recuperar los detalles de los URI que se modificaron.</p>
+						
+						<p>En el siguiente código se anula el método JobService.onStartJob() y se registran las autoridades de contenido y los URI que activaron el trabajo:</p>
+						<img src="../../../../../IMG/br14.jpg">
+						<p><b>Como optimizar aún más tu app</b></p>
+						
+						<p>Se puede optimizar las apps para que se ejecuten en dispositivos con poca memoria o en condiciones de poca memoria, puede mejorar el rendimiento y la experiencia del usuario, por lo tanto, si quitas las dependencias de los servicios en segundo plano y los receptores de emisión implícita registrados en manifiestos, tu app funcionará mejor en esos dispositivos.</p>
+						
+						<p>Aunque Android 7.0 (API nivel 24) </p>
+						
+						<p>· Tome medidas para reducir algunos de estos problemas, se recomienda optimizar la app a fin de que se ejecute sin usar en absoluto estos procesos en segundo plano.</p>
+						
+						<p>· Presenta algunos comandos adicionales de Android Debug Bridge (ADB) que puedes usar para probar el comportamiento de la app con esos procesos en segundo plano inhabilitados:</p>
+						
+						<p>- Para simular condiciones en las que las emisiones implícitas y los servicios en segundo plano no están disponibles, ingresa el siguiente comando:</p>
+						<img src="../../../../../IMG/br15.jpg">
+						<p>- Para volver a habilitar las emisiones implícitas y los servicios en segundo plano, ingresa el siguiente comando:</p>
+						<img src="../../../../../IMG/br16.jpg">
+						<p><b>Descripción general de las transmisiones</b></p>
+						
+						<p>Las apps de Android pueden enviar o recibir mensajes de emisión desde el sistema de Android y otras apps para Android, de forma similar al patrón de diseño de publicación y suscripción.</p>
+						
+						<p>Las apps también pueden enviar emisiones personalizadas, por ejemplo, para notificar a otras apps sobre algo que podría interesarles (como cuando se descargaron algunos datos nuevos).</p>
+						
+						<p>Por lo general, las emisiones pueden usarse como un sistema de mensajería entre apps y fuera del flujo de usuarios normal. Sin embargo, debes tener cuidado de no abusar de la oportunidad de responder a las emisiones y ejecutar tareas en segundo plano que puedan contribuir a ralentizar el rendimiento del sistema.</p>
+						
+						<p><b>Cambios en las emisiones del sistema</b></p>
+						
+						<p>Android 9</p>
+						
+						<p>La emisión <i>NETWORK_STATE_CHANGED_ACTION</i> no recibe información sobre la ubicación del usuario ni los datos de carácter personal.</p>
+						
+						<p>Si las emisiones del sistema desde Wi-Fi no contienen SSID, BSSID, información de conexión ni resultados de análisis se puede obtener esta información llamando a <i>getConnectionInfo()</i>.</p>
+						
+						<p>Android 8.0</p>
+						
+						<p>El sistema impone restricciones adicionales a los receptores declarados en el manifiesto.</p>
+						
+						<p>Se puede usar un receptor registrado en el contexto cuando el usuario usa la app de forma activa, esto se usa para la mayoría de las emisiones implícitas.</p>
+						
+						<p>Android 7.0</p>
+						
+						<p>Las versiones posteriores no envían las siguientes emisiones del sistema:</p>
+						
+						<p><i>ACTION_NEW_PICTURE</i></p>
+						
+						<p><i>ACTION_NEW_VIDEO</i></p>
+						
+						<p>Además, las apps que se orientan a Android 7.0 y versiones posteriores deben registrar la emisión de <i>CONNECTIVITY_ACTION</i> mediante <i>registerReceiver(BroadcastReceiver, IntentFilter).</i> La declaración de un receptor en el manifiesto no funciona.</p>
+						
+						<p>Cómo recibir emisiones</p>
+						
+						<p>Las apps pueden recibir emisiones de dos maneras: mediante receptores declarados en el manifiesto y mediante receptores registrados en el contexto.</p>
+						
+						<p>1. Receptores declarados en el manifiesto.</p>
+						
+						<p>Si se declara un receptor de emisión en el manifiesto, el sistema inicia la app cuando se envía la emisión.</p>
+						
+						<p>Para declarar un receptor de emisión en el manifiesto, realiza los siguientes pasos:</p>
+						
+						<p>1.1. Especifica el elemento &lt;receiver&gt; en el manifiesto de tu app.</p>
+						<img src="../../../../../IMG/br17.jpg">
+						<p>1.2. Crea la subclase BroadcastReceiver y, luego, implementa onReceive(Context, Intent). El receptor de emisión del siguiente ejemplo registra y muestra el contenido de la emisión:</p>
+						<img src="../../../../../IMG/br18.jpg">
+						<p>1.3. Para dejar de recibir emisiones, llama a unregisterReceiver(android.content.BroadcastReceiver). </p>
+						
+						<p>Asegúrate de anular el registro del receptor cuando ya no lo necesites o el contexto ya no sea válido.</p>
+						
+						<p>Importante: </p>
+						
+						<p>De acuerdo donde se registre y se anule el registro del receptor.</p>
+						
+						<p>Ejemplo: </p>
+						
+						<p>Si se registra en <i>onCreate(Bundle)</i> mediante el contexto de la actividad, se debe anular el registro en <i>onDestroy()</i> a fin de evitar que el receptor salga del contexto de la actividad.</p>
+						
+						<p>Si se registra un receptor en <i>onResume()</i>, se debe anular el registro en <i>onPause()</i> a fin de evitar registrarlo varias veces.</p>
+						
+						<p><b>NO</b> anular el registro en <i>onSaveInstanceState(Bundle)</i>, porque no se llama a este si el usuario retrocede en la pila del historial.</p>
+						
+						<p>Efectos en el estado del proceso</p>
+						
+						<p>El estado de <i>BroadcastReceiver</i> siendo que este en ejecución o no afecta el estado del proceso que lo contiene lo que da una posibilidad a que el sistema lo elimine. Por ejemplo cuando un proceso ejecuta un receptor (es decir, actualmente ejecuta el código en su método <i>onReceive()</i>), se considera que es un proceso en primer plano.</p>
+						
+						<p>El proceso de alojamiento del receptor se vuelve tan importante como los demás componentes de la app que se ejecutan en él.</p>
+						
+						<p>Si el proceso aloja solo un receptor declarado en el manifiesto cuando se muestra desde <i>onReceive()</i>, el sistema considera que su proceso es de baja prioridad y puede eliminarlo a fin de que los recursos estén disponibles para otros procesos más importantes.</p>
+						
+						<p>Por tal razón no se debe comenzar a ejecutar subprocesos prolongados en segundo plano desde un receptor de emisión. Después de <i>onReceive()</i>, el sistema puede eliminar el proceso en cualquier momento a fin de reclamar la memoria y, al hacerlo, finaliza el subproceso generado que se ejecuta en el proceso.</p>
+						
+						<p>Para evitarlo:</p>
+						
+						<p><i>goAsync(): </i>Si se desea un poco más de tiempo para procesar la emisión en un subproceso en segundo plano o programas un <i>JobService</i> desde el receptor por medio del <i>JobScheduler </i>de manera que el sistema sepa que el proceso continúa trabajando activamente para obtener más información <b>Ciclo de vida de procesos.</b></p>
+						<img src="../../../../../IMG/br19.jpg">
+						<p>Cómo enviar emisiones</p>
+						
+						<p>Android ofrece tres maneras para que las apps envíen emisiones:</p>
+						
+						<p>· El método <i>sendOrderedBroadcast(Intent, String)</i> envía emisiones a un receptor por vez. Como se ejecuta un receptor por vez, este puede propagar un resultado al siguiente o puede anular por completo la emisión de manera que no se transmita a otros. El orden en el que se ejecutan los receptores puede controlarse con el atributo <i>android:priority </i>del filtro de intent coincidente; los receptores con la misma prioridad se ejecutarán en orden aleatorio.</p>
+						
+						<p>· El método <i>sendBroadcast(Intent)</i> envía emisiones a todos los receptores en un orden no especificado, lo que se denomina emisión normal. Este método es más eficiente, pero implica que los receptores no pueden leer los resultados de otros receptores, propagar los datos recibidos de la emisión ni anular la emisión.</p>
+						
+						<p>· El método <i>LocalBroadcastManager.sendBroadcast</i> envía emisiones a los receptores que están en la misma app que el emisor. Si no necesitas enviar emisiones entre apps, usa emisiones locales. La implementación es mucho más eficiente (no se requiere comunicación entre procesos) y no tienes que preocuparte por ningún problema de seguridad relacionado con otras apps que puedan recibir o enviar emisiones.</p>
+						<img src="../../../../../IMG/br20.jpg">
+						<p><b>Nota: </b>Si bien los <i>intents</i> se usan tanto para enviar emisiones como para iniciar actividades con <i>startActivity(Intent)</i>, estas acciones no tienen ninguna relación. Los receptores de emisión no pueden ver ni capturar los <i>intents</i> que se usan para iniciar una actividad. Del mismo modo, cuando emites un <i>intent</i>, no puedes buscar ni iniciar una actividad.</p>
+						
+						<p><b>Cómo restringir emisiones con permisos</b></p>
+						
+						<p>Los permisos te permiten restringir emisiones a un conjunto de apps que cuenta con permisos específicos. Puedes aplicar restricciones tanto en el emisor como en el receptor de una emisión.</p>
+						
+						<p>Cómo enviar emisiones con permisos</p>
+						
+						<p>Cuando llamas a <i>sendBroadcast(Intent, String)</i> o <i>sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)</i> se puede especificar un parámetro de permiso. Solo pueden recibir la emisión los receptores que solicitaron ese permiso con la etiqueta en su manifiesto y a los que posteriormente se les otorgó el permiso si es peligroso.</p>
+						
+						<p>Por ejemplo, el siguiente código envía una emisión:</p>
+						<img src="../../../../../IMG/br21.jpg">
+						<p>Para recibir la emisión, la app receptora debe solicitar el permiso como se indica a continuación:</p>
+						<img src="../../../../../IMG/br22.jpg">
+						<p>Puedes especificar un permiso existente del sistema como <i>SEND_SMS</i> o definir un permiso personalizado con el elemento <i>&lt;permission&gt;. </i>Para obtener información sobre los permisos y la seguridad en general, consulta los Permisos del sistema.</p>
+						
+						<p><b>Nota:</b> Los permisos personalizados se registran cuando se instala la app. La app que define el permiso personalizado debe instalarse antes que la app que lo usa.</p>
+						
+						<p>Cómo recibir emisiones con permisos</p>
+						
+						<p>Si se especifica un parámetro de permisos cuando se registra un receptor de emisión sea con <i>registerReceiver(BroadcastReceiver, IntentFilter, String, Handler</i>) o en la etiqueta <i>&lt;receiver&gt; </i>en tu manifiesto, solo los emisores que solicitaron el permiso con la etiqueta <i>&lt;uses-permission&gt; </i>en su manifiesto y a los que posteriormente se les otorgó el permiso si es peligroso pueden enviar un <i>intent</i> al receptor.</p>
+						
+						<p>Por ejemplo, supongamos que tu app receptora tiene un receptor declarado en el manifiesto como se muestra a continuación:</p>
+						<img src="../../../../../IMG/br23.jpg">
+						<p>O bien la app receptora tiene un receptor registrado en el contexto, de la siguiente manera:</p>
+						<img src="../../../../../IMG/br24.jpg">
+						<p>Luego, para poder enviar emisiones a esos receptores, la app que las envía debe solicitar el permiso como se indica a continuación:</p>
+						<img src="../../../../../IMG/br25.jpg">
+						<p><b>Consideraciones de seguridad y prácticas recomendadas</b></p>
+						
+						<p>Estas son algunas consideraciones de seguridad y las prácticas recomendadas para enviar y recibir emisiones:</p>
+						
+						<p>· Si no necesitas enviar emisiones a componentes fuera de tu app, puedes enviar y recibir emisiones locales con el <i>LocalBroadcastManager </i>que está disponible en la biblioteca de compatibilidad. El <i>LocalBroadcastManager</i> es mucho más eficiente no se requiere comunicación entre procesos y te permite evitar problemas de seguridad relacionados con otras apps que pueden recibir o enviar tus emisiones. Las emisiones locales pueden usarse como un bus de eventos de publicación y suscripción de uso general en tu app sin ningún tipo de sobrecarga de emisiones en todo el sistema.</p>
+						
+						<p>· Si se registraron muchas apps para recibir la misma emisión en su manifiesto, es posible que el sistema inicie muchas apps, lo que afecta considerablemente el rendimiento del dispositivo y la experiencia del usuario. Si quieres evitarlo, debes usar el registro de contexto en lugar de la declaración en el manifiesto. A veces, el propio sistema Android impone el uso de receptores registrados en el contexto. Por ejemplo, la emisión de <i>CONNECTIVITY_ACTION</i> se envía solamente a receptores registrados en el contexto.</p>
+						
+						<p>· No emitas información sensible mediante un <i>intent </i>implícito, ya que cualquier app que se registre para recibir la emisión puede leer la información. Existen tres maneras de controlar quién puede recibir tus emisiones:</p>
+						
+						<p>ü Puedes especificar un permiso cuando envías una emisión.</p>
+						
+						<p>ü En Android 4.0 y versiones posteriores, puedes especificar un paquete con setPackage(String) cuando envías una emisión. El sistema restringe la emisión al conjunto de apps que coinciden con el paquete.</p>
+						
+						<p>ü Puedes enviar emisiones locales con LocalBroadcastManager.</p>
+						
+						<p>· Cuando registras un receptor, cualquier app puede enviar emisiones potencialmente maliciosas al receptor de tu app. Existen tres maneras de limitar las emisiones que recibe tu app:</p>
+						
+						<p>ü Puedes especificar un permiso cuando registras un receptor de emisión.</p>
+						
+						<p>ü En el caso de los receptores declarados en el manifiesto, puedes establecer el atributo android:exported en "false" en el manifiesto. El receptor no recibe emisiones de fuentes externas a la app.</p>
+						
+						<p>ü Puedes limitarte solo a emisiones locales con LocalBroadcastManager.</p>
+						
+						<p>· El espacio de nombres para las acciones de emisión es global. Asegúrate de que los nombres de las acciones y otras strings estén escritos en un espacio de nombres del cual seas propietario; de lo contrario, podría generarse un conflicto con otras apps accidentalmente.</p>
+						
+						<p>· Como el método onReceive(Context, Intent) de un receptor se ejecuta en el subproceso principal, debería ejecutarse y mostrarse rápidamente. Si necesitas realizar una tarea prolongada, sé cuidadoso al generar subprocesos o al iniciar servicios en segundo plano, ya que el sistema podría eliminar todo el proceso después de que se muestre onReceive(). Para obtener más información, consulta Efectos en el estado del proceso. A fin de realizar una tarea prolongada, te recomendamos que hagas lo siguiente:</p>
+						
+						<p>ü Llama a goAsync() en el método onReceive() de tu receptor y pasa BroadcastReceiver.PendingResult a un subproceso en segundo plano. De esta manera, la emisión se mantiene activa luego de que se muestra desde onReceive(). Sin embargo, incluso con este enfoque, el sistema espera que termines la emisión rápidamente (menos de 10 segundos). De igual manera, te permite mover la tarea a otro subproceso a fin de evitar que se produzca un error en el subproceso principal.</p>
+						
+						<p>ü Programa una tarea con JobScheduler. Para obtener más información, consulta Programación inteligente de tareas.</p>
+						
+						<p>· No inicies actividades desde receptores de emisión porque la experiencia del usuario no es coherente, en especial, si hay varios receptores. En su lugar, considera mostrar una notificación.</p>
+						
+						<p><b>Excepciones de transmisiones implícitas</b></p>
+						
+						<p>Las apps pueden seguir registrando objetos de escucha para las siguientes emisiones, sin importar el nivel de API al que se orienten las apps. Si bien estas emisiones implícitas funcionan en segundo plano, debes evitar registrar objetos de escucha para ellas.</p>
+						
+						<p><b><i>ACTION_LOCKED_BOOT_COMPLETED, ACTION_BOOT_COMPLETED: </i></b>Están exentas porque estas emisiones solo se envían una vez, en el primer inicio, y muchas apps necesitan recibirlas a fin de programar tareas, alarmas,etc.</p>
+						
+						<p><b><i>ACTION_USER_INITIALIZE,"android.intent.action.USER_ADDED", “android.intent.action.USER_REMOVED": </i></b>Estas emisiones están protegidas con permisos privilegiados, de manera que las apps comunes no pueden recibirlas.</p>
+						
+						<p><b><i>"android.intent.action.TIME_SET",ACTION_TIMEZONE_CHANGED, ACTION_NEXT_ALARM_CLOCK_CHANGED: </i></b>Es posible que las apps de reloj necesiten recibir estas emisiones a fin de actualizar las alarmas cuando se cambian la hora, la zona horaria o las alarmas.</p>
+						
+						<p><b><i>ACTION_LOCALE_CHANGED: </i></b>Solo se envía cuando la configuración regional cambia, lo que no ocurre con frecuencia. Es posible que las apps necesiten actualizar sus datos cuando cambie la configuración regional.</p>
+						
+						<p><b><i>ACTION_USB_ACCESSORY_ATTACHED,ACTION_USB_ACCESSORY_DETACHED, ACTION_USB_DEVICE_ATTACHED, ACTION_USB_DEVICE_DETACHED: </i></b>Si una app necesita información sobre estos eventos relacionados con USB, actualmente no existe una buena alternativa de registro para recibir la emisión.</p>
+						
+						<p><b><i>ACTION_CONNECTION_STATE_CHANGED,ACTION_CONNECTION_STATE_CHANGED, ACTION_ACL_CONNECTED, ACTION_ACL_DISCONNECTED: </i></b>No es probable que la experiencia del usuario se vea afectada si las apps reciben emisiones para estos eventos Bluetooth.</p>
+						
+						<p><b><i>ACTION_CARRIER_CONFIG_CHANGED, TelephonyIntents.ACTION_*_SUBSCRIPTION_CHANGED, "TelephonyIntents.SECRET_CODE_ACTION", ACTION_PHONE_STATE_CHANGED, ACTION_PHONE_ACCOUNT_REGISTERED y ACTION_PHONE_ACCOUNT_UNREGISTERED</i></b></p>
+						
+						<p>Es posible que las apps de telefonía del OEM necesiten recibir estas emisiones.</p>
+						
+						<p><b><i>LOGIN_ACCOUNTS_CHANGED_ACTION</i></b></p>
+						
+						<p>Algunas apps necesitan conocer los cambios en las cuentas de acceso a fin de poder configurar operaciones programadas para las cuentas nuevas y modificadas.</p>
+						
+						<p><b><i>ACTION_ACCOUNT_REMOVED</i></b></p>
+						
+						<p>Las apps que tienen visibilidad de una cuenta reciben esta emisión cuando se quita la cuenta. Si este es el único cambio de cuenta en el que la app necesita actuar, se recomienda encarecidamente que la app use esta emisión en lugar de la <i>LOGIN_ACCOUNTS_CHANGED_ACTION</i> obsoleta.</p>
+						
+						<p><b><i>ACTION_PACKAGE_DATA_CLEARED</i></b></p>
+						
+						<p>Solo se envía cuando el usuario borra explícitamente sus datos de la Configuración, por lo que es poco probable que los receptores de emisión afecten significativamente la experiencia del usuario.</p>
+						
+						<p><b><i>ACTION_PACKAGE_FULLY_REMOVED</i></b></p>
+						
+						<p>Es posible que algunas apps necesiten actualizar sus datos almacenados cuando se quite otro paquete; en el caso de estas apps, no hay una buena alternativa de registro para recibir esta emisión.</p>
+						
+						<p><b>Limitaciones de transición </b></p>
+						
+						<p>Las aplicaciones a Android 8.0 o versiones posteriores ya no pueden registrar receptores para transmisiones implícitas en su manifiesto.</p>
+						
+						<p>Por ejemplo:</p>
+						
+						<p><i>ACTION PACKAGE REPLACED</i>: es una transmission implícita ya que se envía a todos los receptores registrados y comunica a estos que se remplazó algún paquete en el dispositivo.</p>
+						
+						<p>· Las apps pueden continuar registrándose para transmisiones explicitas en sus manifiestos.</p>
+						
+						<p>· Las apps pueden usar <i>Context.registerReceiver()</i> durante el tiempo de ejecución con el fin de registrar un receptor para cualquier transmisión sea implícita o explicita.</p>
+						
+						<p><b>Nota: </b>Actualmente varias transmisiones implícitas quedan exentas de esta limitación. Las apps pueden continuar registrando receptores para estas transmisiones en sus manifiestos, sin importar el nivel de la API al cual se orienten. Para acceder a una lista de las transmisiones excluidas.</p>
+						
+						<p><b>Accede aquí para tener más información</b></p>
 <a href="presentacionGenially4/genially.html">
 
 	<img src="../../../../../IMG/g.gif" height="50px" width="50px"  >
