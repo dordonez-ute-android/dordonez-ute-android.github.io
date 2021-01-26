@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Sesión 20</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../CSS/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="../../../CSS/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../../../CSS/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../../CSS/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="../../../Index.html">
+					<img src="../../../IMG/Logo.png"alt="" width="100" height="100"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="../../../Index.html">Inicio</a></li>
+						<li class="nav-item active dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="Primer Parcial.html">Primer Parcial</a>
+								<a class="dropdown-item" href="../Segundo Parcial/Segundo Parcial.html">Segundo Parcial</a>
+								<a class="dropdown-item" href="../Tercer Parcial/Tercer Parcial.html">Tercer Parcial</a>
+							</div>
+					  </li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Consultas</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href= "../../Consulta/Consulta_Grupo1.html">Grupo 1</a>
+								<a class="dropdown-item" href="../../Consulta/Consulta_Grupo2.html">Grupo 2</a>
+                                <a class="dropdown-item" href="../../Consulta/Consulta_Grupo3.html">Grupo 3</a>
+                                <a class="dropdown-item" href="../../Consulta/Consulta_Grupo4.html">Grupo 4</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Desarrollo de Sistemas II</h1>
+                    </br>
+                    <h1>TouchScreen</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class>
+				  <div class="inner-column">
+						<h1><span>Título: TouchScreen</span></h1> <br/> <br/> <br/>
+
+					
+					</div>
+				</div>
+			</div>
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<img src="../../../IMG/ImgGrupo2/img1_sesion20.png"  align="center" width="450px" height="300px">	
+                        		
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha -->
+
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                	<div class="inner-column">
+                    
+                	<h2 align="left"><strong>Eventos de entrada </strong></h2>
+						<p align="justify">Existe más de una forma de interceptar los eventos con los desde una interacción del usuario con tu aplicación. 
+                        El enfoque consiste en capturar eventos desde objeto de vista específico con el que el usuario interactúa. </p>                       
+                        
+						<p align="justify">La clase View  contiene una colección de interfaces anidadas con devoluciones de llamada que puedes definir más fácilmente. 
+                        Estas interfaces, llamadas objetos de escucha de eventos,  permiten capturar la interacción del usuario con tu IU.</p>
+                        
+                	</div>					
+                </div>
+			
+            	<!-- Texto derecha fin -->
+			</div>
+            
+            <br/>
+            
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <hr style="size:4px" color="black" />
+            
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            
+            
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Gestores de Eventos</strong></h2>
+						<p align="justify">Un objeto de escucha de eventos es una interfaz de la clase View que contiene un solo método de devolución de llamada.
+                        El framework de Android llamará a estos métodos cuando la vista con la que se haya registrado el objeto de escucha se active por la interacción 
+                        del usuario con el elemento de la IU.</p>
+                            
+                        <p align="justify">Métodos de devolución de llamadas: </p>                       
+                        	
+					</div>
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+
+						<img src="../../../IMG/ImgGrupo2/img2_sesion20"  align="center" width="400px" height="400px"> 
+                        	
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha -->
+
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                    
+                    <img src="../../../IMG/ImgGrupo2/img3_sesion20"  align="center" width="400px" height="420px">
+                    <br/>
+                	<br/>     
+                </div>
+                
+                        
+                <!-- Texto Derecha fin -->
+                
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    
+                    <p><strong>Definir métodos de devolución de llamada  </strong></p>
+                    
+                    	<ul>
+                        	<li><p align="justify"><strong>1. </strong>Implementar la interfaz anidada en la actividad o definirla como una clase anónima. </p></li>
+                            
+                            <li><p align="justify"><strong>2. </strong>Pasar una instancia de la implementación al método View.set...Listener() respectivo (p. ej., llama a setOnClickListener() 
+                            y pásale tu implementación del objeto OnClickListener).</p></li> 
+                            
+                        </ul>  
+                        	
+					</div>
+				</div> 	
+                
+                
+                <!-- Texto Derecha --> 
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    
+                    	<br/>
+  
+                        
+                        <img src="../../../IMG/ImgGrupo2/img4_sesion20.png"  align="center" width="400px" height="250px">
+                        	
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha fin -->
+                
+ 
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <br/>
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Controladores de eventos</strong></h2>
+						<p align="justify">Si estás creando un componente personalizado desde un elemento View, podrás definir varios métodos de devolución de llamada utilizados como 
+                        controladores de eventos predeterminados. Las devoluciones de llamada que se utilizan comúnmente para controlar eventos son: </p>
+                            
+                                                              
+					</div>
+				</div> 	
+                               
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+                    	<br/>  
+						<ul>
+                        	<li><p align="justify"><strong>• &nbsp onKeyDown(int, KeyEvent): </strong> Se llama cuando se produce un evento de tecla nuevo.</p></li>
+                            
+                            <li><p align="justify"><strong>• &nbsp onKeyUp(int, KeyEvent): </strong> Se llama cuando se produce un evento de activación de tecla.</p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp onTrackballEvent(MotionEvent): </strong> Se llama cuando se produce un evento de movimiento de la bola de seguimiento.</p></li> 
+                            
+                        </ul> 
+                        	
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha -->
+
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">                   
+                    <div class="inner-column">
+                    
+						<br/>  
+						<ul>
+                        	<li><p align="justify"><strong>• &nbsp onTouchEvent(MotionEvent): </strong> Se llama cuando se produce un evento de movimiento de la pantalla táctil.</p></li>
+                            
+                            <li><p align="justify"><strong>• &nbsp onFocusChanged(boolean, int, Rect): </strong> Se llama cuando la vista gana o pierde el foco.</p></li> 
+                            
+                            
+                        </ul> 
+                        	
+					</div>             
+                </div>
+                                      
+                <!-- Texto Derecha fin -->                
+ 
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            
+            
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+                
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            
+             <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Modo táctil</strong></h2>
+						<p align="justify">Cuando un usuario navega en una interfaz de usuario con teclas direccionales o una bola de seguimiento, es necesario 
+                        enfocar los elementos que se pueden accionar (como los botones) para que el usuario pueda ver lo que aceptará una entrada.</p>           
+                        
+                        <p align="justify">El estado del modo táctil se mantiene en todo el sistema (todas las ventanas y actividades). A fin de consultar el 
+                        estado actual, puedes llamar a isInTouchMode() para comprobar si el dispositivo está en el modo táctil.</p>                         
+                        
+					</div>
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                <br/>
+                <br/>
+                    
+                    <img src="../../../IMG/ImgGrupo2/img5_sesion20.jpg"  align="center" width="400px" height="200px"> 
+                                        
+                </div>
+                
+                
+                
+		</div>
+        
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+        
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+        <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+        	<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Cómo controlar el foco</strong></h2>
+						<p align="justify">El framework controlará el movimiento del foco de rutina en respuesta a las entradas del usuario. Esto incluye 
+                        cambiar el foco a medida que se oculten o quiten las vistas, o a medida que haya nuevas vistas disponibles.</p>                                   
+                        
+					</div>
+				</div> 	
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					
+					<img src="../../../IMG/ImgGrupo2/img6_sesion20.png"  align="center" width="650px" height="250px"> 
+					
+				</div>
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						
+						<p align="justify">El movimiento del foco se basa en un algoritmo que encuentra el vecino más cercano en una dirección determinada.</p>    
+                        
+						<p align="justify">Cuando el algoritmo no coincide con el comportamiento previsto del desarrollador, se debe proporcionar anulaciones explícitas 
+                        con los siguientes atributos XML en el archivo de diseño: nextFocusDown, nextFocusLeft, nextFocusRight y nextFocusUp.</p>       
+                        
+                                         
+                        
+					</div>
+                    <img src="../../../IMG/ImgGrupo2/img7_sesion20.PNG"  align="center" width="400px" height="200px">    
+				</div> 	 
+                
+                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    	<br/>
+					
+						<p align="justify">Para solicitar que se enfoque un elemento View en particular, llama a requestFocus(). 
+                        Para detectar eventos de foco (ser notificado cuando un elemento View recibe o pierde el foco), utiliza onFocusChange(), 
+                        como se explica en la sección Objetos de escucha de eventos. </p>                                   
+                        
+					</div>
+				</div> 	
+                
+                   
+      		</div>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <br/>
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Motionevent</strong></h2>
+						<p align="justify">Objeto utilizado para informar eventos de movimiento (mouse, lápiz, dedo, trackball). Los eventos de movimiento 
+                        pueden contener movimientos absolutos o relativos y otros datos, según el tipo de dispositivo.</p>
+                        
+                        <p align="justify">Algunas constantes típicas en MotionEvent son: </p>
+                            
+                                                              
+					</div>
+				</div> 	
+                               
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+                    	<br/>  
+						<ul>
+                        	<li><p align="justify"><strong>• &nbsp MotionEvent.ACTION_DOWN: </strong> Ocurre cuando se apoyó un dedo en la pantalla. </p></li>
+                            
+                            <li><p align="justify"><strong>• &nbsp MotionEvent.ACTION_MOVE: </strong> Ocurre cuando se movió un dedo mientras estaba apoyado en la pantalla. </p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp  MotionEvent.ACTION_UP: </strong> Ocurre cuando se levantó un dedo de la pantalla. </p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp  MotionEvent.ACTION_POINTER_DOWN: </strong> Ocurre cuando por cada dedo adicional.  </p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp  MotionEvent.ACTION_POINTER_UP: </strong> Ocurre cuando algún dedo se levanta menos el ultimo. </p></li> 
+                            
+                        </ul> 
+                        	
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha -->
+
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">                   
+                    <div class="inner-column">
+                    
+						<br/>  
+						
+                        <img src="../../../IMG/ImgGrupo2/img8_sesion20.PNG"  align="center" width="450px" height="400px"> 
+                        	
+					</div>             
+                </div>
+                                      
+                <!-- Texto Derecha fin -->                
+ 
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            <br/>
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            <!---------------------------------------------------------------------- SEPARADOR ----------------------------------------------------------->
+            
+            
+            <!-- Texto izquierda -->
+            <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="left"><strong>Multi Touch</strong></h2>
+						<p align="justify">La clase Multitouch administra y proporciona información sobre la compatibilidad del entorno actual para la gestión 
+                        del contacto de los dispositivos de entrada del usuario, incluidos los que tienen dos o más puntos de contacto. </p>
+                        
+                        <p align="justify">La API para controlar la interacción del usuario con estos eventos de gestos incluye las siguientes clases: </p>
+                            
+                                                              
+					</div>
+				</div> 	
+                               
+                
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+                    	<br/>  
+						<ul>
+                        	<li><p align="justify"><strong>• &nbsp flash.events.TouchEvent: </strong> permite manejar eventos en dispositivos que detectan el contacto del usuario con el dispositivo. </p></li>
+                            
+                            <li><p align="justify"><strong>• &nbsp flash.events.GestureEvent: </strong> permite manejar eventos multitáctiles en dispositivos que detectan un contacto complejo del usuario con el dispositivo </p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp flash.events.GesturePhase: </strong> es una clase de enumeración de valores constantes para usar con las clases GestureEvent, PressAndTapGestureEvent y TransformGestureEvent</p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp flash.events.TransformGestureEvent: </strong> permite manejar eventos de entrada de movimiento complejos</p></li> 
+                            
+                            <li><p align="justify"><strong>• &nbsp flash.events.PressAndTapGestureEvent: </strong> permite manejar el gesto de presionar y tocar en dispositivos táctiles. </p></li> 
+                            
+                        </ul> 
+                        	
+					</div>
+				</div> 	
+                
+                <!-- Texto Derecha -->
+
+                <div class="col-lg-6 col-md-12 col-sm-12  text-center">                   
+                    <div class="inner-column">
+                    
+						<br/>  
+						
+                        <img src="../../../IMG/ImgGrupo2/img9_sesion20.jpg"  align="center" width="400px" height="500px"> 
+                        	
+					</div>             
+                </div>
+                                      
+                <!-- Texto Derecha fin -->                
+ 
+			</div>
+            
+            
+            <br/>           
+            <hr style="size:4px" color="black" />
+            <br/>
+            
+            
+
+    
+    
+	<!-- End About -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f" >
+	  <div class="container" >
+		  <div class="row" >
+			  
+			<div class="col-lg-4 col-md-4" >
+				<h3 align="justify" style="color:#0FF">Sobre Nosotros...</h3>
+				<p align="justify">Somos estudiantes de la Universidad UTE que actualmente cursamos el octavo semestre de la carrera de Ingeniería Informática y Ciencias de la Computación.</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" >
+				<p align="justify" style="color:#0FF">&nbsp</p>
+				<p align="justify">&nbsp</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" > 
+				  <h3 style="color:#0FF">Líderes</h3>
+                  <ul>
+                   <li>
+                <span style="color:#0FF">Daniel Altamirano</span>
+                <h3>daniel.altamirano@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Leslie Torres</span>
+                <h3>leslie.torres@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Ivonne Venegas</span>
+                <h3>ivonne.venegas@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Carlos Yépez</span>
+                <h3>carlos.yepez@ute.edu.ec</h3></a>
+              </li>
+            </ul>   	
+			</div>
+	    </div>
+	  </div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2020 <a>UTE Ingeniería Informática</a> 
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+</footer>
+	<!-- End Footer -->
+    
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="../../../JS/jquery-3.2.1.min.js"></script>
+	<script src="../../../JS/popper.min.js"></script>
+	<script src="../../../JS/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="../../../JS/jquery.superslides.min.js"></script>
+	<script src="../../../JS/images-loded.min.js"></script>
+	<script src="../../../JS/isotope.min.js"></script>
+	<script src="../../../JS/baguetteBox.min.js"></script>
+	<script src="../../../JS/form-validator.min.js"></script>
+    <script src="../../../JS/contact-form-script.js"></script>
+    <script src="../../../JS/custom.js"></script>
+</body>
+</html>
