@@ -102,50 +102,236 @@
                         <br/>
                         <p align="justify"><strong><u>Descripción general de los servicios</u></strong></p>
 						<p align="justify">Un Service es un componente de una aplicación que puede realizar operaciones de larga ejecución en 
-                        segundo plano y que no proporciona una interfaz de usuario. Otro componente de la aplicación puede iniciar un servicio 
-                        y continuar ejecutándose en segundo plano aunque el usuario cambie a otra aplicación. Además, un componente puede enlazarse 
-                        con un servicio para interactuar con él e incluso realizar una comunicación entre procesos (IPC). Por ejemplo, un servicio 
-                        puede manejar transacciones de red, reproducir música, realizar I/O de archivos o interactuar con un proveedor de contenido, 
-                        todo en segundo plano. </p>            
+                        segundo plano.</p> 
+                        <ul>
+                        <li><p align="justify">•No proporciona una interfaz de usuario.</p></li>
+                        <li><p align="justify">•Puede iniciar un servicio y continuar ejecutándose en segundo plano aunque el usuario cambie a otra aplicación.</p></li>
+                        <li><p align="justify">•Un componente puede enlazarse con un servicio para interactuar con él e incluso realizar una comunicación entre procesos (IPC).</p></li></ul>           
                         
                         <br/>
-                        <p align="justify"><strong><u>Servicios de primer plano</u></strong></p>
-						<p align="justify">Los servicios de primer plano realizan operaciones que son perceptibles para el usuario.Cada servicio 
-                        en primer plano debe mostrar una notificación en la barra de estado que tenga una prioridad igual PRIORITY_LOW o superior. 
-                        De esa manera, los usuarios son conscientes de que su aplicación está realizando una tarea en primer plano y consume recursos 
-                        del sistema. La notificación no se puede descartar a menos que el servicio se detenga o se elimine del primer plano. </p>         
-                        
-                        <br/>
-                        <p align="justify"><strong><u>Descripción general de los servicios vinculados</u></strong></p>
-						<p align="justify">Un servicio vinculado es el servidor de una interfaz cliente-servidor. Permite que los componentes (como actividades) 
-                        se vinculen con el servicio, envíen solicitudes, reciban respuestas y establezcan comunicaciones entre procesos (IPC). Un servicio 
-                        vinculado, por lo general, solo está activo mientras le presta servicio a otro componente de la aplicación y no se ejecuta en segundo 
-                        plano indefinidamente. </p> 
-                        
-                        <br/>
-                        <p align="justify"><strong><u>Lenguaje de definición de la interfaz de Android (AIDL)</u></strong></p>
-						<p align="justify">El Lenguaje de definición de la interfaz de Android (AIDL) es similar a otros IDL con los que posiblemente hayas trabajo. 
-                        Te permite definir la interfaz de programación que el cliente y el servicio acuerdan utilizar para establecer comunicación entre procesos (IPC). 
-                        Por lo general, en Android, un proceso no puede acceder a la memoria de otro proceso. Por esto, para comunicarse, tienen que descomponer sus 
-                        objetos en primitivas que el sistema operativo pueda comprender y tienen que ordenar los objetos entre esos límites para ti.</p>    
-                        
-                        <h2 align="center"><strong>Ingrese aquí para mas información</strong></h2> 
-                        
-                        <p align="center">
-                        <a href="https://my.visme.co/view/ojnd83gy-presentacion#s1" >
-
-							<img src="../../../../../IMG/ImgGrupo2/logo.GIF" height="50px" width="50px" >
-  
-  						</a>
-                      
-                        </p>
-                        
-                	</div>                                                 
+                        <p align="justify">Estos son los tres tipos diferentes de servicios:</p>
+                        <center><img src="../../../../../IMG/4.1.jpg" alt="Capture.png" align="center" width="400px" height="200px"></center>
+                	</div>                                               
                         					
 				</div> 	
                             
 			</div>
 			<!-- Seccion fin izquierda texto -->
+            <!--Seccion división-->
+            <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    </br></br></br>
+						<h2 style="color:#9F0"><strong>Primer Plano</strong></h2></br>
+					  <ul>
+                        <li><p align="justify">• Un servicio en primer plano realiza una operación que el usuario puede notar.</p></li>
+                        <li><p align="justify">• Los servicios en primer plano deben mostrar una notificación.</p></li>
+                        <li><p align="justify">• Estos servicios continúan ejecutándose incluso si el usuario deja de interactuar con la aplicación.</p></li></ul> 
+					</div>
+				</div> 		
+			
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                </br></br></br></br></br>
+                	<img src="../../../../../IMG/4.2.png" alt="Capture.png" align="center" width="200px" height="221px">
+                </div>
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            </br></br>
+	<!-- Seccion derecha texto -->
+			<div class="row">			
+					<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    
+						<img src="../../../../../IMG/4.3.png" alt="Captures2.png" align="center" width="280px" height="240px">					
+					</div>				
+						</br></br>	
+				<div class="col-lg-5 col-md-12 col-sm-12 text-justify">	
+                <div class="inner-column">
+                </br></br>	
+                      <h2 style="color:#6C9"><strong>Segundo Plano</strong></h2></br>
+					  <p align="justify">• Realiza una operación que el usuario no nota directamente.</p>
+              </div>       
+			</div> 
+            </div>
+            <!-- Seccion fin izquierda texto -->
+            <!--Seccion división-->
+            <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    </br></br></br>
+						<h2 style="color:#9F0"><strong>Enlace</strong></h2></br>
+					  <ul>
+                        <li><p align="justify">• Un servicio es de enlace cuando un componente de la aplicación se vincula a él llamando a <b style="color:#3CC">bindService()</b>.</p></li>
+                        <li><p align="justify">• Ofrece una interfaz cliente-servidor que permite que los componentes interactúen con el servicio, incluso comunicación entre procesos (IPC).</p></li>
+                        <li><p align="justify">• Se ejecuta solamente mientras otro componente de aplicación está enlazado a él.</p></li>
+                        <li><p align="justify">• Se pueden enlazar varios componentes con el servicio a la vez, pero el servicio se destruye cuando todos ellos se desenlazan.</p></li></ul> 
+					</div>
+				</div> 		
+			
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                </br></br></br></br></br></br></br>
+                	<img src="../../../../../IMG/4.4.png" alt="Capture.png" align="center" width="200px" height="221px">
+                </div>
+			</div>
+			<!-- Seccion fin izquierda texto -->
+            <!--Sección division fin-->
+             <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <h2 style="color:#636"><strong>Diferencia entre un servicio y subproceso </strong></h2></br>
+						<h2 style="color:#F66"><strong>Servicio</strong></h2></br>
+                        <p align="justify">Un servicio es simplemente un componente que puede ejecutarse en segundo plano, incluso cuando el usuario no está interactuando con tu aplicación.</p>
+                       
+<center><img src="../../../../../IMG/4.7.JPG" alt="Capture.png" align="center" width="542px" height="232px"></center>	
+                       
+                	</div>                                               
+                        					
+				</div> 	
+                            
+			</div>
+            <div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+                    </br>
+						<h2 style="color:#9F0"><strong>Declarar un servicio en el manifiesto</strong></h2></br>
+					 <p align="justify">Se debe declarar todos los servicios en el archivo de manifiesto de la aplicación, tal como se hace con las actividades y otros componentes. Para declarar tu servicio, agrega un elemento <b style="color:#FF3"> <service></b> como campo secundario del elemento de <b style="color:#0F6"> <application></b>.</p> 
+					</div>
+				</div> 		
+			
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+                </br></br></br>
+                	<img src="../../../../../IMG/4.8.png" alt="Capture.png" align="center" width="450px" height="149px">
+                </div>
+			</div>
+              <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <h2 style="color:#695"><strong>Crear un servicio iniciado  </strong></h2></br>
+						
+                       <ul>
+                        <li><p align="justify">• Un servicio inicia llamando a startService(), lo cual da como resultado una llamada al método <b style="color:#3CC">onStartCommand()</b> del servicio.</p></li>
+                        <li><p align="justify">• Cuando se inicia un servicio, tiene un ciclo de vida independiente del componente que lo inició. </p></li>
+                        <li><p align="justify">• Se detienen a sí mismo llamando a stopSelf(), u otro componente puede detenerlo llamando a <b style="color:#3CC">stopService()</b>.</p></li>
+                        <li><p align="justify">• Un componente de una aplicación, como una actividad, puede iniciar el servicio llamando a startService() y pasando una Intent que especifique el servicio e incluya datos para el servicio.</p></li>
+<li><p align="justify">• El servicio recibe esta Intent en el método onStartCommand().</p></li></ul> 
+<center><img src="../../../../../IMG/4.8.JPG" alt="Capture.png" align="center" width="826px" height="397px"></center>	
+                       
+                	</div>                                               
+                        					
+				</div> 	
+                            
+			</div>
+            <div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                
+					<div class="inner-column">
+						
+                        <br/>
+                        <h2 style="color:#695"><strong>Iniciar un servicio</strong></h2></br>
+                        <p align="justify">Puedes iniciar un servicio desde una actividad u otro componente de la aplicación pasando una <b style="color:#0F6">Intent</b> a <b style="color:#0F6">startService()</b> o <b style="color:#0F6">startForegroundService()</b>. </br></br>
+El sistema de Android llama al método del servicio <b style="color:#0F6">onStartCommand()</b> y le pasa la <b style="color:#0F6">Intent</b>, que especifica qué servicio iniciar.</p>
+<center><img src="../../../../../IMG/4.9.png" alt="Capture.png" align="center" width="700px" height="120px"></center>
+</br></br>
+<h2 style="color:#847"><strong>Crear un servicio enlazado</strong></h2></br>
+<p align="justify">Un servicio enlazado es un servicio que permite que los componentes de la aplicación se enlacen a él llamando a <b style="color:#0F6">bindService()</b> para crear una conexión a largo plazo.
+</br></br>
+Para crear un servicio enlazado: </p>
+						
+                       <ul>
+                        <li><p align="justify">• Se debe implementar el método de devolución de llamada <b style="color:#3CC">onBind()</b>.</p></li>
+                        <li><p align="justify">• Otros componentes de la aplicación pueden llamar a <b style="color:#3CC">bindService() </b> para recuperar la interfaz y comenzar a llamar a métodos en el servicio.</p></li>
+                        <li><p align="justify">• El servicio está activo solo para servir al componente de la aplicación que está enlazado a él.</p></li>
+                        <li><p align="justify">• Se debe definir la interfaz que especifica cómo un cliente puede comunicarse con el servicio. Esta interfaz entre el servicio y un cliente debe ser una implementación de <b style="color:#3CC">IBinder </b>.</p></li>
+<li><p align="justify">• Cuando un cliente termina de interactuar con el servicio, llama a unbindService() para desenlazarse. Cuando ya no hay clientes enlazados con el servicio, el sistema lo destruye.</p></li></ul> 
+
+<h2 style="color:#885"><strong>Enviar notificaciones al usuario.</strong></h2></br>
+                        <p align="justify">Cuando se está ejecutando, un servicio puede notificar al usuario acerca de los eventos utilizando notificaciones del sistema o notificaciones de la barra de estado.</p></br></br>
+<center><img src="../../../../../IMG/4.10.JPG" alt="Capture.png" align="center" width="591px" height="196px"></center>
+</br></br>
+<h2 style="color:#635"><strong>Ejecutar un servicio en primer plano</strong></h2></br>
+<p align="justify">Un servicio en primer plano es un servicio del que el usuario está activamente al tanto y que no es candidato a que el sistema lo cierre cuando tiene poca memoria. </p>
+                       <ul>
+                        <li><p align="justify">• Debe proporcionar una notificación en la barra de estado, que aparece debajo del encabezado  <b style="color:#3CC">En curso</b>.</p></li>
+                        <li><p align="justify">• Para solicitar que tu servicio se ejecute en primer plano, llama a <b style="color:#3CC">startForeground()</b>. Este método tiene dos parámetros: un valor entero que identifica de forma exclusiva la notificación de barra de estado. La prioridad de la notificación debe ser PRIORITY_LOW o superior. </p></li>
+                       </ul> 
+        <center><img src="../../../../../IMG/4.11.JPG" alt="Capture.png" align="center" width="398px" height="355px"></center>
+</br></br>         
+<h2 style="color:#998"><strong>Administrar el ciclo de vida de un servicio</strong></h2></br>
+<p align="justify">El ciclo de vida del servicio puede seguir dos rutas de acceso diferentes: </p></br>
+<center><img src="../../../../../IMG/4.12.png" alt="Capture.png" align="center" width="662px" height="306px"></center>
+<h2 style="color:#635"><strong>Servicio Iniciado</strong></h2></br>
+                       <ul>
+                        <li><p align="justify">• El servicio se crea cuando otro componente llama a <b style="color:#3CC">startService()</b>.</p></li>
+                        <li><p align="justify">• El servicio se ejecuta de forma indefinida y se debe detener a sí mismo llamando a  <b style="color:#3CC">stopSelf()</b>. </p></li>
+                       </ul> 
+                       <h2 style="color:#635"><strong>Servicio enlazado</strong></h2></br>
+                       <ul>
+                        <li><p align="justify">• El servicio se crea cuando otro componente (un cliente) llama a <b style="color:#3CC">bindService()</b>.</p></li>
+                        <li><p align="justify">• Luego, el cliente se comunica con el servicio a través de una interfaz <b style="color:#3CC">IBinder</b>.</p></li>
+                        <li><p align="justify">• El cliente puede cerrar la conexión llamando a <b style="color:#3CC">unbindService()</b>.</p></li>
+                        <li><p align="justify">• Se pueden enlazar varios clientes al mismo servicio y, cuando todos ellos se desenlazan, el sistema destruye el servicio.</p></li>
+                       </ul> </br>
+                       <h2 style="color:#F45"><strong>Servicios de primer plano</strong></h2></br>
+<p align="justify"><strong>Definición</strong> </p>
+                       <ul>
+                        <li><p align="justify">• Los servicios de primer plano realizan operaciones que son perceptibles para el usuario.</p></li>
+                        <li><p align="justify">• Cada servicio en primer plano debe mostrar una notificación en la barra de estado que tenga una prioridad igual PRIORITY_LOW o superior. La notificación no se puede descartar a menos que el servicio se detenga o se elimine del primer plano.</p></li>
+                       </ul> 
+           <center><img src="../../../../../IMG/4.13.JPG" alt="Capture.png" align="center" width="400px" height="266px"></center></br>
+           <h2 style="color:#998"><strong>Solicitar el permiso de servicio en primer plano</strong></h2></br>
+<p align="justify">Los servicios en primer plano deben solicitar el FOREGROUND_SERVICE permiso, como se muestra en el siguiente fragmento de código.</p>
+<center><img src="../../../../../IMG/4.15.png" alt="Capture.png" align="center" width="739px" height="179px"></center>  </br>          
+<h2 style="color:#148"><strong>Iniciar un servicio de primer plano</strong></h2></br>
+<p align="justify">Para solicitar que su servicio se ejecute en primer plano, llame a startForeground(). Este método toma dos parámetros: un número entero positivo que identifica de forma única la notificación en la barra de estado y el Notification objeto en sí.</p></br>
+<center><img src="../../../../../IMG/4.16.png" alt="Capture.png" align="center" width="652px" height="335px"></center></br>
+<h2 style="color:#918"><strong>Declarar tipos de servicios en primer plano</strong></h2></br>
+<p align="justify">Para quitar el servicio del primer plano, llame stopForeground(). Este método toma un booleano, que indica si se debe eliminar también la notificación de la barra de estado. Tenga en cuenta que el servicio continúa ejecutándose.</p></br> 
+<h2 style="color:#918"><strong>Eliminar un servicio del primer plano</strong></h2></br>
+<p align="justify">Si se accede a información de ubicación en un servicio en primer plano, declare el location tipo de servicio en primer plano como un atributo de su <service> componente.</br>
+Si se accede a la cámara o al micrófono en un servicio en primer plano, declare los tipos de servicio camera o en microphone primer plano, respectivamente, como atributos de su <service> componente.</p></br> 
+<center><img src="../../../../../IMG/4.17.JPG" alt="Capture.png" align="center" width="957px" height="593px"></center></br>
+<h2 style="color:#918"><strong>Restricciones durante el uso</strong></h2></br>
+<p align="justify">Si su aplicación inicia un servicio en primer plano mientras se ejecuta en segundo plano.</p></br>  
+<center><img src="../../../../../IMG/4.18.JPG" alt="Capture.png" align="center" width="333px" height="139px"></center></br> 
+<p align="justify">Su aplicación inicia un servicio en primer plano mientras se ejecuta en primer plano.</p></br> 
+<center><img src="../../../../../IMG/4.19.JPG" alt="Capture.png" align="center" width="1074px" height="606px"></center></br>
+<h2 style="color:#F98"><strong>Descripción general de los servicios enlazados</strong></h2></br>  
+<p align="justify">Un servicio enlazado es el servidor de una interfaz cliente-servidor. Permite que los componentes (como actividades) se vinculen con el servicio, envíen solicitudes, reciban respuestas y establezcan comunicaciones entre procesos (IPC).</p></br>
+    <center><img src="../../../../../IMG/4.20.png" alt="Capture.png" align="center" width="128px" height="394px"></center></br>
+    <h2 style="color:#F98"><strong>Cómo crear un enlace con un servicio iniciado</strong></h2>
+     <center><img src="../../../../../IMG/4.21.JPG" alt="Capture.png" align="center" width="842px" height="309px"></center></br>
+     <h2 style="color:#F98"><strong>Cómo crear un servicio enlazado</strong></h2></br>
+     <center><img src="../../../../../IMG/4.22.JPG" alt="Capture.png" align="center" width="705px" height="303px"></center></br>
+     <h2 style="color:#F98"><strong>Cómo extender la clase Binder</strong></h2></br>
+     <center><img src="../../../../../IMG/4.23.JPG" alt="Capture.png" align="center" width="523px" height="173px"></center></br>
+      <center><img src="../../../../../IMG/4.24.png" alt="Capture.png" align="center" width="822px" height="598px"></center></br>
+       <h2 style="color:#F98"><strong>Cómo usar un objeto Messenger</strong></h2></br>
+     <center><img src="../../../../../IMG/4.25.JPG" alt="Capture.png" align="center" width="544px" height="352px"></center></br>
+      <center><img src="../../../../../IMG/4.26.png" alt="Capture.png" align="center" width="734px" height="798px"></center></br>
+      <center><img src="../../../../../IMG/4.27.JPG" alt="Capture.png" width="1130px" height="611px"></center></br>
+      <center><img src="../../../../../IMG/4.28.JPG" alt="Capture.png" align="center" width="925px" height="531px"></center></br>
+      <center><img src="../../../../../IMG/4.29.png" alt="Capture.png" align="center" width="612px" height="321px"></center></br>
+      <center><img src="../../../../../IMG/4.30.JPG" alt="Capture.png" align="center" width="1134px" height="301px"></center></br>
+      <center><img src="../../../../../IMG/4.31.png" alt="Capture.png" align="center" width="526px" height="567px"></center></br>
+      <center><img src="../../../../../IMG/4.32.JPG" alt="Capture.png" align="center" width="1133px" height="592px"></center></br>
+      <center><img src="../../../../../IMG/4.33.JPG" alt="Capture.png" align="center" width="1128px" height="374px"></center></br>
+      <center><img src="../../../../../IMG/4.34.png" alt="Capture.png" align="center" width="594px" height="281px"></center></br>
+      <center><img src="../../../../../IMG/4.35.JPG" alt="Capture.png" align="center" width="1128px" height="650px"></center></br>
+      <center><img src="../../../../../IMG/4.36.png" alt="Capture.png" align="center" width="589px" height="413px"></center></br>
+      <center><img src="../../../../../IMG/4.37.JPG" alt="Capture.png" align="center" width="1121px" height="624px"></center>
+      <center><img src="../../../../../IMG/4.38.JPG" alt="Capture.png" align="center" width="1119px" height="396px"></center></br>
+      
+     
+                	</div>                                               
+                        					
+				</div> 	
+                            
+			</div>
 		</div>
 	</div>
 	<!-- End About -->
