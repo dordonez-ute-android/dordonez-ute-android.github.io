@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>UBICACIÓN, GPS</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../CSS/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="../../../CSS/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../../../CSS/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../../CSS/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand">
+					<img src="../../../IMG/Logo.png"alt="" width="100" height="100"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="../../../Index.html">Inicio</a></li>
+						<li class="nav-item active dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="../Primer Parcial/Primer Parcial.html">Primer Parcial</a>
+								<a class="dropdown-item" href="../Segundo Parcial/Segundo Parcial.html">Segundo Parcial</a>
+								<a class="dropdown-item" href="Tercer Parcial.html">Tercer Parcial</a>
+							</div>
+					  	</li>
+					
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Desarrollo de Sistemas II</h1>
+                    </br>
+                    <h1>UBICACIÓN, GPS</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8 col-sm-12 text-left">
+				  <div class="inner-column">
+						<h1 align="justify"><span>Introducción</span></h1><br>	
+					</div>
+				</div>
+			</div>
+				
+				<!-- Start About -->
+
+			<!-- Seccion izquierda texto -->
+			<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+				<div class="inner-column">
+					
+				  <p align="justify">El reconocimiento de la ubicación le permite a una aplicación brindar una experiencia más contextual, debido a que los usuarios llevan sus dispositivos móviles a todas partes. Las API de ubicación disponibles en los Servicios de Google Play permiten agregar la función de reconocimiento de la ubicación con seguimiento automático de la ubicación, geovallado y reconocimiento de actividades.<br><br>
+				</p>
+					
+				</div>
+				
+				
+				
+			</div> 	
+
+<div class="col-lg-12 col-md-8 col-sm-12 text-left">
+				  <div class="inner-column">
+						<h1 align="justify"><span>Configurar una aplicación con servicios de ubicación</span></h1><br>	
+						
+						
+						
+						<h2>Permisos </h2>
+					</div>
+				</div>
+				
+					
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+				
+					 
+                      <p align="justify" style="font-size: 120%"><br>El primer paso es solicitar permisos de ubicación en el Android Manifest. El sistema de Android incluye varios permisos relacionados a la ubicación que deben ser solicitados dependiendo de los requisitos de la aplicación. <br><br>Las dos categorías existentes son:<br>	<br>	
+
+•	Ubicación en primer plano: Si la aplicación contiene una función que comparte o recibe información de ubicación solo una vez o durante un tiempo definido. <br>	<br>	
+
+Es necesario declarar un servicio en primer plano primero.<br>	<br>	
+			 
+					  </p>						
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12  text-center">
+                	<img src="../../../IMG/imgGrupo1/img/img1.jpg" alt="img1.png" align="center" width="750px" height="270px"><br><br>
+                </div>
+				
+				</div> 		
+			
+				
+			</div>
+			<!-- Seccion fin izquierda texto -->
+		
+			<div class="row">			
+							
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+				<div class="inner-column">
+                      <p align="justify" style="font-size: 120%"><br>A continuación, se declaran los permisos dependiendo de la precisión requerida.  ACCESS_COARSE_LOCATION; proporciona una precisión de ubicación de hasta una manzana. ACCESS_FINE_LOCATION; proporciona una ubicación más precisa y es necesario para algunas tareas de conectividad.<br><br>
+					  
+			
+
+					  </p>	
+				</div>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">
+                	<img src="../../../IMG/imgGrupo1/img/img2.jpg" alt="img1.png" align="center" width="750px" height="170px"><br><br>
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+				<div class="inner-column">
+                      <p align="justify" style="font-size: 120%"><br>	<h2>Ubicación en segundo plano: </h2> Si una función dentro de la aplicación comparte constantemente la ubicación con otros usuarios o usa la API de geovallado.<br><br>
+
+Se debe declarar el permiso ACCESS_BACKGROUND_LOCATION en el Android Manifest.<br><br>
+					  
+			
+
+					  </p>	
+				</div>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">
+                	<img src="../../../IMG/imgGrupo1/img/img3.jpg" alt="img1.png" align="center" width="750px" height="170px"><br><br>
+                </div>
+				
+				</div>
+		
+		<!-- Seccion fin derecha texto -->
+		
+			<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<h1>&nbsp </h1>		
+	</div>
+<!--fin separador negro-->
+	
+	
+	<!-- Seccion izquierda texto -->
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+						
+					  <p align="justify" style="font-size: 120%"><br>Para solicitar estos permisos al usuario, se debe esperar a que interactúe con la aplicación y de preferencia debe realizarse de manera incremental, de manera el usuario tenga más control y transparencia al usar la aplicación.
+
+
+</p>
+					</div>
+				</div> 		
+			
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">
+					<h1>&nbsp </h1>		
+                	<img src="../../../IMG/imgGrupo1/img/img4.png" align="center" width="500px" height="500px">
+					<br><br>
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+						
+					  <p align="justify" style="font-size: 120%"><br>En el caso de los permisos en segundo plano, se debe tener distintas consideraciones para versiones superiores a Android 10. Hasta esta versión, el usuario puede activar la función de ubicación en segundo plano de manera más sencilla desde la misma aplicación, sin embargo, desde Android 11 en adelante el usuario debe habilitar el servicio en configuraciones. 
+
+
+
+
+</p>
+					</div>
+				</div> 		
+				
+				<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<h1>&nbsp</h1>		
+	</div>
+<!--fin separador negro-->
+
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column"><br><br>
+				<h1>Obtener última ubicación conocida</h1>
+				<p align="justify" style="font-size: 130%">
+			
+				<br><br>
+ Las API que brindan estos servicios (como; proveedor de ubicación combinada), permiten conocer la ubicación actual del usuario, solicitando la ubicación más reciente del dispositivo. Uno de los métodos para realizarlo es getLastLocation(). 
+
+</p>
+			
+			</div>
+				</div> 
+
+<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+					<h1>&nbsp </h1>		
+                	<img src="../../../IMG/imgGrupo1/img/img5.jpg" align="center" width="500px" height="400px">
+					<br><br>
+                </div>
+				
+			
+			</div>
+			<!-- Seccion fin izquierda texto -->
+	
+<!-- Seccion izquierda texto -->
+			<div class="row">
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">			
+						
+						<h2 align="justify"><br>Primero se debe descargar e instalar el componente de Servicios de Google Play y agregarlo a la aplicación. A continuación, para crear un cliente de servicios de ubicación se debe configurar en el método OnCreate(), una instancia del cliente de proveedor de ubicación combinada.</h2>	<br>						
+					  </div>
+				</div> 	
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img6.jpg" alt="imagen53.jpg" align="center" width="750px" height="370px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					<br><br>
+						<h2 align="justify"><br>Mediante el método getLastLocation() se solicita la última ubicación del dispositivo y el resultado es determinado por la configuración de permisos declarados anteriormente. La longitud puede ser null en los siguientes casos:<br><br>
+•	La ubicación está desactivada en la configuración del dispositivo.<br><br>
+•	El dispositivo nunca registró su ubicación.<br><br>
+•	Se reiniciaron los Servicios de Google Play en el dispositivo y ningún cliente de proveedor de ubicación combinada activo solicitó la ubicación.
+<br><br>
+
+</h2>	<br>
+						
+					  </div>
+				</div> 
+				
+			
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img7.jpg" alt="imagen53.jpg" align="center" width="750px" height="340px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="justify" ><br>Para cargar una página web en la WebView:</h2>	<br>
+						
+					  </div>
+				</div> 
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img7.jpg" alt="imagen55.jpg" align="center" width="750px" height="340px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="justify"><br>Para tener más precisión al momento de obtener la ubicación más reciente se deben tener tres consideraciones: <br><br>
+•	Comprobar si la ubicación recuperada es significativamente más reciente.<br><br>
+•	Verificar si la precisión de la ubicación es mejor o peor que la estimación anterior.<br><br>
+•	Verificar el proveedor asociado con la nueva ubicación. 
+</h2>	<br>
+						
+					  </div>
+				</div> 
+				
+				<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						<h1>Cambiar la configuración de la ubicación</h1>
+						<p align="justify" style="font-size: 130%"><br>
+						Si la aplicación necesita solicitar la ubicación o recibir actualizaciones de permisos, se debe especificar el nivel requerido de consumo de energía o precisión y el intervalo de actualización deseado, y el dispositivo hace los cambios apropiados en la configuración del sistema automáticamente. El objeto de datos LocationRequest define estos parámetros de configuración.</p>	<br>
+						
+					  </div>
+				</div> 
+				
+				<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="justify"><strong><br><br>Se hace uso de la clase LocationRequest para almacenar los parámetros de solicitud que determinan el nivel de precisión de las solicitudes de ubicación. Los más relevantes son: </strong></h2>	<br>
+						
+					  </div>
+				</div> 
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						
+						
+						<p align="justify" style="font-size: 130%">
+						En el LocationRequest se usa la prioridad y el permiso de acceso definidos en el Android Manifest, junto con el intervalo de actualización:</p>	<br>
+						
+					  </div>
+				</div> 
+
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img9.jpg"alt="imagen55.jpg" align="center" width="850px" height="250px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						
+						<br>
+						<p align="justify" style="font-size: 130%">
+						Para obtener la configuración de ubicación actual se debe crear un LocationSettingsRequest.Builder:</p>	<br>
+						
+					  </div>
+				</div> 
+
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img10.jpg" alt="imagen55.jpg" align="center" width="850px" height="80px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						
+						<br>
+						<p align="justify" style="font-size: 130%">
+						Se debe verificar que se cumpla la configuración de ubicación actual, observando el código de estado del objeto LocationSettingsResponse y para obtener más detalles se llama al método getLocationSettingsStates():</p>	<br>
+						
+					  </div>
+				</div> 
+
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img11.jpg" alt="imagen55.jpg" align="center" width="850px" height="200px">
+                </div>
+		
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						
+						<br>
+						<p align="justify" style="font-size: 130%">
+						Para cambiar la configuración de ubicación se hace uso del método OnFailureListener, que mediante una excepción detecta si la configuración es apropiada para la solicitud, en caso de no serlo, pide permiso al usuario para cambiar la configuración mediante el método startResolutionForResult().</p>	<br>
+						
+					  </div>
+				</div> 
+
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img12.jpg" alt="imagen55.jpg" align="center" width="950px" height="600px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						
+						<br>
+						<p align="justify" style="font-size: 130%">
+						Para cambiar la configuración de ubicación se hace uso del método OnFailureListener, que mediante una excepción detecta si la configuración es apropiada para la solicitud, en caso de no serlo, pide permiso al usuario para cambiar la configuración mediante el método startResolutionForResult().</p>	<br>
+						
+					  </div>
+				</div> 
+
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img12.jpg" alt="imagen55.jpg" align="center" width="950px" height="600px">
+                </div>
+				
+				
+				
+			</div> 
+		<!-- Seccion fin derecha texto -->	
+	<!-- End About -->
+	<br><br>
+	<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+	
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						<h1>Cambiar la configuración de la ubicación</h1>
+						<p align="justify" style="font-size: 130%"><br>
+						La información de ubicación puede permitir a los usuarios orientarse mientras caminan o conducen. Además de la ubicación geográfica (latitud y longitud), se puede mostrar otra información, como rumbo, altitud, velocidad, etc. Todos estos parámetros están disponibles en el objeto Location. Para esto propósito se puede hacer uso del método requestLocationUpdates().</p>	
+						
+					  </div>
+				</div> 
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+												
+						<p align="justify" style="font-size: 130%">
+						Según el formato de la solicitud, se invoca al método de devolución de llamada LocationCallback.onLocationResult() y se le pasa una lista de objetos Location, o bien se le envía un PendingIntent que contiene la ubicación en los datos extendidos. Para obtener la actualización con el método de devolución de llamada LocationCallback. Se debe llamar a requestLocationUpdates() y pasarle la instancia del objeto LocationRequest y una LocationCallback. A continuación, se define un método startLocationUpdates().</p>	<br>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img14.jpg" alt="imagen55.jpg" align="center" width="950px" height="600px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%"><br>
+						Para definir la devolución de llamada de las actualizaciones de ubicación, se invoca el método de devolución de llamada LocationCallback.onLocationResult(). El argumento entrante tiene un objeto Location de lista que contiene la latitud y la longitud de la ubicación. </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img15.jpg" alt="imagen55.jpg" align="center" width="950px" height="600px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%"><br>
+						Para detener las actualizaciones de ubicación, debería considerarse si la actividad sigue enfocada o no, esto con el fin de reducir energía. Para ello se hace uso del método onPause(), llamando a removeLocationUpdates() y pasándole como parámetro un LocationCallback. </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img16.jpg" alt="imagen55.jpg" align="center" width="950px" height="400px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%"><br>
+						A continuación, haciendo uso de un valor booleano en el requestingLocationUpdates, se realiza un seguimiento para saber si las actualizaciones de ubicación están activadas en ese momento y se las activa de ser necesario. </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img17.jpg" alt="imagen55.jpg" align="center" width="950px" height="300px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%"><br>
+						Para guardar el estado de la actividad en caso de que la configuración del dispositivo cambie, se debe almacenar toda la información necesaria para recrear la actividad. Una forma de hacerlo es mediante un estado de instancia almacenado en un objeto Bundle y realizando la devolución de llamada onSaveInstanceState(). </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img18.jpg" alt="imagen55.jpg" align="center" width="950px" height="300px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%"><br>
+						A continuación, se define un método updateValuesFromBundle() para restablecer los valores guardados de la instancia anterior de la actividad si están disponibles.  </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img19.jpg" alt="imagen55.jpg" align="center" width="950px" height="600px">
+                </div>
+				
+				<br><br>
+	<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						<h1>Acceder a ubicación en segundo plano</h1><br>
+						<p align="justify" style="font-size: 130%">
+						
+						En caso de que la aplicación requiera ubicación en segundo plano (como al implementar geovallados), existe una lista de tareas para identificar la lógica de acceso:  </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img20.png" alt="imagen55.jpg" align="center" width="450px" height="300px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						•	Usar los permisos ACCESS_COARSE_LOCATION y ACCESS_FINE_LOCATION. A continuación, verificar que la app requiera esos permisos de ubicación. En Android 10 (API 29) y posteriores, buscar también el permiso ACCESS_BACKGROUND_LOCATION. Llamarlos en una función.<br><br>
+•	Definir el uso de la API de acceso a la ubicación dentro del código.<br><br>
+•	Si la aplicación usa un SDK o una biblioteca que accede a la ubicación, dicho acceso se atribuye a la aplicación por lo que la mejor opción es revisar la documentación de la librería.
+  </p>	
+						
+					  </div>
+				</div> 
+				
+				
+				<br><br>
+	<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						<h1>Geovallas</h1><br>
+						<p align="justify" style="font-size: 130%">
+						
+						El geovallado combina el conocimiento de la ubicación actual del usuario con el conocimiento de la proximidad del usuario a ubicaciones de interés. La latitud, la longitud y el radio definen una geovalla, que crea un área circular, o valla, alrededor de la ubicación de interés. El máximo de geovallas activas es de 100 por app y por usuario de dispositivo.  </p>	<br>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img21.jpg" alt="imagen55.jpg" align="center" width="850px" height="600px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						Para crear objetos de geovallas el primer paso es usar Geofence.Builder a fin de crear una geovalla y configura el radio, la duración y los tipos de transición deseados. 
+  </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img22.jpg" alt="imagen55.jpg" align="center" width="850px" height="550px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						Para especificar las geovallas a supervisar y sus activadores iniciales se hace uso de la clase GeofencingRequest y su clase anidada GeofencingRequestBuilder.
+  </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img23.jpg" alt="imagen55.jpg" align="center" width="850px" height="250px">
+                </div>
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						Para especificar las geovallas a supervisar y sus activadores iniciales se hace uso de la clase GeofencingRequest y su clase anidada GeofencingRequestBuilder.
+  </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img24.jpg" alt="imagen55.jpg" align="center" width="850px" height="550px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						Para agregar geovallas, se usa el método GeofencingClient.addGeofences(), que proporciona el objeto GeofencingRequest y el PendingIntent. 
+  </p>	
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img25.jpg" alt="imagen55.jpg" align="center" width="850px" height="550px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						Existe una lista de prácticas recomendadas para la implementación del geovallado:<br><br>
+•	Reducir el consumo de energía.<br>
+•	Elegir el radio óptimo para la geovalla.<br>
+•	Explicar a los usuarios el porqué de las geovallas.<br>
+•	Usar el tipo de transición de permanencia para reducir el spam de alertas.<br>
+•	Volver a registrar geovallas solo cuando sea necesario.<br>
+•	Solucionar problemas relacionados con el evento de entrada a la geovalla
+
+  </p>	
+						
+					  </div>
+				</div> 
+				<br><br>
+	<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						<h1>Agregar mapas</h1><br>
+						<p align="justify" style="font-size: 130%">
+						
+						La API de Google Maps para Android, permite incluir mapas e información personalizada de mapeos en una aplicación. Las principales funciones que permite esta API son las siguientes: </p>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img26.jpg" alt="imagen55.jpg" align="center" width="800px" height="400px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						•	Agregar mapas: 3D, de interiores, híbridos, de terreno, mosaicos basados en vectores para dibujos y almacenamiento en cache, transiciones animadas, etc.</p>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img27.jpg" alt="imagen55.jpg" align="center" width="800px" height="400px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						•	Personalizar mapas: Definir colores o íconos personalizados, incluir polilíneas y polígonos, proporcionar superposiciones de imágenes.</p>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img28.jpg" alt="imagen55.jpg" align="center" width="800px" height="400px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						•	Controlar la vista del usuario: Controlar las propiedades de rotación, inclinación, zoom y desplazamiento.</p>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img29.jpg" alt="imagen55.jpg" align="center" width="800px" height="400px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						
+						<p align="justify" style="font-size: 130%">
+						
+						•	Agregar Street View: Permite explorar el mundo a través de vistas panorámicas de 360°, controlar el zoom y la orientación, animar los movimientos de cámara.</p>
+						
+					  </div>
+				</div> 
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img30.jpg" alt="imagen55.jpg" align="center" width="800px" height="400px">
+                </div>
+				<br><br>
+				<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<br>
+						<h1>Conclusiones</h1><br>
+						<p align="justify" style="font-size: 130%">
+						
+						•	Al momento de desarrollar una aplicación que requiera servicios de ubicación, se debe tener muy presente solicitar los respectivos permisos al usuario. Esto con la finalidad de ser transparentes con los objetivos de la aplicación.<br><br>
+•	Librerías como Google Maps Android API, permiten implementar funcionalidades de georreferenciación en una aplicación móvil de manera rápida y simple.<br><br>
+•	Agregar geovallados a una aplicación es un proceso sencillo debido a la cantidad de documentación disponible. Sin embargo, uno de los principales retos es el consumo de recursos que debe ser manejado apropiadamente con el fin de optimizar la aplicación.
+
+ </p>
+						
+					  </div>
+				</div> 
+			</div>
+		</div>
+	
+	<!-- End About -->
+	
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f" >
+	  <div class="container" >
+		  <div class="row" >
+			  
+			<div class="col-lg-4 col-md-4" >
+				<h3 align="justify" style="color:#0FF">Sobre Nosotros...</h3>
+				<p align="justify">Somos estudiantes de la Universidad UTE que actualmente cursamos el octavo semestre de la carrera de Ingeniería Informática y Ciencias de la Computación.</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" >
+				<p align="justify" style="color:#0FF">&nbsp</p>
+				<p align="justify">&nbsp</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" > 
+				  <h3 style="color:#0FF">Líderes</h3>
+                  <ul>
+                   <li>
+                <span style="color:#0FF">Daniel Altamirano</span>
+                <h3>daniel.altamirano@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Leslie Torres</span>
+                <h3>leslie.torres@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Ivonne Venegas</span>
+                <h3>ivonne.venegas@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Carlos Yépez</span>
+                <h3>carlos.yepez@ute.edu.ec</h3></a>
+              </li>
+            </ul>   	
+			</div>
+	    </div>
+	  </div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2020 <a>UTE Ingeniería Informática</a> 
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="../../../JS/jquery-3.2.1.min.js"></script>
+	<script src="../../../JS/popper.min.js"></script>
+	<script src="../../../JS/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="../../../JS/jquery.superslides.min.js"></script>
+	<script src="../../../JS/images-loded.min.js"></script>
+	<script src="../../../JS/isotope.min.js"></script>
+	<script src="../../../JS/baguetteBox.min.js"></script>
+	<script src="../../../JS/form-validator.min.js"></script>
+    <script src="../../../JS/contact-form-script.js"></script>
+    <script src="../../../JS/custom.js"></script>
+</body>
+</html>
