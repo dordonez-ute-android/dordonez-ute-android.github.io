@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  <title>Presentation 5 UBICACIÓN, GPS.</title>
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+  <link rel="icon" type="image/png" href="img/logo.png" />  
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/divide.css">
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>  
+</head>
+
+<body>
+  <div class="deck-container">
+  
+    <!-- Begin slides. Just make elements with a class of slide. -->
+	
+	
+    <section class="slide">
+      <h1>
+		 <img src="img/logo.png" style="width: 10%" alt=""></p>
+		 <p style="font-size:80px">DESARROLLO DE SISTEMAS II</p> 
+		  <p style="font-size:60px">UBICACIÓN, GPS</p>
+		  <p style="font-size:20px">&nbsp </p>
+		  <p style="font-size:40px"> 			  
+			   &nbsp Daniel Altamirano	&nbsp y		 
+		  </p>
+		  <p style="font-size:40px"> &nbsp Laura &nbsp Zambrano &nbsp</p> 	  
+	  </h1>	  
+    </section>
+
+	<section class="slide">
+      <h1>Introducción
+	  <p style="font-size:30px">&nbsp </p>
+			 
+		 <p style="font-size:50px">
+		 El reconocimiento de la ubicación le permite a una  <br> 
+		 aplicación brindar una experiencia más contextual,<br> 
+		 debido a que los usuarios &nbsp llevan sus &nbsp dispositivos <br>
+		 móviles a todas partes. 
+		 		 
+		 <br>
+		 <br>	
+		 </p>
+	  
+	  
+	  </h1>
+    </section>	
+
+
+	<section class="slide">
+      <h1>Configurar una aplicación <br> con servicios de ubicación
+	  <p style="font-size:30px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		 Permisos 
+		 <br>
+		 <br>		 
+		 <img src="img/img1.jpg" 
+		 style="width: 45%" alt="">
+			Ubicación en primer plano
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+
+	<section class="slide">
+      <h1>Configurar una aplicación <br> con servicios de ubicación
+	  <p style="font-size:30px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		 Permisos dependiendo de la precisión requerida.  
+		 <br>
+		 <br>		 
+		 <img src="img/img2.jpg" 
+		 style="width: 45%" alt="">
+		 Proporcionan una ubicación más precisa y es necesario<br> para algunas tareas de conectividad.
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Configurar una aplicación <br> con servicios de ubicación
+	  <p style="font-size:30px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		Si una función dentro de la aplicación comparte <br>constantemente la ubicación con otros usuarios   
+		 <br>
+		 <br>		 
+		 <img src="img/img3.jpg" 
+		 style="width: 45%" alt="">
+		 	Ubicación en segundo plano
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+
+	<section class="slide">
+      <h1>Solicitar permisos al usuario
+	  <p style="font-size:10px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		
+		 <br>
+		 <br>		 
+		 <img src="img/img4.png" 
+		 style="width: 25%" alt="">
+		 	Se debe declarar el permiso <br>ACCESS_BACKGROUND_LOCATION <br>
+		en el Android Manifest.
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Obtener última ubicación conocida
+	  <p style="font-size:10px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		 <br>
+		 <br>	
+		Uno de los métodos para realizarlo es getLastLocation().
+		 <br>
+		 <br> 
+		 <img src="img/img5.jpg" 
+		 style="width: 25%" alt="">
+		 <br>		 	
+		A continuación, para crear un cliente de servicios de  <br>
+		ubicación se debe configurar en el método OnCreate()			
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Configurar en el método OnCreate()
+	  <p style="font-size:10px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		
+		 <br>
+		 <br>		 
+		 <img src="img/img6.jpg" 
+		 style="width: 40%" alt="">
+		 	Primero se debe descargar e instalar el componente de <br>
+			Servicios de Google Play y agregarlo a la aplicación. 
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Obtener última ubicación conocida
+	  <p style="font-size:10px">&nbsp </p>
+			 
+		 <p style="font-size:60px">
+		
+		 <br>
+		 <br>		 
+		 <img src="img/img7.jpg" 
+		 style="width: 40%" alt="">
+		 	Se solicita la última &nbsp ubicación del dispositivo <br>
+			 La longitud puede ser null en el siguiente caso:
+		  </p>	  
+	  
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Cambiar la configuración de la ubicación
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:60px">		
+		 <br>
+		 <br>		 
+		 <img src="img/img8.png" 
+		 style="width: 10%" alt="">
+		 <ul style="font-size:50px">
+			<li>Si la aplicación necesita solicitar la ubicación <br>o recibir actualizaciones de permisos</li>			
+			<li>El objeto de datos LocationRequest define <br>estos parámetros de configuración.</li>
+		</ul>
+		 </p>
+	  </h1>
+    </section>	
+	
+	
+	<section class="slide">
+      <h1>Clase LocationRequest 
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:60px">		
+		 <br><br>		
+		 Almacena los parámetros de solicitud que determinan <br>
+		 el nivel de precisión de las solicitudes de ubicación. <br>
+		 Los parámetros  más relevantes son: 
+		 <br><br>
+		 <img src="img/img8.jpg" 
+		 style="width: 20%" alt="">
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Android Manifest: <br>Prioridad y Permiso de acceso 
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:60px">	
+		<br><br>		 
+		 <img src="img/img9.jpg" 
+		 style="width: 50%" alt="">	
+		 Definir junto con el intervalo de actualización.
+		 <br><br>
+		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Crear un LocationSettingsRequest.Builder
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:60px">	
+		<br><br>		 
+		 <img src="img/img10.jpg" 
+		 style="width: 55%" alt="">	
+		 Para &nbsp obtener &nbsp la &nbsp configuración &nbsp de &nbsp ubicación &nbsp actual.
+		 <br><br>
+		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Verificar &nbsp que &nbsp se &nbsp cumpla &nbsp la <br>configuración de ubicación actual
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:60px">	
+		<br><br>		 
+		 <img src="img/img11.jpg" 
+		 style="width: 55%" alt="">	
+		 Se debe &nbsp en el código &nbsp de estado del objeto &nbsp LocationSettingsResponse y <br>
+		 para obtener más detalles se llama al método getLocationSettingsStates()
+		 <br><br>
+		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	
+	<section class="slide">
+      <h1>Cambiar la configuración de ubicación
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 
+		 <img src="img/img12.jpg" 
+		 style="width: 40%" alt="">	
+		 Uso del método OnFailureListener.<br>
+		 Permiso al usuario  mediante: startResolutionForResult().
+		 <br><br>
+		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Solicitar actualizaciones de ubicación
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> Usar el método requestLocationUpdates()
+		 <br><br><br><br>
+		 <img src="img/img13.png" 
+		 style="width: 7%" alt="">	
+		 <br><br>
+		 La información de ubicación puede permitir a los <br>
+		 usuarios orientarse mientras caminan o conducen. 
+		 
+		 <br><br>
+		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Obtener la actualización con el método <br>
+	  de devolución de llamada LocationCallback
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br><br>
+		 <img src="img/img14.jpg" 
+		 style="width: 30%" alt="">	
+		 <br><br>
+		 Definir el método startLocationUpdates(). 
+		 
+		 <br><br>
+		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Definir la devolución de llamada de <br>
+		las actualizaciones de ubicación
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br><br>
+		 <img src="img/img15.jpg" 
+		 style="width: 30%" alt="">	
+		 <br><br>
+		 Invocar el método de devolución de llamada LocationCallback.onLocationResult(). 		 
+		 <br><br>		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Detener las actualizaciones de ubicación
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br><br>
+		 <img src="img/img16.jpg" 
+		 style="width: 30%" alt="">	
+		 <br><br>
+		 Uso del método onPause(), llamando a removeLocationUpdates() <br>
+		y pasándole como parámetro un LocationCallback.		 
+		 <br><br>		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Activar el seguimiento de las <br>
+	  actualizaciones de ubicación 
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br><br>
+		 <img src="img/img17.jpg" 
+		 style="width: 20%" alt="">	
+		 <br><br>
+		 Invocar el método de devolución de llamada LocationCallback.onLocationResult().
+		 <br><br>		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Guardar el estado de la actividad en caso de <br>
+		  que la configuración del dispositivo cambie
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br><br>
+		 <img src="img/img18.jpg" 
+		 style="width: 50%" alt="">	
+		 <br><br>
+		 Mediante un estado de instancia almacenado en un objeto Bundle <br>
+		 y realizando la devolución de llamada onSaveInstanceState().	 
+		 <br><br>		 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Restablecer los valores guardados en caso de <br>
+		  que la configuración del dispositivo cambie
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br>
+		 <img src="img/img19.jpg" 
+		 style="width: 40%" alt="">			 
+		 Definir un método updateValuesFromBundle() 	 
+		 <br>	 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Acceder a ubicación en segundo plano
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br>
+		 <img src="img/img20.png" 
+		 style="width: 30%" alt="">		
+			 <br> <br>
+		Usar los permisos ACCESS_COARSE_LOCATION y ACCESS_FINE_LOCATION. 
+		 <br><br>	 
+		 En Android 10 (API 29), buscar el permiso ACCESS_BACKGROUND_LOCATION
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Geovallas
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br>
+		 <img src="img/img21.jpg" 
+		 style="width: 30%" alt="">			 
+		El geovallado combina el conocimiento de la ubicación <br>
+		actual del usuario con el conocimiento de la proximidad <br>
+		del usuario a ubicaciones de interés. 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Crear objetos de Geovallas 
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br>
+		 <img src="img/img22.jpg" 
+		 style="width: 40%" alt="">	
+			 <br> <br>
+		Usar Geofence.Builder a fin de crear una geovalla y configurar el radio;
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Especificar las Geovallas a  <br>supervisar y sus activadores iniciales
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img23.jpg" 
+		 style="width: 40%" alt="">	
+		<br> <br>		 
+		Uso de la clase GeofencingRequest y su <br> 
+		clase anidada GeofencingRequestBuilder.
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Agregar Geovallas
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img24.jpg" 
+		 style="width: 40%" alt="">	
+		<br>		 
+		Usar el método &nbsp GeofencingClient.addGeofences(), <br>
+		que proporciona el objeto &nbsp GeofencingRequest &nbsp y <br>
+		el &nbsp PendingIntent. 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Detener la supervisión de una geovalla 
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img25.jpg" 
+		 style="width: 40%" alt="">	
+		<br>		 
+		De esta manera se ahorra recursos del dispositivo. 
+		 </p>
+	  </h1>
+    </section>	
+	
+	
+	<section class="slide">
+      <h1>Prácticas recomendadas para la  <br>
+		implementación del geovallado.
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>		 
+		• &nbsp 	Reducir el consumo de energía.&nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp <br>	
+		• &nbsp 	Elegir el radio óptimo para la geovalla. &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp   &nbsp  &nbsp <br>	
+		• &nbsp 	Explicar a los usuarios el porqué de las geovallas.
+
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Agregar mapas
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img26.jpg" 
+		 style="width: 30%" alt="">	
+		<br>		 
+		Permite &nbsp incluir &nbsp mapas &nbsp e &nbsp información <br>
+		personalizada de mapeos en una aplicación. 
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Agregar mapas
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img27.jpg" 
+		 style="width: 30%" alt="">	
+		<br>		 
+		3D, de interiores, híbridos, de terreno, mosaicos basados en vectores <br>
+		para dibujos y almacenamiento en cache, transiciones animadas, etc.
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Personalizar  mapas
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img28.jpg" 
+		 style="width: 30%" alt="">	
+		<br>		 
+		Definir colores o íconos personalizados, incluir polilíneas <br>
+		y polígonos, proporcionar superposiciones de imágenes.
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Controlar la vista del usuario
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> <br>
+		 <img src="img/img29.jpg" 
+		 style="width: 30%" alt="">	
+		<br>		 
+		Controlar las propiedades de rotación, <br>
+		inclinación, zoom y desplazamiento.
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Agregar Street View
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> 
+		 <img src="img/img30.jpg" 
+		 style="width: 30%" alt="">	
+		<br>		 
+		Permite explorar el mundo a través de vistas panorámicas de 360°, <br>
+		controlar el zoom y la orientación, animar los movimientos de cámara.
+		 </p>
+	  </h1>
+    </section>	
+	
+	
+	<section class="slide">
+      <h1>Conclusiones
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> 
+			1) &nbsp&nbsp Al momento de desarrollar una aplicación que requiera<br> servicios de ubicación, se debe tener muy presente solicitar los<br> respectivos permisos al usuario. Esto con la finalidad de ser<br> transparentes con los objetivos de la aplicación.
+		
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Conclusiones
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> 
+			2) &nbsp&nbsp Librerías como Google Maps Android API, permiten <br> implementar funcionalidades de georreferenciación en una aplicación <br> móvil de manera rápida y simple.
+		
+		 </p>
+	  </h1>
+    </section>	
+	
+	<section class="slide">
+      <h1>Conclusiones
+	  <p style="font-size:10px">&nbsp </p>			 
+		 <p style="font-size:50px">	
+		 <br> 
+			3) &nbsp&nbsp	Agregar geovallados a una aplicación es un proceso   sencillo <br>debido a la cantidad de documentación disponible. Sin embargo, <br>  uno de los principales retos es el consumo de recursos que debe <br>  ser manejado apropiadamente con el fin de optimizar la aplicación.
+		
+		 </p>
+	  </h1>
+    </section>	
+	
+	
+		<section class="slide">
+      <h1>Gracias<br>
+	  <p style="font-size: 40px"> Daniel Altamirano y Laura Zambrano </p>	
+	  		   			
+	  </h1>
+    </section>
+	
+		
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
