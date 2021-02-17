@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>BLUETOOTH</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../CSS/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="../../../CSS/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../../../CSS/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../../CSS/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand">
+					<img src="../../../IMG/Logo.png"alt="" width="100" height="100"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="../../../Index.html">Inicio</a></li>
+						<li class="nav-item active dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Parciales</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="../Primer Parcial/Primer Parcial.html">Primer Parcial</a>
+								<a class="dropdown-item" href="../Segundo Parcial/Segundo Parcial.html">Segundo Parcial</a>
+								<a class="dropdown-item" href="Tercer Parcial.html">Tercer Parcial</a>
+							</div>
+					  	</li>
+					
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Desarrollo de Sistemas II</h1>
+                    </br>
+                    <h1>Bluetooth</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8 col-sm-12 text-left">
+				  <div class="inner-column">
+						<h1 align="justify"><span>Introducción general a Bluetooth</span></h1><br>	
+					</div>
+				</div>
+			</div>
+				
+				<!-- Start About -->
+
+			<!-- Seccion izquierda texto -->
+			<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+				<div class="inner-column">
+					
+				  <p align="justify">La plataforma de Android incluye compatibilidad con la pila de red Bluetooth, la cual permite que un dispositivo intercambie datos de manera inalámbrica con otros dispositivos Bluetooth. 
+				  
+				  <br>El marco de trabajo de la aplicación proporciona acceso a la funcionalidad Bluetooth mediante las API de Bluetooth de Android. <br>Estas API permiten a las aplicaciones conectarse de manera inalámbrica con otros dispositivos Bluetooth y habilitan las funciones inalámbricas punto a punto y multipunto.
+				</p>
+					
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">
+                	<img src="../../../IMG/imgGrupo1/img24.jpg" alt="img1.png" align="center" width="550px" height="370px"><br><br>
+                </div>
+				
+			</div> 		
+					
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+				
+					 
+                      <p align="justify" style="font-size: 120%"><br>Con las API de Bluetooth, una aplicación de Android puede realizar lo siguiente:<br><br>
+
+*  &nbsp&nbsp Buscar otros dispositivos Bluetooth<br>
+*  &nbsp&nbsp Consultar el adaptador local de Bluetooth en busca de dispositivos Bluetooth sincronizados<br>
+*  &nbsp&nbsp Establecer canales RFCOMM<br>
+*  &nbsp&nbsp Conectarse con otros dispositivos mediante el descubrimiento de servicios<br>
+*  &nbsp&nbsp Transferir datos hacia otros dispositivos y desde estos<br>
+*  &nbsp&nbsp Administrar varias conexiones	 
+					  </p>						
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12  text-center">
+                	<img src="../../../IMG/imgGrupo1/img/img25.png" alt="img1.png" align="center" width="250px" height="250px"><br><br>
+                </div>
+				
+				</div> 		
+			
+				
+			</div>
+			<!-- Seccion fin izquierda texto -->
+		
+			<div class="row">			
+							
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-justify">	
+				<div class="inner-column">
+                      <p align="justify" style="font-size: 120%"><br>Esta página se centra en el sistema de Bluetooth clásico. Este sistema es la opción ideal para las operaciones que consumen más batería, como la transmisión y la comunicación entre dispositivos Android. Para dispositivos Bluetooth con bajos requisitos de energía, Android 4.3 (API de nivel 18) presenta compatibilidad de API con Bluetooth de bajo consumo. Para obtener más información, consulta Bluetooth de bajo consumo.<br><br>
+					  
+					  Aqui se describen diferentes perfiles de Bluetooth, incluido el perfil de dispositivo de salud. Luego, se describe la manera de usar las API de Bluetooth de Android a fin de llevar a cabo las cuatro tareas principales necesarias para establecer la comunicación a través de Bluetooth: configuración de Bluetooth, búsqueda de dispositivos sincronizados o disponibles en el área local, conexión con dispositivos y transferencia de datos entre dispositivos.<br><br>
+
+					  </p>	
+				</div>
+				</div>
+				</div>
+		
+		<!-- Seccion fin derecha texto -->
+		
+			<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<h1>&nbsp </h1>		
+	</div>
+<!--fin separador negro-->
+	
+	
+	<!-- Seccion izquierda texto -->
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+						<h1><br>Conceptos básicos
+
+ </h1>	<br>
+					  <p align="justify" style="font-size: 120%">Para que los dispositivos compatibles con Bluetooth transmitan datos entre sí, primero deben establecer un canal de comunicación mediante un proceso de sincronización. Un dispositivo (el dispositivo detectable) se habilita para recibir solicitudes de conexión entrantes. Otro dispositivo encuentra el dispositivo detectable mediante un proceso de detección del servicio. <br><br>Después de que el dispositivo detectable acepta la solicitud de sincronización, los dos dispositivos completan un proceso de conexión en el que se intercambian claves de seguridad. Ambos dispositivos almacenan estas claves en caché para usarlas posteriormente. Después de que terminan los procesos de sincronización y conexión, los dispositivos intercambian información. Cuando se completa la sesión, el dispositivo que inicializó la solicitud de sincronización libera el canal que usó para la sincronización con el dispositivo detectable.<br><br> Sin embargo, siempre y cuando estén dentro del rango de alcance y ninguno elimine la conexión, los dos dispositivos permanecen vinculados para poder volver a conectarse automáticamente en una sesión futura.<br><br>
+
+
+</p>
+					</div>
+				</div> 		
+			
+				<div class="col-lg-6 col-md-12 col-sm-12  text-center">
+					<h1>&nbsp </h1>		
+                	<br><br><br><img src="../../../IMG/imgGrupo1/img/img26.png" align="center" width="400px" height="750px">
+					<br><br>
+                </div>
+				<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<h1>&nbsp</h1>		
+	</div>
+<!--fin separador negro-->
+
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+				<p align="justify" style="font-size: 120%">
+				<br>
+				<h1>Permisos de Bluetooth</h1><br><br>
+
+<h2>Para usar las funciones de Bluetooth en tu aplicación, debes declarar dos permisos. El primero es BLUETOOTH. Necesitas este permiso para establecer cualquier comunicación de Bluetooth, como solicitar o aceptar una conexión y transferir datos.</h2><br><br>
+
+<h2>El otro permiso que debes declarar es ACCESS_FINE_LOCATION. Tu app necesita este permiso porque es posible usar un escaneo de Bluetooth para reunir información sobre la ubicación del usuario. Esta información puede obtenerse desde el dispositivo del usuario o desde balizas Bluetooth en determinados lugares, como tiendas y áreas de tránsito.
+
+<br><br>
+Si deseas que tu app inicialice la detección de dispositivos o controle la configuración de Bluetooth, debes declarar el permiso BLUETOOTH_ADMIN además del permiso BLUETOOTH. La mayoría de las aplicaciones necesitan este permiso solamente para poder ver dispositivos Bluetooth locales. Las demás capacidades que otorga este permiso no deben usarse, a menos que la aplicación sea un “administrador de energía” que modifique la configuración de Bluetooth a pedido del usuario.<br><br>
+Declara los permisos de Bluetooth del archivo de manifiesto de tu aplicación. Por ejemplo:
+</h2></p><br><br>
+			
+			</div>
+				</div> 	
+			
+			</div>
+			<!-- Seccion fin izquierda texto -->
+	<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img27.png" alt="imagen53.jpg" align="center" width="850px" height="350px"><br><br><br>
+                </div>
+				
+	<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<h1>&nbsp</h1>		
+	</div>
+<!--fin separador negro-->
+	
+	
+	
+<!-- Seccion izquierda texto -->
+			<div class="row">
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					
+						<h1><br>Trabajar con perfiles </h1>	<br>
+						<h2 align="justify"><br>A partir de Android 3.0, la API de Bluetooth incluye compatibilidad para trabajar con perfiles de Bluetooth. Un perfil de Bluetooth es una especificación de interfaz inalámbrica para la comunicación entre dispositivos basada en Bluetooth. Un ejemplo es el perfil de manos libres. Para que un teléfono móvil se conecte a auriculares inalámbricos, ambos dispositivos deben ser compatibles con el perfil de manos libres.<br><br>La API de Bluetooth de Android proporciona implementaciones para los siguientes perfiles de Bluetooth:<br><br>
+						
+						
+						<strong>Auriculares. </strong>El perfil de auriculares ofrece compatibilidad con auriculares Bluetooth para usarlos con teléfonos móviles. Android proporciona la clase BluetoothHeadset, que es un proxy para controlar el servicio de auriculares Bluetooth. Esto incluye los perfiles de manos libres (v1.5) y de auriculares Bluetooth. La clase BluetoothHeadset incluye compatibilidad con comandos de AT. Para obtener más información sobre este tema, consulta la sección Comandos de AT específicos del proveedor.<br><br>
+<strong>A2DP.</strong> El perfil de distribución de audio avanzada (A2DP) define el nivel de audio de alta calidad que puede transmitirse de un dispositivo a otro a través de una conexión Bluetooth. Android proporciona la clase BluetoothA2dp, que es un proxy para controlar el servicio de A2DP Bluetooth.
+<br><br><strong>Dispositivo de salud.</strong> Android 4.0 (nivel de API 14) presenta compatibilidad con el perfil de dispositivos de salud (HDP) Bluetooth. Esto te permite crear aplicaciones que usen Bluetooth para comunicarse con dispositivos de salud que admiten Bluetooth, como monitores de frecuencia cardíaca, medidores de la sangre, termómetros y balanzas, entre otros. <br><br>Para acceder a una lista de los dispositivos compatibles y sus correspondientes códigos de especialización de los datos del dispositivo, consulta la sección Especializaciones de datos de los dispositivos con HDP de Bluetooth. También se hace referencia a estos valores en la especificación ISO/IEEE 11073-20601 [7] como MDC_DEV_SPEC_PROFILE_* en el Anexo de códigos de nomenclaturas. Para obtener más información sobre el HDP, consulta la sección Perfil de dispositivos de salud.
+<br><br>
+Por ejemplo, en este fragmento de código, se muestra la manera de conectarse a un objeto del proxy de BluetoothHeadset, de modo que se pueda controlar el perfil de auriculares:
+
+</h2>	<br>
+						
+					  </div>
+				</div> 	
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img28.png" alt="imagen53.jpg" align="center" width="1000px" height="750px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+					<br><br>
+						<h2 align="justify"><br><strong>Configurar el sistema Bluetooth</strong><br><br>
+Para que tu aplicación pueda comunicarse a través de Bluetooth, debes verificar que Bluetooth sea compatible con el dispositivo y, si es así, asegurarte de que esté habilitado.
+<br><br>
+Si Bluetooth no es compatible, debes inhabilitar correctamente cualquier función de Bluetooth. En caso de que Bluetooth sea compatible, pero esté inhabilitado, puedes solicitar que el usuario lo habilite sin abandonar tu aplicación. Esta configuración se logra en dos pasos, mediante el BluetoothAdapter.<br><br><br>
+
+<strong>Paso 1 : Obtén el BluetoothAdapter</strong><br><br>
+
+
+El BluetoothAdapter es obligatorio para toda actividad de Bluetooth. Para obtener el BluetoothAdapter, llama al método estático del getDefaultAdapter(). <br><br>Esto muestra un BluetoothAdapter que representa el propio adaptador de Bluetooth del dispositivo (la radio Bluetooth). Existe un adaptador de Bluetooth para todo el sistema y tu aplicación puede interactuar con él usando este objeto. <br><br>Si getDefaultAdapter() devuelve null, significa que el dispositivo no es compatible con Bluetooth. Por ejemplo:<br><br>
+
+</h2>	<br>
+						
+					  </div>
+				</div> 
+				
+			
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img29.png" alt="imagen53.jpg" align="center" width="750px" height="170px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="justify" ><br><strong>Paso 2: Habilita Bluetooth.</strong><br><br>
+A continuación, debes asegurarte de que Bluetooth esté habilitado. Llama al isEnabled() para verificar si Bluetooth se encuentra actualmente habilitado. Si este método muestra “false”, Bluetooth no estará habilitado. Para solicitar que Bluetooth esté habilitado, llama a startActivityForResult() pasando una acción de intent ACTION_REQUEST_ENABLE. Esto emite una solicitud para habilitar Bluetooth mediante la configuración del sistema (sin detener tu aplicación). Por ejemplo:</h2>	<br>
+						
+					  </div>
+				</div> 
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1//img/img30.png" alt="imagen55.jpg" align="center" width="750px" height="180px">
+                </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="justify"><br>Se muestra un cuadro de diálogo (como en la figura 1) en el que se solicita permiso al usuario para habilitar Bluetooth. Si el usuario responde “Sí”, el sistema comienza a habilitar Bluetooth y el enfoque vuelve a tu aplicación una vez que el proceso se completa con éxito (o no). <br><br>
+						La constante REQUEST_ENABLE_BT que se pasa a startActivityForResult() es un valor entero definido localmente que debe ser superior a 0. El sistema te devuelve esta constante en tu implementación de onActivityResult() como parámetro requestCode.
+<br><br>
+Si la habilitación de Bluetooth se realiza con éxito, tu actividad recibe el código de resultado RESULT_OK en la devolución de llamada onActivityResult(). Si Bluetooth no se habilita debido a un error (o a que el usuario responde “No”), el código de resultado será RESULT_CANCELED.
+<br><br>
+Opcionalmente, tu aplicación también puede recibir la intent de transmisión ACTION_STATE_CHANGED, que el sistema emite cada vez que cambia el estado de Bluetooth. Esta emisión contiene los campos adicionales EXTRA_STATE y EXTRA_PREVIOUS_STATE, que incluyen los estados de Bluetooth nuevo y antiguo, respectivamente. Los valores posibles de estos campos adicionales son STATE_TURNING_ON, STATE_ON, STATE_TURNING_OFF y STATE_OFF. La recepción de esta emisión puede ser útil si tu aplicación necesita detectar cambios en el tiempo de ejecución realizados en el estado de Bluetooth.
+						</h2>	<br>
+						
+					  </div>
+				</div> 
+				
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12  text-center">		
+                	<img src="../../../IMG/imgGrupo1/img/img31.png" alt="imagen56.jpg" align="center" width="550px" height="300px">
+                </div>
+				
+				
+				<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<div class="inner-column">
+						<h2 align="justify"><br><strong>Buscar dispositivos:</strong><br><br><br>
+
+	Si usas BluetoothAdapter, puedes buscar dispositivos Bluetooth remotos mediante la detección de dispositivos o la consulta de la lista de dispositivos sincronizados.<br><br>
+
+La detección de dispositivos es un procedimiento de escaneo que busca en el área local dispositivos con Bluetooth habilitado y, luego, solicita información sobre cada uno de ellos. A menudo, esto se denomina detección, consulta o escaneo. <br><br>Sin embargo, un dispositivo Bluetooth cercano solamente responde a una solicitud de visibilidad cuando es detectable y acepta solicitudes de información. Si un dispositivo es detectable, comparte información (como su nombre, su clase y su dirección MAC única) como respuesta a la solicitud de detección.<br><br> Al usar esta información, el dispositivo que lleva a cabo la visibilidad puede decidir inicializar una conexión con el dispositivo detectado. <br><br>
+
+Ten presente que existe una diferencia entre la vinculación y la conexión:
+<br><br>
+Para estar vinculados, dos dispositivos deben reconocer su existencia mutuamente, tener una clave de enlace compartida que pueda usarse para autenticación y ser capaces de establecer una conexión cifrada entre sí.<br><br>
+Para estar conectados, los dispositivos deben compartir un canal RFCOMM y tener la capacidad de transmitirse datos entre sí. Las API de Bluetooth de Android actuales requieren que los dispositivos estén vinculados para que se pueda establecer una conexión RFCOMM. La vinculación se realiza automáticamente cuando inicializas una conexión cifrada con las API de Bluetooth.<br><br>
+En las siguientes secciones, se describe la manera de buscar dispositivos vinculados o hallar dispositivos nuevos mediante la detección de dispositivos.<br><br>
+<!--separador negro-->
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+						<strong><h1>&nbsp</h1></strong>		
+				</div>
+	<br><br>	<strong><h2>		
+Realizar consultas a dispositivos sincronizados</strong></h2><br><br>
+Antes de llevar a cabo la detección de dispositivos, es importante consultar el conjunto de dispositivos sincronizados a fin de ver si el dispositivo deseado ya es conocido. Para ello, llama a getBondedDevices(). <br><br>Esto devuelve un conjunto de objetos BluetoothDevice que representa a los dispositivos sincronizados. Por ejemplo, puedes consultar todos los dispositivos sincronizados y obtener el nombre y la dirección MAC de cada uno, como se demuestra en el siguiente fragmento de código:
+	<br><br>
+					  </div>
+				</div> 
+				
+						
+				
+				
+			</div>
+			<!-- Seccion fin izquierda texto -->
+	
+			<!-- Seccion derecha texto -->
+			<div class="row">			
+					<div class="col-lg-12  col-md-12 col-sm-12 text-center">
+						<img src="../../../IMG/imgGrupo1/img/img32.png" alt="imagen60.png" align="center" width="750px" height="310px">	
+						<p align="justify">&nbsp</p>
+					</div>				
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+				<div class="inner-column">	
+					<br>
+                      <p align="justify" style="font-size: 140%">Para inicializar una conexión con un dispositivo Bluetooth, solo se necesita la dirección MAC del objeto BluetoothDevice asociado, que puedes recuperar llamando a getAddress(). Puedes obtener más información acerca de cómo crear una conexión en la sección Conectar dispositivos.</p>	<br><br>
+				</div>
+				
+				</div>
+				
+				<h2><strong>&nbsp&nbsp&nbsp&nbsp Conectar dispositivos</strong></h2>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+				<br>
+					
+                      
+				</div>
+				
+					
+				
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+					
+                      <p align="justify" style="font-size: 140%">A fin de crear una conexión entre dos dispositivos, debes implementar los mecanismos del lado del servidor y del lado del cliente, porque un dispositivo debe abrir un socket de servidor y el otro debe inicializar la conexión usando la dirección MAC del dispositivo del servidor para inicializar la conexión. <br><br>El dispositivo del servidor y el dispositivo del cliente obtienen el BluetoothSocket obligatorio de diferentes maneras. El servidor recibe la información del socket cuando se acepta una conexión entrante. El cliente proporciona la información del socket cuando abre un canal RFCOMM hacia el servidor.
+<br><br>
+El servidor y el cliente se consideran conectados entre sí cuando tienen un BluetoothSocket conectado en el mismo canal RFCOMM. En este punto, cada dispositivo puede obtener flujos de entrada y salida, y se puede iniciar la transferencia de datos, que se trata en la sección Administrar una conexión. En esta sección, se describe la manera de inicializar la conexión entre dos dispositivos.<br><br>
+</p>	
+				</div>
+				
+						
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+					
+                      <p align="justify" style="font-size: 140%"><strong>Conectarse como servidor</strong><br><br>
+Cuando desees conectar dos dispositivos, uno deberá funcionar como servidor y tener un BluetoothServerSocket abierto. El propósito del socket de servidor es recibir solicitudes de conexiones entrantes y proporcionar un BluetoothSocket conectado cuando se acepta una. Cuando el BluetoothSocket se obtiene del BluetoothServerSocket, el BluetoothServerSocket puede (y debería) descartarse, a menos que quieras que el dispositivo acepte más conexiones.<br><br>
+
+Para configurar un socket de servidor y aceptar una conexión, sigue estos pasos:
+
+
+<br><br>
+<strong>Paso 1 BluetoothServerSocket</strong><br><br>
+Obtén un BluetoothServerSocket llamando a listenUsingRfcommWithServiceRecord().
+La string es un nombre de identificación de tu servicio, que el sistema escribirá automáticamente en una nueva entrada de la base de datos del protocolo de detección de servicios (SDP) en el dispositivo. El nombre es arbitrario y puede ser simplemente el de tu aplicación. El identificador único universal (UUID) también se incluye en la entrada del SDP y conforma la base del acuerdo de conexión con el dispositivo del cliente. Es decir, cuando el cliente intenta conectarse con este dispositivo, incluye un UUID que identifica de manera única el servicio con el cual desea conectarse. Estos UUID deben coincidir a fin de que se acepte la conexión.
+
+Un UUID es un ID de string con un formato estandarizado de 128 bits que se emplea para identificar información de manera exclusiva. La ventaja de un UUID es que tiene el tamaño suficiente para que puedas seleccionar cualquiera al azar y que no haya conflictos. En este caso, se usa para identificar de manera única el servicio Bluetooth de tu aplicación. A fin de obtener un UUID que pueda usarse con tu aplicación, puedes emplear uno de los numerosos generadores de UUID al azar de la Web e inicializar un UUID con fromString(String).
+<br><br>
+<strong>Paso 2 Bluetooth accept()</strong><br><br>
+
+Llama a accept() para comenzar a recibir solicitudes de conexión.
+Esta es una llamada de bloqueo. Se muestra cuando se acepta una conexión o se produce una excepción. Una conexión se acepta solo cuando un dispositivo remoto envía una solicitud de conexión que contiene un UUID que coincide con el UUID registrado con este socket de servidor de recepción. Si la conexión se realiza correctamente, accept() devuelve un BluetoothSocket conectado.
+
+<br><br>
+<strong>Paso 3 Bluetooth close()</strong><br><br>
+
+A menos que desees aceptar conexiones adicionales, llama a close().
+Este método libera el socket de servidor y todos sus recursos, pero no cierra el BluetoothSocket conectado que accept() devuelve. A diferencia del protocolo TCP/IP, RFCOMM solo permite un cliente conectado por canal a la vez, por lo que, en la mayoría de los casos, tiene sentido llamar a close() en el BluetoothServerSocket inmediatamente después de aceptar un socket conectado.<br><br>
+
+Debido a que la llamada accept() es de bloqueo, no debe ejecutarse en el subproceso de la IU de la actividad principal, de modo que tu aplicación pueda seguir respondiendo a otras interacciones de los usuarios. Por lo general, resulta lógico hacer todo el trabajo que involucra BluetoothServerSocket o BluetoothSocket en un nuevo subproceso administrado por tu aplicación. <br><br>Para anular una llamada bloqueada, como accept(), llama a close() en el BluetoothServerSocket o BluetoothSocket desde otro subproceso. Ten en cuenta que todos los métodos en un BluetoothServerSocket o BluetoothSocket tienen seguridad para subprocesos.
+
+
+</p>	
+				</div>
+				
+						
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+					<br><br>
+                      <p align="justify" style="font-size: 140%"><strong>Ejemplo:</strong><br><br>
+</p>	
+				</div>
+				
+					<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+						<img src="../../../IMG/imgGrupo1/img/img33.png" alt="imagen63.png" align="center" width="950px" height="950px">	<br>			
+					</div>	
+				
+							
+							
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+					<br><br>
+                      <p align="justify" style="font-size: 140%">En este ejemplo, solo se desea una conexión entrante; por lo tanto, apenas se acepta una conexión y se obtiene el BluetoothSocket, la aplicación pasa el BluetoothSocket adquirido a un subproceso separado, cierra el BluetoothServerSocket y abandona el bucle.
+<br><br>
+Ten presente que, cuando accept() devuelve el BluetoothSocket, el socket ya está conectado. Por lo tanto, no debes llamar a connect(), como lo haces del lado del cliente.
+<br><br>
+El método manageMyConnectedSocket() específico de la aplicación está diseñado para inicializar el subproceso de transferencia de datos, que se analiza en la sección Cómo administrar una conexión.
+<br><br>
+Por lo general, deberás cerrar tu BluetoothServerSocket no bien termines de recibir conexiones entrantes. En este ejemplo, se llama a close() apenas se obtiene el BluetoothSocket. Es posible que también desees proporcionar en tu subproceso un método público que pueda cerrar el BluetoothSocket en caso de que necesites dejar de recibir conexiones en ese socket de servidor.<br><br>
+</p>	
+				</div>
+				
+				
+				
+				<!--separador negro-->
+	<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="background-color:black; color:white">					
+			<h1>&nbsp</h1>		
+	</div>
+<!--fin separador negro-->
+
+		<div class="col-lg-12 col-md-12 col-sm-12 text-center">	
+					<br><br>
+                      <p align="justify" style="font-size: 140%"><strong>Conclusiones: </strong><br><br>
+					  •	Después de conectar correctamente varios dispositivos, cada uno tiene un BluetoothSocket conectado. Aquí es donde comienza la diversión, ya que puedes compartir información entre dispositivos. <br><br>
+
+
+
+
+					</p>	
+					
+						
+
+
+				</div>
+		
+		
+			</div> 
+		<!-- Seccion fin derecha texto -->	
+	<!-- End About -->
+			</div>
+		</div>
+	
+	<!-- End About -->
+	
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f" >
+	  <div class="container" >
+		  <div class="row" >
+			  
+			<div class="col-lg-4 col-md-4" >
+				<h3 align="justify" style="color:#0FF">Sobre Nosotros...</h3>
+				<p align="justify">Somos estudiantes de la Universidad UTE que actualmente cursamos el octavo semestre de la carrera de Ingeniería Informática y Ciencias de la Computación.</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" >
+				<p align="justify" style="color:#0FF">&nbsp</p>
+				<p align="justify">&nbsp</p>
+			  </div>
+			  
+			  <div class="col-lg-4 col-md-4" > 
+				  <h3 style="color:#0FF">Líderes</h3>
+                  <ul>
+                   <li>
+                <span style="color:#0FF">Daniel Altamirano</span>
+                <h3>daniel.altamirano@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Leslie Torres</span>
+                <h3>leslie.torres@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Ivonne Venegas</span>
+                <h3>ivonne.venegas@ute.edu.ec</h3></a>
+              </li>
+              <li>
+                <span style="color:#0FF">Carlos Yépez</span>
+                <h3>carlos.yepez@ute.edu.ec</h3></a>
+              </li>
+            </ul>   	
+			</div>
+	    </div>
+	  </div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2020 <a>UTE Ingeniería Informática</a> 
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="../../../JS/jquery-3.2.1.min.js"></script>
+	<script src="../../../JS/popper.min.js"></script>
+	<script src="../../../JS/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="../../../JS/jquery.superslides.min.js"></script>
+	<script src="../../../JS/images-loded.min.js"></script>
+	<script src="../../../JS/isotope.min.js"></script>
+	<script src="../../../JS/baguetteBox.min.js"></script>
+	<script src="../../../JS/form-validator.min.js"></script>
+    <script src="../../../JS/contact-form-script.js"></script>
+    <script src="../../../JS/custom.js"></script>
+</body>
+</html>
